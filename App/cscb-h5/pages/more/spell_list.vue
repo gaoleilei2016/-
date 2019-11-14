@@ -1,0 +1,156 @@
+<template>
+	<view class="bg-yellow padding-bottom-xl">
+		<view class="cu-custom" :style="[{height:CustomBar + 'px'}]">
+			<view class="cu-bar fixed bg-white" :style="style">
+				<navigator url="home" class="action">
+					<text class="cuIcon-homefill padding-left"></text>
+				</navigator>
+				<view class="content text-bold">
+					好友邀请拼单
+				</view>
+			</view>
+		</view>
+		<view class="flex justify-between padding-tb-lg">
+			<text class="margin-left-xl">XXX刚刚拼单成功</text>
+			<view @tap="dialog=true" class='cu-tag bg-orange ' style="border-top-left-radius: 5000upx;border-bottom-left-radius: 5000upx;"> 规则
+			</view>
+		</view>
+		<view class="bg-white radius margin flex flex-direction align-center">
+			<view style="margin-top: -70upx;" class="flex flex-direction justify-center align-center">
+				<image class="round" style="width: 140upx;height: 140upx;" src="http://img.tukexw.com/img/2c99a00e77f69be1.jpg"
+				 mode="aspectFit"></image>
+				<view class="flex align-center padding-tb-sm">
+					<view class="margin-right-sm">助力倒计时</view>
+					<tui-countdown color="#fff" bcolor="#000" bgcolor="#000" colonColor="#000" :time="timeList[0]" :height="35" :width="35"
+					 :size="26" :colonsize="32"></tui-countdown>
+				</view>
+			</view>
+			<view class="flex justify-between self-start margin-lr-sm" style="min-height: 80upx;line-height: 80upx;">
+				<view class="flex align-center">
+					<image src="../../static/bm.png" mode="aspectFit" style="width:80upx;height:80upx;"></image>
+					<view class="text-black text-bold">创世车宝自营店</view>
+					<view class="cuIcon-right align-center"></view>
+				</view>
+			</view>
+			<view class="flex padding-tb-sm align-center bg-gray">
+				<image class="margin-lr radius" src="../../static/gg.png" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
+				<view class="flex flex-direction justify-start text-sm">
+					<view style="width:430upx;" class="text-df text-black text-cut text-bold">康普顿GT950,合成型机油 便宜卖</view>
+					<view>规格：<text>4L</text> </view>
+					<view>级别：<text>SN</text> </view>
+					<view>粘度：<text>ow-40</text> </view>
+					<view class="text-df text-bold text-black"><text class="text-price">225.00</text>/件</view>
+				</view>
+			</view>
+			<view class="text-sm margin-tb-sm">
+				我在参与好友助力，0元拿券活动快来祝我一臂之力吧
+			</view>
+			<view class="margin-bottom-sm">
+				<button class="cu-btn round bg-yellow lg block">帮我助力</button>
+			</view>
+			<view style="background: #FDF6F0;width: 100%;" class="radius padding-tb-xl solid-bottom flex justify-center">
+				<view @tap="share" class="text-center">
+					<image style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
+				</view>
+				<view @tap="share" class="text-center">
+					<image style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
+				</view>
+				<view @tap="share" class="text-center">
+					<image style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
+				</view>
+			</view>
+		</view>
+		<view class="bg-white radius margin-top-xl margin-lr flex flex-direction align-center">
+			机油特惠
+			<image src="../../static/bb.png" mode="aspectFit"></image>
+		</view>
+		<view class="cu-modal" :class="dialog?'show':''">
+			<view class="cu-dialog" style="background-color:transparent;width: 600upx;">
+				<view class="bg-white" style="border-radius: 10upx;">
+					<view class="cu-bar text-black text-bold">
+						<view class="content">活动规则</view>
+					</view>
+					<view class="flex text-black text-left flex-direction padding-lr-lg padding-bottom">
+						<view style="line-height: 45upx;">
+							1.每位用户当天尽可参加活动6次(含发起4次与参与2次)；其中面单券活动期间内仅限领1次， [仅限邀请新用户助力]活动，参与者成功参与1次，如参与的助力活动失效后才可参与其他助力活动；
+						</view>
+						<view style="line-height: 45upx;">
+							2.规定时间内，邀请好友助力成功。发起者可以得到对应的优惠券，可在我的-优惠券中查看；助力失败，不会得到优惠券；
+						</view>
+						<view style="line-height: 45upx;">
+							3.优惠券在活动期间库存有限，以每个团助力成功的前后顺序发放优惠券先到先得；若优惠券数量不足，进行中的助力活动提示该优惠券已抢光，助力活动则终止。助力成功
+						</view>
+					</view>
+				</view>
+				<view class="text-white text-sl margin-top">
+					<text @tap="dialog=false" class="cuIcon-roundclose"></text>
+				</view>
+			</view>
+
+		</view>
+	</view>
+</template>
+
+<script>
+	// #ifdef H5
+	var jweixin = require('../../utils/wxsdk.js')
+	// #endif
+	import tuiCountdown from "@/components/countdown/countdown"
+	export default {
+		components: {
+			tuiCountdown
+		},
+		computed: {
+			style() {
+				var StatusBar = this.StatusBar;
+				var CustomBar = this.CustomBar;
+				var bgImage = this.bgImage;
+				var style = `height:${CustomBar}px;padding-top:${StatusBar}px;`;
+				if (this.bgImage) {
+					style = `${style}background-image:url(${bgImage});`;
+				}
+				return style
+			}
+		},
+		onLoad() {
+			// #ifdef H5
+			jweixin.config({
+				debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+				appId: 'wxf9651f8626d421a9', // 必填，公众号的唯一标识
+				timestamp: '1573616116', // 必填，生成签名的时间戳
+				nonceStr: '093bd45e4bpo8gln', // 必填，生成签名的随机串
+				signature: '8b0d8b99af0a751af31c981cb8720240a1cc38bd', // 必填，签名
+				jsApiList: ['checkJsApi', 'translateVoice', 'scanQRCode', 'updateAppMessageShareData'] // 必填，需要使用的JS接口列表
+			});
+			// #endif
+		},
+		data() {
+			return {
+				timeList: [1 * 60 * 60 * 24], //倒计时24小时
+				dialog: false,
+				StatusBar: this.StatusBar,
+				CustomBar: this.CustomBar
+			}
+		},
+		methods: {
+			share() {
+				// #ifdef H5
+				jweixin.ready(function() {
+					jweixin.updateAppMessageShareData({
+						title: '标题', // 分享标题
+						desc: '分享描述', // 分享描述
+						link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+						imgUrl: '', // 分享图标
+						success: function() {
+							// 设置成功
+						}
+					})
+				});
+				// #endif
+			}
+		}
+	}
+</script>
+
+<style>
+</style>

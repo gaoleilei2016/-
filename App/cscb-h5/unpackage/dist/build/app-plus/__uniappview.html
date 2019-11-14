@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"创世车宝","entryPagePath":"pages/home/home.html","page":{"pages/home/home.html":{"window":{"navigationStyle":"custom","navigationBarTitleText":"首页","usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/mine/points.html":{"window":{"navigationBarTitleText":"积分账单","navigationBarTextStyle":"black","usingComponents":{"tui-datetime":"/components/dateTime/dateTime"}}},"pages/index/dialog.html":{"window":{"navigationStyle":"custom","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/order_detail.html":{"window":{"navigationBarTitleText":"订单详情","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/personal.html":{"window":{"navigationBarTitleText":"会员中心","navigationBarBackgroundColor":"#182E6C","navigationBarTextStyle":"white","usingComponents":{}}},"pages/mine/wallet_details.html":{"window":{"navigationBarTitleText":"钱包明细","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/wallet.html":{"window":{"navigationBarTitleText":"钱包","navigationBarTextStyle":"black","usingComponents":{"tui-sticky":"/components/sticky/sticky"}}},"pages/mine/mywallet.html":{"window":{"navigationBarTitleText":"我的钱包","navigationBarTextStyle":"black","usingComponents":{"tui-datetime":"/components/dateTime/dateTime"}}},"pages/mine/myinfo.html":{"window":{"navigationBarTitleText":"我的信息","navigationBarTextStyle":"black","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar","mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/mine/mycar.html":{"window":{"navigationBarTitleText":"我的爱车","navigationBarTextStyle":"black","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar","tui-datetime":"/components/dateTime/dateTime","mpvue-picker":"/components/mpvue-picker/mpvuePicker","mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/mine/carmanager.html":{"window":{"navigationBarTitleText":"车辆管理","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/orderlist.html":{"window":{"navigationBarTitleText":"订单管理","navigationBarTextStyle":"black","disableScroll":true,"bounce":"none","usingComponents":{"tui-tips":"/components/tips/tips","tui-loadmore":"/components/loadmore/loadmore","tui-nomore":"/components/nomore/nomore"}}},"pages/mine/coupon.html":{"window":{"navigationBarTitleText":"我的优惠券","navigationBarTextStyle":"black","disableScroll":true,"bounce":"none","usingComponents":{"tui-tips":"/components/tips/tips"}}},"pages/mine/carbrand.html":{"window":{"navigationBarTitleText":"品牌设置","navigationBarTextStyle":"black","usingComponents":{"tui-cell":"/components/list-cell/list-cell","tui-icon":"/components/icon/icon","tui-sticky":"/components/sticky/sticky"}}},"pages/home/businesshome.html":{"window":{"navigationBarTitleText":"商家主页","navigationBarTextStyle":"black","usingComponents":{}}},"pages/home/business.html":{"window":{"navigationBarTitleText":"商家中心","navigationBarTextStyle":"black","usingComponents":{}}},"pages/home/paysuccess.html":{"window":{"navigationBarTitleText":"支付结果","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/publishbid.html":{"window":{"navigationBarTitleText":"我的发布","navigationBarTextStyle":"black","enablePullDownRefresh":true,"usingComponents":{}}},"pages/mine/sjmb.html":{"window":{"navigationBarTitleText":"商家面板","navigationBarTextStyle":"black","usingComponents":{}}},"pages/mine/h5.html":{"window":{"navigationBarTitleText":"","navigationBarTextStyle":"black","usingComponents":{}}},"pages/home/quotedprice.html":{"window":{"navigationBarTitleText":"提交报价","navigationBarTextStyle":"black","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar"}}},"pages/home/orderpage.html":{"window":{"navigationBarTitleText":"订单确认","navigationBarTextStyle":"black","usingComponents":{}}},"pages/home/shopselect.html":{"window":{"navigationBarTitleText":"挂单详情","navigationBarTextStyle":"black","navigationBarBackgroundColor":"#FFFFFF","usingComponents":{}}},"pages/index/precisefabu.html":{"window":{"navigationBarTitleText":"精准发布","navigationBarTextStyle":"black","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar","tui-datetime":"/components/dateTime/dateTime","mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/index/fastfabu.html":{"window":{"navigationBarTitleText":"快速发布","navigationBarTextStyle":"black","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar","tui-datetime":"/components/dateTime/dateTime"}}},"pages/more/nearby_merchants.html":{"window":{"navigationBarTitleText":"商家主页","navigationBarTextStyle":"black","usingComponents":{}}},"pages/market/home.html":{"window":{"navigationStyle":"custom","navigationBarTitleText":"市场","usingComponents":{"cu-custom":"/colorui/components/cu-custom","tui-top-dropdown":"/components/top-dropdown/top-dropdown"}}},"pages/market/more.html":{"window":{"navigationBarBackgroundColor":"#FFFFFF","navigationBarTitleText":"挂单","navigationBarTextStyle":"black","enablePullDownRefresh":true,"navigationStyle":"custom","usingComponents":{"cu-custom":"/colorui/components/cu-custom","tui-top-dropdown":"/components/top-dropdown/top-dropdown"}}},"pages/mine/home.html":{"window":{"navigationStyle":"custom","disableScroll":true,"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/more/home.html":{"window":{"navigationBarBackgroundColor":"#FFFFFF","navigationStyle":"custom","navigationBarTitleText":"商家","usingComponents":{"cu-custom":"/colorui/components/cu-custom","tui-top-dropdown":"/components/top-dropdown/top-dropdown","mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/more/shop.html":{"window":{"navigationBarBackgroundColor":"#FFFFFF","navigationBarTitleText":"商城","navigationBarTextStyle":"black","usingComponents":{}}}},"global":{"window":{"navigationBarTitleText":"创世车宝","navigationStyle":"default","navigationBarTextStyle":"black","navigationBarBackgroundColor":"#FFFFFF","scrollIndicator":"none"}},"tabBar":{"color":"#999999","selectedColor":"#161848","backgroundColor":"","borderStyle":"black","list":[{"pagePath":"pages/home/home.html","iconPath":"static/tabbar/home.png","selectedIconPath":"static/tabbar/homes.png","text":"首页"},{"pagePath":"pages/market/home.html","iconPath":"static/tabbar/mark.png","selectedIconPath":"static/tabbar/marks.png","text":"市场"},{"pagePath":"pages/index/dialog.html","iconPath":"static/tabbar/fabu.png","selectedIconPath":"static/tabbar/fabu.png","text":"发布"},{"pagePath":"pages/more/home.html","iconPath":"static/tabbar/more.png","selectedIconPath":"static/tabbar/mores.png","text":"商家"},{"pagePath":"pages/mine/personal.html","iconPath":"static/tabbar/mine.png","selectedIconPath":"static/tabbar/mines.png","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/home/home","pages/mine/points","pages/index/dialog","pages/mine/order_detail","pages/mine/personal","pages/mine/wallet_details","pages/mine/wallet","pages/mine/mywallet","pages/mine/myinfo","pages/mine/mycar","pages/mine/carmanager","pages/mine/orderlist","pages/mine/coupon","pages/mine/carbrand","pages/home/businesshome","pages/home/business","pages/home/paysuccess","pages/mine/publishbid","pages/mine/sjmb","pages/mine/h5","pages/home/quotedprice","pages/home/orderpage","pages/home/shopselect","pages/index/precisefabu","pages/index/fastfabu","pages/more/nearby_merchants","pages/market/home","pages/market/more","pages/mine/home","pages/more/home","pages/more/shop"],"nvueCompiler":"weex","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":false,"autoclose":true},"compilerVersion":"2.3.6","usingComponents":{"home":"/pages/home/home","market":"/pages/market/home","more":"/pages/more/home","mine":"/pages/mine/home","cu-custom":"/colorui/components/cu-custom","avatar":"/components/yq-avatar/yq-avatar"}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

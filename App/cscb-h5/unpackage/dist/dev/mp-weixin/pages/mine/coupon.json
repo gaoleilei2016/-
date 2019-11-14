@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的优惠券",
+  "navigationBarTextStyle": "black",
+  "disableScroll": true,
+  "usingComponents": {
+    "tui-tips": "/components/tips/tips"
+  }
+}

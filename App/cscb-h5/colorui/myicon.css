@@ -1,0 +1,29 @@
+[class*="icon-"] {
+	font-family: "icon";
+	font-size: inherit;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'icon';  /* project id 1508683 */
+  src: url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.eot');
+  src: url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.svg#iconfont') format('svg');
+}
+.icon-tab1:before{
+	content: '\e607';
+}
+.icon-tab2:before{
+	content: '\e60e';
+}
+.icon-tab3:before{
+	content: '\e696';
+}
+.icon-location:before{
+	content: '\e62f';
+}
+.icon-phone:before{
+	content: '\e6f9';
+}

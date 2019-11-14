@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/points",
+    "pages/index/dialog",
+    "pages/mine/order_detail",
+    "pages/mine/personal",
+    "pages/mine/wallet_details",
+    "pages/mine/wallet",
+    "pages/mine/mywallet",
+    "pages/mine/myinfo",
+    "pages/mine/mycar",
+    "pages/mine/carmanager",
+    "pages/mine/orderlist",
+    "pages/mine/coupon",
+    "pages/mine/carbrand",
+    "pages/home/businesshome",
+    "pages/home/service_detail",
+    "pages/home/business",
+    "pages/home/paysuccess",
+    "pages/mine/publishbid",
+    "pages/mine/sjmb",
+    "pages/mine/h5",
+    "pages/home/quotedprice",
+    "pages/home/orderpage",
+    "pages/home/shopselect",
+    "pages/index/precisefabu",
+    "pages/index/fastfabu",
+    "pages/more/nearby_merchants",
+    "pages/market/home",
+    "pages/market/more",
+    "pages/mine/home",
+    "pages/more/home",
+    "pages/more/shop"
+  ],
+  "window": {
+    "navigationBarTitleText": "创世车宝",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "scrollIndicator": "none"
+  },
+  "tabBar": {
+    "selectedColor": "#161848",
+    "color": "#999999",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/homes.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/market/home",
+        "iconPath": "static/tabbar/mark.png",
+        "selectedIconPath": "static/tabbar/marks.png",
+        "text": "市场"
+      },
+      {
+        "pagePath": "pages/index/dialog",
+        "iconPath": "static/tabbar/fabu.png",
+        "selectedIconPath": "static/tabbar/fabu.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/more/home",
+        "iconPath": "static/tabbar/more.png",
+        "selectedIconPath": "static/tabbar/mores.png",
+        "text": "商家"
+      },
+      {
+        "pagePath": "pages/mine/personal",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mines.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": false,
+    "autoclose": true
+  },
+  "appname": "创世车宝",
+  "compilerVersion": "2.3.6",
+  "usingComponents": {
+    "home": "/pages/home/home",
+    "market": "/pages/market/home",
+    "more": "/pages/more/home",
+    "mine": "/pages/mine/home",
+    "cu-custom": "/colorui/components/cu-custom",
+    "avatar": "/components/yq-avatar/yq-avatar",
+    "load-tip": "/colorui/components/loadtip"
+  }
+}

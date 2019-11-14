@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "市场",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "tui-top-dropdown": "/components/top-dropdown/top-dropdown"
+  }
+}
