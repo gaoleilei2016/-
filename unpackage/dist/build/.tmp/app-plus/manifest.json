@@ -1,0 +1,168 @@
+{
+  "@platforms": [
+    "android",
+    "iPhone",
+    "iPad"
+  ],
+  "id": "__UNI__1E9959A",
+  "name": "创世车宝",
+  "version": {
+    "name": "CSCB",
+    "code": 1
+  },
+  "description": "",
+  "launch_path": "__uniappview.html",
+  "developer": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "permissions": {
+    "Payment": {},
+    "OAuth": {},
+    "Maps": {
+      "coordType": "gcj02"
+    },
+    "Share": {},
+    "UniNView": {
+      "description": "UniNView原生渲染"
+    }
+  },
+  "plus": {
+    "useragent": {
+      "value": "uni-app",
+      "concatenate": true
+    },
+    "splashscreen": {
+      "autoclose": false,
+      "waiting": false
+    },
+    "popGesture": "close",
+    "launchwebview": {
+      "id": "1",
+      "kernel": "WKWebview",
+      "uni-app": "auto"
+    },
+    "statusbar": {
+      "immersed": "supportedDevice",
+      "style": "dark",
+      "background": "#FFFFFF"
+    },
+    "usingComponents": true,
+    "distribute": {
+      "google": {
+        "permissions": [
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+        ],
+        "minSdkVersion": 21,
+        "targetSdkVersion": 28
+      },
+      "apple": {},
+      "plugins": {
+        "oauth": {
+          "weixin": {
+            "appid": "wx46f9e1c77f2641af",
+            "appsecret": "cc99e150c4b30c5dd27e6f0e0eb5a305",
+            "UniversalLinks": ""
+          }
+        },
+        "payment": {
+          "alipay": {},
+          "weixin": {
+            "appid": "wx46f9e1c77f2641af",
+            "UniversalLinks": ""
+          }
+        },
+        "share": {
+          "weixin": {
+            "appid": "wx46f9e1c77f2641af",
+            "UniversalLinks": ""
+          }
+        },
+        "audio": {
+          "mp3": {
+            "description": "Android平台录音支持MP3格式文件"
+          }
+        }
+      }
+    },
+    "allowsInlineMediaPlayback": true,
+    "safearea": {
+      "background": "#FFFFFF",
+      "bottom": {
+        "offset": "auto"
+      }
+    },
+    "uni-app": {
+      "compilerVersion": "2.3.6",
+      "control": "v8",
+      "nvueCompiler": "weex",
+      "renderer": "auto"
+    },
+    "tabBar": {
+      "selectedColor": "#161848",
+      "color": "#999999",
+      "list": [
+        {
+          "pagePath": "pages/home/home",
+          "iconPath": "static/tabbar/home.png",
+          "selectedIconPath": "static/tabbar/homes.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/market/home",
+          "iconPath": "static/tabbar/mark.png",
+          "selectedIconPath": "static/tabbar/marks.png",
+          "text": "市场"
+        },
+        {
+          "pagePath": "pages/index/dialog",
+          "iconPath": "static/tabbar/fabu.png",
+          "selectedIconPath": "static/tabbar/fabu.png",
+          "text": "发布"
+        },
+        {
+          "pagePath": "pages/more/home",
+          "iconPath": "static/tabbar/more.png",
+          "selectedIconPath": "static/tabbar/mores.png",
+          "text": "商家"
+        },
+        {
+          "pagePath": "pages/mine/personal",
+          "iconPath": "static/tabbar/mine.png",
+          "selectedIconPath": "static/tabbar/mines.png",
+          "text": "我的"
+        }
+      ],
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "height": "50px",
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 0
+    }
+  }
+}

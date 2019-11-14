@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTitleText": "挂单",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tui-top-dropdown": "/components/top-dropdown/top-dropdown",
+    "list-item": "/colorui/components/listitem"
+  }
+}

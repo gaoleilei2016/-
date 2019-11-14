@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提交报价",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "avatar": "/components/yq-avatar/yq-avatar"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "商家",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tui-top-dropdown": "/components/top-dropdown/top-dropdown",
+    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
+  }
+}

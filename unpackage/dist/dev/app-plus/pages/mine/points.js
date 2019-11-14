@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"solids-b{ border-bottom: ",[0,6]," solid; }\n.",[1],"tui-tag-fillet-left { border-radius: ",[0,50]," 0 0 ",[0,50],"; }\n.",[1],"tui-tag, .",[1],"tui-tag-small, .",[1],"tui-mrbtm { margin-bottom: ",[0,26],"; margin-right: ",[0,20]," }\n",],undefined,{path:"./pages/mine/points.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/points.wxml') } }));

@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"bar{ background: #EEE; height: ",[0,10],"; width: 100%; }\n",],undefined,{path:"./pages/home/business.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/home/business.wxml') } }));

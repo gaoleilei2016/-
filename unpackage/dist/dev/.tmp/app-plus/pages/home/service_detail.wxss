@@ -1,0 +1,8 @@
+
+.grid.col-1.grid-square>uni-view{
+	padding-bottom: 50%;
+}
+.grid.col-1.grid-square>view{
+	padding-bottom: 50%;
+}
+

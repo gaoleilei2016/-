@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tui-loadmore": "/components/loadmore/loadmore",
+    "tui-nomore": "/components/nomore/nomore"
+  },
+  "component": true
+}

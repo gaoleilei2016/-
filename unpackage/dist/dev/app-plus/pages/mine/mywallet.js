@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"min-height{ min-height: ",[0,260],"; }\n.",[1],"lineHeight{ line-height: ",[0,80],"; }\n.",[1],"minWidth{ width: ",[0,200],"; }\n.",[1],"page{ height: 100vh; }\n",],undefined,{path:"./pages/mine/mywallet.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/mywallet.wxml') } }));

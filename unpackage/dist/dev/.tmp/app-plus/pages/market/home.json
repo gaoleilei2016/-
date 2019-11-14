@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "市场",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "load-tip": "/colorui/components/loadtip",
+    "tui-top-dropdown": "/components/top-dropdown/top-dropdown",
+    "list-item": "/colorui/components/listitem"
+  }
+}

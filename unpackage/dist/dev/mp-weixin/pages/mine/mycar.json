@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的爱车",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "tui-datetime": "/components/dateTime/dateTime",
+    "mpvue-picker": "/components/mpvue-picker/mpvuePicker",
+    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
+  }
+}

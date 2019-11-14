@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "钱包",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "tui-sticky": "/components/sticky/sticky"
+  }
+}

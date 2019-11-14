@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的信息",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "avatar": "/components/yq-avatar/yq-avatar",
+    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
+  }
+}

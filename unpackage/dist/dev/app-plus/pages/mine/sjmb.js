@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\nbody { background: #fff; }\n.",[1],"margin-top-x-lg { margin-top: ",[0,50],"; }\n.",[1],"margin-left-lg { margin-left: ",[0,40],"; }\n.",[1],"margin-top-lg { margin-top: ",[0,30],"; }\n.",[1],"border-line { height: ",[0,10],"; background: #F1F1F1; }\n",],undefined,{path:"./pages/mine/sjmb.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/sjmb.wxml') } }));
