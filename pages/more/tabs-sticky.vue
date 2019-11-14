@@ -2,7 +2,7 @@
 <template>
 	<view class="tabs-sticky" :class="{'tabs-fixed': fixed}">
 		<view class="tab" v-for="(tab, i) in tabs" :key="i" :class="{active: value==i}" @click="changeTab(i)">
-			<text :class="i==0?'icon-tab1 ':i==1?'icon-tab2':'icon-tab3'"></text>{{tab.name}}
+			<text :class="i==0?'icon-tab1':i==1?'icon-tab2':'icon-tab3'"></text>{{tab.name}}
 		</view>
 	</view>
 </template>
@@ -40,9 +40,9 @@
 	/*菜单*/
 	.tabs-sticky{
 		display: flex;
-		height: 80rpx;
-		line-height: 80rpx;
-		font-size: 28upx;
+		height: 100rpx;
+		line-height: 100rpx;
+		font-size: 30upx;
 		text-align: center;
 		background: #fff;
 		border-bottom: 1upx solid #ddd;
