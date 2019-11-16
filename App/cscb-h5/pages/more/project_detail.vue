@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<swiper style="height: 600upx;" class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="false"
+		<swiper :style="'height:'+screenWidth+'px;'" class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="false"
 		 :circular="true" :autoplay="true" interval="5000" duration="500">
 			<swiper-item @tap="previewImage(images,index)" v-for="(item,index) in images" :key="index">
 				<image :src="seller.logo==null||seller.logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.logo"
