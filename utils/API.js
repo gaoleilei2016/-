@@ -18,6 +18,8 @@ const API = {
 	//3.提交订单并支付
 	orderpay:'mall/orderpay',
 	seller:'mall/seller',
+	projectList:'mall/projectList',
+	goodsList:'mall/goodsList',
 	//2.首页-广告接口
 	adlist:'wemini/adlist',
 	//3.挂单推荐列表
