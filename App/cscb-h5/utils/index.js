@@ -5,7 +5,7 @@ const test = new Request()
 test.setConfig((config) => { /* 设置全局配置 */
   config.baseUrl = 'https://cscbnew.kelinteng.com/api/'
   // #ifdef H5
-  config.baseUrl = '/api/'
+  config.baseUrl = 'https://cscbnew.kelinteng.com/api/'
   // #endif
   config.header = {
     ...config.header,
