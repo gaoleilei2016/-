@@ -100,37 +100,12 @@
         }
     },
     "h5" : {
-        "devServer" : {
-            "port" : 80, //端口号
-            "disableHostCheck" : true,
-            "proxy" : {
-                "/api/" : {
-                    "target" : "https://cscbnew.kelinteng.com", //目标接口域名
-                    "changeOrigin" : true, //是否跨域
-                    "secure" : true // 设置支持https协议的代理
-                }
-            }
-        },
-        // ,
-        // "/reverse_geocoding/" : {
-        //     "target" : "https://api.map.baidu.com", //目标接口域名
-        //     "changeOrigin" : true, //是否跨域
-        //     "secure" : true // 设置支持https协议的代理
-        // }
-        "router" : {
-            "mode" : "history"
-        },
-        "sdkConfigs" : {
-            "maps" : {
-                "qqmap" : {
-                    "key" : "V4KBZ-K3S3O-LHGWE-S3LG7-RVG7Z-24B3W"
-                }
-            }
-        },
-        "title" : ""
+        "publishPath" : "https://cscbnew.kelinteng.com/cscbh5/",
+        "title" : "创世车宝"
     }
 }
-//cscbnew.kelinteng.com', //目标接口域名
+//端口号
+//目标接口域名
 //是否跨域
 // 设置支持https协议的代理
 
