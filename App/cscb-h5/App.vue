@@ -4,6 +4,9 @@
 		onLaunch: function() {
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
+			Vue.prototype.uid=2207
+			Vue.prototype.seller_id=60
+			Vue.prototype.wxConfig=null;
 			uni.getSystemInfo({
 				success: function(e) {
 					// #ifndef MP
@@ -47,6 +50,11 @@
 				}
 			})
 			console.log('App Show')
+			this.$api.post(this.api.wechatJSSDK,
+				function callbacks(res){
+					console.log(res);
+					Vue.prototype.wxConfig=JSON.stringify(res.data);
+				})
 		},
 		onHide: function() {
 			console.log('App Hide')

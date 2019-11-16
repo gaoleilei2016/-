@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/more/home",
+    "pages/more/spell_list",
+    "pages/more/paysuccess",
+    "pages/more/sure_order",
+    "pages/more/nearby_merchants",
+    "pages/more/project_detail",
     "pages/home/home",
     "pages/mine/points",
     "pages/index/dialog",
@@ -27,55 +33,17 @@
     "pages/home/shopselect",
     "pages/index/precisefabu",
     "pages/index/fastfabu",
-    "pages/more/nearby_merchants",
     "pages/market/home",
     "pages/market/more",
     "pages/mine/home",
-    "pages/more/home",
     "pages/more/shop"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTitleText": "创世车宝",
+    "navigationBarTitleText": "创世车宝-机油活动",
     "navigationStyle": "default",
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#FFFFFF"
-  },
-  "tabBar": {
-    "selectedColor": "#161848",
-    "color": "#999999",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "static/tabbar/home.png",
-        "selectedIconPath": "static/tabbar/homes.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/market/home",
-        "iconPath": "static/tabbar/mark.png",
-        "selectedIconPath": "static/tabbar/marks.png",
-        "text": "市场"
-      },
-      {
-        "pagePath": "pages/index/dialog",
-        "iconPath": "static/tabbar/fabu.png",
-        "selectedIconPath": "static/tabbar/fabu.png",
-        "text": "发布"
-      },
-      {
-        "pagePath": "pages/more/home",
-        "iconPath": "static/tabbar/more.png",
-        "selectedIconPath": "static/tabbar/mores.png",
-        "text": "商家"
-      },
-      {
-        "pagePath": "pages/mine/personal",
-        "iconPath": "static/tabbar/mine.png",
-        "selectedIconPath": "static/tabbar/mines.png",
-        "text": "我的"
-      }
-    ]
   },
   "permission": {
     "scope.userLocation": {
@@ -91,5 +59,5 @@
     "avatar": "/components/yq-avatar/yq-avatar",
     "load-tip": "/colorui/components/loadtip"
   },
-  "sitemapLocation": "sitemap59.json"
+  "sitemapLocation": "sitemap41.json"
 }

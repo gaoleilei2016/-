@@ -6,15 +6,18 @@
 				<view class="text-black text-bold">创世车宝自营店</view>
 				<view class="cuIcon-right align-center"></view>
 			</view>
+			<view class="text-xl">
+				<text class="cuIcon-locationfill"></text>
+			</view>
 		</view>
 		<view class="flex padding-tb-sm align-center">
 			<image class="margin-lr radius" src="../../static/gg.png" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
-				<view style="width:500upx;" class="text-df text-black text-cut text-bold">康普顿GT950,合成型机油 便宜卖</view>
+				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.title}}</view>
 				<view>规格：<text>4L</text> </view>
 				<view>级别：<text>SN</text> </view>
 				<view>粘度：<text>ow-40</text> </view>
-				<view class="text-df text-bold text-black"><text class="text-price">225.00</text>/件</view>
+				<view class="text-df text-bold text-black"><text class="text-price">{{goodprice}}</text>/件</view>
 			</view>
 		</view>
 		<view class="flex bg-white justify-between padding-lr percent100-100">
@@ -53,7 +56,7 @@
 			<view class="submit flex align-center">
 				<text class="text-black text-bold">实付款:</text>
 				<view class="text-lg margin-left-sm">
-					<text class="text-price text-red margin-right-xs">680</text>
+					<text class="text-price text-red margin-right-xs">{{price}}</text>
 					<text class="text-red text-df">免运费</text>
 				</view>
 			</view>
@@ -67,6 +70,9 @@
 <script>
 	import tuiNumberbox from "@/components/numberbox/numberbox"
 	import tuiDropdownList from "@/components/dropdown-list/dropdown-list"
+	// #ifdef H5
+	var jweixin = require('../../utils/wxsdk.js')
+	// #endif
 	export default {
 		components:{
 			tuiNumberbox,
@@ -85,21 +91,97 @@
 					value : 1,
 				}, {
 					name: "3人拼单",
-					value : 2,
+					value : 3,
 				}, {
 					name: "5人拼单",
-					value : 3,
+					value : 5,
 				}],
+				form:{
+					id:0,
+					uid:0,
+					seller_id:0,
+					o_type:0,
+					num:0,
+					redids:0
+				},
+				price:0,
+				good:{},
+				goodprice:0
+			}
+		},
+		onLoad(e) {
+			// #ifdef H5
+			console.log(JSON.parse(this.wxConfig));
+			jweixin.config(JSON.parse(this.wxConfig));
+			// #endif
+			this.good=JSON.parse(e.good)
+			console.log(e.good);
+			console.log(e.isone);
+			if(e.isone==1){
+				this.goodprice=this.good.price;
+				this.price=this.goodprice
+				this.selectIndex=1
+			}
+			if(e.isone==5){
+				this.goodprice=this.good.price_5;
+				this.price=this.goodprice
+				this.selectIndex=3
+			}
+		},
+		updated() {
+			if(this.selectIndex==0){
+				this.price=0;
+			}
+			if(this.selectIndex==1){
+				this.price=(this.good.price*this.value)+".00";
+			}
+			if(this.selectIndex==2){
+				this.price=(this.good.price_3*this.value)+".00";
+			}
+			if(this.selectIndex==3){
+				this.price=(this.good.price_5*this.value)+".00";
 			}
 		},
 		methods: {
 			goPay(){
+				let that=this;
 				if(this.dropdownlistData[this.selectIndex].value==0){
 					this.$api.msg("请选择购买类型")
 					return ;
 				}
-				uni.navigateTo({
-					url:'paysuccess?type='+this.dropdownlistData[this.selectIndex].value
+				this.form.id=this.good.id
+				this.form.uid=this.uid
+				this.form.seller_id=this.seller_id
+				this.form.o_type=this.dropdownlistData[this.selectIndex].value
+				this.form.num=this.value
+				this.form.redids=0
+				this.$api.postWithData(this.api.orderpay,this.form,
+					function callbacks(res){
+						console.log(res);
+						that.payment(res.data)
+						// uni.navigateTo({
+						// 	url:'paysuccess?type='+that.dropdownlistData[that.selectIndex].value
+						// })
+					})
+				
+			},
+			payment(data){
+				jweixin.ready(function(){
+					jweixin.chooseWXPay({
+					  timestamp: data.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+					  nonceStr: data.nonceStr, // 支付签名随机串，不长于 32 位
+					  package: data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）
+					  signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+					  paySign: data.paySign, // 支付签名
+					  out_trade_no:data.out_trade_no,
+					  success: function (res) {
+						  console.log(res);
+						// 支付成功后的回调函数
+						uni.showModal({
+							content:JSON.stringify(res)
+						})
+					  }
+					});
 				})
 			},
 			change: function(e) {
@@ -111,6 +193,60 @@
 					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShow = !this.dropdownShow
+			},
+			payments: function(data, callback_succ_func, callback_error_func) {
+				if (!this.isWechat()) {
+					return;
+				}
+				if (typeof WeixinJSBridge == "undefined") {
+					if (document.addEventListener) {
+						document.addEventListener('WeixinJSBridgeReady', this.jsApiCall, false);
+					} else if (document.attachEvent) {
+						document.attachEvent('WeixinJSBridgeReady', this.jsApiCall);
+						document.attachEvent('onWeixinJSBridgeReady', this.jsApiCall);
+					}
+				} else {
+					this.jsApiCall(data, callback_succ_func, callback_error_func);
+				}
+			},
+			isWechat: function() {
+				var ua = window.navigator.userAgent.toLowerCase();
+				if (ua.match(/micromessenger/i) == 'micromessenger') {
+					return true;
+				} else {
+					return false;
+				}
+			},
+			jsApiCall(data, callback_succ_func, callback_error_func) {
+				//使用原生的，避免初始化appid问题  
+				WeixinJSBridge.invoke('getBrandWCPayRequest', {
+						appId: 'wxf9651f8626d421a9',
+						timeStamp: data.timeStamp,
+						nonceStr: data.nonceStr, // 支付签名随机串，不长于 32 位  
+						package: data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）  
+						signType: data.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'  
+						paySign: data.paySign, // 支付签名  
+						out_trade_no:data.out_trade_no
+					},
+					function(res) {
+						var msg = res.err_msg ? res.err_msg : res.errMsg;
+						//WeixinJSBridge.log(msg);  
+						switch (msg) {
+							case 'get_brand_wcpay_request:ok': //支付成功时  
+								if (callback_succ_func) {
+									callback_succ_func(res);
+								}
+								break;
+							default: //支付失败时  
+								WeixinJSBridge.log('支付失败!' + msg + ',请返回重试.');
+								if (callback_error_func) {
+									callback_error_func({
+										msg: msg
+									});
+								}
+								break;
+						}
+					})
 			},
 		},
 	}

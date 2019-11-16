@@ -4,12 +4,20 @@ const API = {
 	http:'http://cscb2.kelinteng.com',
 	https:'https://cscb2.kelinteng.com',
 	UPLOAD_HOST:'http://txcos.kelinteng.com/',
-	//0.获取省市县接口
-    getAreaData:'area/areaData',
-	//1.登陆接口
-	login:'wemini/login',
-	//1.注册接口
-	register:'wemini/register',
+	//0.平台活动服务商家
+    sellerListCEA:'mall/sellerListCEA',
+	//1.机油特惠
+	goodsListCEA:'mall/goodsListCEA',
+	//2.注册接口
+	good:'mall/good',
+	ceaDetail:'mall/ceaDetail',
+	orderpaySL:'mall/orderpaySL',
+	wechatJSSDK:'mall/wechatJSSDK',
+	//支付结果
+	payResult:'mall/payResult',
+	//3.提交订单并支付
+	orderpay:'mall/orderpay',
+	seller:'mall/seller',
 	//2.首页-广告接口
 	adlist:'wemini/adlist',
 	//3.挂单推荐列表
@@ -30,8 +38,6 @@ const API = {
 	sureorder:'wemini/sureorder',
 	//11.确认订单-提交订单
 	postOrder:'wemini/postOrder',
-	//12.支付结果-支付数据
-	payResult:'wemini/payResult',
 	//13.发布-快速发布-获取挂单数据
 	taskDetail:'wemini/taskDetail',
 	//14.发布-快速发布-提交发布
@@ -64,7 +70,7 @@ const API = {
 	//28.扫码核销
 	scanTask:'wemini/scanTask',
 	//29.商家主页接口
-	seller:'wemini/seller',
+	// seller:'wemini/seller',
 	//30.商家主页-我的竞标记录
 	getCYTaskList:'wemini/getCYTaskList',
 	//31.商家主页-我的服务记录
