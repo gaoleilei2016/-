@@ -1,9 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "navigationBarTitleText": "市场",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "tui-top-dropdown": "/components/top-dropdown/top-dropdown",
-    "list-item": "/colorui/components/listitem"
-  }
-}

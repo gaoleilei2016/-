@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "精准发布",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "tui-datetime": "/components/dateTime/dateTime",
-    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
-  }
-}

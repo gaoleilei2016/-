@@ -1,8 +1,0 @@
-
-.lineHeight {
-	line-height: 50rpx;
-}
-.minWidth {
-	min-width: 200rpx;
-}
-
