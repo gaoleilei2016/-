@@ -332,13 +332,19 @@
 					condition1: this.form.condition1,
 					condition2: this.form.condition2,
 					condition3: this.form.condition3,
+					cea_id:1,
 					page: this.form.page,
 					size: this.form.size
 				};
-				this.$api.postWithData(this.api.getSellerList, data,
+				this.$api.postWithData(this.api.sellerListCEA, data,
 					function callbacks(res) {
 						if(isSupport){
 							uni.stopPullDownRefresh()
+						}
+						if(res.data==null){
+							that.isLoad = false;
+							that.getSellerList=[]
+							return;
 						}
 						if (res.data.length > 0) {
 							that.isLoad = true;
@@ -388,15 +394,8 @@
 				this.isOpenRefresh(false);
 			},
 			navigateTo(page) {
-				this.$api.post(this.api.getCarNew, function callbacks(res) {
-					if (res == -1) {
-						that.$eventBus.$emit('register');
-						uni.switchTab({url:'../home/home'})
-					} else {
-						uni.navigateTo({
-							url: page
-						})
-					}
+				uni.navigateTo({
+					url: page
 				})
 			}
 		},

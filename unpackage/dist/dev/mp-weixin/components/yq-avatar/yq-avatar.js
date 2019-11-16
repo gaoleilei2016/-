@@ -1,38 +1,1139 @@
-(global.webpackJsonp=global.webpackJsonp||[]).push([["components/yq-avatar/yq-avatar"],{291:
-/*!*****************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue ***!
-  \*****************************************************************************************/
-/*! no static exports found */function(t,i,e){"use strict";e.r(i);var s=e(/*! ./yq-avatar.vue?vue&type=template&id=65b9ea13&name=yq-avatar& */292),h=e(/*! ./yq-avatar.vue?vue&type=script&lang=js& */294);for(var a in h)"default"!==a&&function(t){e.d(i,t,function(){return h[t]})}(a);e(/*! ./yq-avatar.vue?vue&type=style&index=0&lang=css& */296);var n=e(/*! ../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */14),r=Object(n.default)(h.default,s.render,s.staticRenderFns,!1,null,null,null);r.options.__file="Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue",i.default=r.exports},292:
-/*!***************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=template&id=65b9ea13&name=yq-avatar& ***!
-  \***************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */function(t,i,e){"use strict";e.r(i);var s=e(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=template&id=65b9ea13&name=yq-avatar& */293);e.d(i,"render",function(){return s.render}),e.d(i,"staticRenderFns",function(){return s.staticRenderFns})},293:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=template&id=65b9ea13&name=yq-avatar& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */function(t,i,e){"use strict";e.r(i),e.d(i,"render",function(){return s}),e.d(i,"staticRenderFns",function(){return h});var s=function(){var t=this.$createElement,i=(this._self._c,this.__get_style([this.imgStyle]));this.$mp.data=Object.assign({},{$root:{s0:i}})},h=[];s._withStripped=!0},294:
-/*!******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************/
-/*! no static exports found */function(t,i,e){"use strict";e.r(i);var s=e(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=script&lang=js& */295),h=e.n(s);for(var a in s)"default"!==a&&function(t){e.d(i,t,function(){return s[t]})}(a);i.default=h.a},295:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */function(t,i,e){"use strict";(function(t){Object.defineProperty(i,"__esModule",{value:!0}),i.default=void 0;var s,h=(s=e(/*! ./node_modules/@babel/runtime/regenerator */17))&&s.__esModule?s:{default:s};function a(t,i,e,s,h,a,n){try{var r=t[a](n),o=r.value}catch(t){return void e(t)}r.done?i(o):Promise.resolve(o).then(s,h)}var n={name:"yq-avatar",data:function(){return{cvsStyleHeight:"0px",styleDisplay:"none",styleTop:"-10000px",prvTop:"-10000px",imgStyle:{},selStyle:{},showOper:!0,imgSrc:{imgSrc:""},btnWidth:"19%",btnDsp:"flex"}},watch:{avatarSrc:function(){this.imgSrc.imgSrc=this.avatarSrc}},props:{avatarSrc:"",avatarStyle:"",selWidth:"",selHeight:"",expWidth:"",expHeight:"",minScale:"",maxScale:"",canScale:"",canRotate:"",lockWidth:"",lockHeight:"",stretch:"",lock:"",noTab:"",inner:"",quality:"",index:""},created:function(){var i=this;this.ctxCanvas=t.createCanvasContext("avatar-canvas",this),this.ctxCanvasOper=t.createCanvasContext("oper-canvas",this),this.ctxCanvasPrv=t.createCanvasContext("prv-canvas",this),this.qlty=parseInt(this.quality)||.9,this.imgSrc.imgSrc=this.avatarSrc,this.letRotate="false"===this.canRotate||"true"===this.inner?0:1,this.letScale="false"===this.canScale?0:1,this.isin="true"===this.inner?1:0,this.indx=this.index||void 0,this.mnScale=this.minScale||.3,this.mxScale=this.maxScale||4,this.noBar="true"===this.noTab?1:0,this.stc=this.stretch,this.lck=this.lock,this.isin?(this.btnWidth="24%",this.btnDsp="none"):(this.btnWidth="19%",this.btnDsp="flex"),this.noBar?(this.moreHeight=0,this.fWindowResize()):t.showTabBar({complete:function(t){i.moreHeight="showTabBar:ok"===t.errMsg?50:0,i.fWindowResize()}})},methods:{fWindowResize:function(){var i=t.getSystemInfoSync();this.platform=i.platform,this.pixelRatio=i.pixelRatio,this.windowWidth=i.windowWidth,this.windowHeight=i.windowHeight+this.moreHeight,this.cvsStyleHeight=this.windowHeight-50-2+"px",this.pxRatio=this.windowWidth/750;var e=this.avatarStyle;if(e&&!0!==e&&(e=e.trim())){e=e.split(";");var s={},h=!0,a=!1,n=void 0;try{for(var r,o=e[Symbol.iterator]();!(h=(r=o.next()).done);h=!0){var l=r.value;if(l){if((l=l.trim().split(":"))[1].indexOf("upx")>=0){var c=l[1].trim().split(" ");for(var p in c)c[p]&&c[p].indexOf("upx")>=0&&(c[p]=parseFloat(c[p])*this.pxRatio+"px");l[1]=c.join(" ")}s[l[0].trim()]=l[1].trim()}}}catch(t){a=!0,n=t}finally{try{h||null==o.return||o.return()}finally{if(a)throw n}}this.imgStyle=s}this.expWidth&&(this.exportWidth=this.expWidth.indexOf("upx")>=0?parseInt(this.expWidth)*this.pxRatio:parseInt(this.expWidth)),this.expHeight&&(this.exportHeight=this.expHeight.indexOf("upx")>=0?parseInt(this.expHeight)*this.pxRatio:parseInt(this.expHeight)),"flex"===this.styleDisplay&&this.fDrawInit(!0),this.fHideImg()},fSelect:function(){var i=this;this.fSelecting||(this.fSelecting=!0,setTimeout(function(){i.fSelecting=!1},500),t.chooseImage({count:1,sizeType:["compressed"],sourceType:["album","camera"],success:function(e){t.showLoading({mask:!0});var s=i.imgPath=e.tempFilePaths[0];t.getImageInfo({src:s,success:function(e){if(i.imgWidth=e.width,i.imgHeight=e.height,i.path=s,!i.hasSel){var h=i.selStyle||{};if(!i.selWidth||!i.selHeight)return void t.showModal({title:"裁剪框的宽或高没有设置",showCancel:!1});var a=i.selWidth.indexOf("upx")>=0?parseInt(i.selWidth)*i.pxRatio:parseInt(i.selWidth),n=i.selHeight.indexOf("upx")>=0?parseInt(i.selHeight)*i.pxRatio:parseInt(i.selHeight);h.width=a+"px",h.height=n+"px",h.top=(i.windowHeight-n-50)/2+"px",h.left=(i.windowWidth-a)/2+"px",i.selStyle=h}i.noBar?i.fDrawInit(!0):t.hideTabBar({complete:function(){i.fDrawInit(!0)}})},fail:function(){t.showToast({title:"error3",duration:2e3})},complete:function(){t.hideLoading()}})}}))},fUpload:function(){var i=this;if(!this.fUploading){this.fUploading=!0,setTimeout(function(){i.fUploading=!1},1e3);var e=this.selStyle,s=parseInt(e.left),h=parseInt(e.top),a=parseInt(e.width),n=parseInt(e.height),r=this.exportWidth||a,o=this.exportHeight||n;t.showLoading({mask:!0}),this.styleDisplay="none",this.styleTop="-10000px",this.hasSel=!1,this.fHideImg(),t.canvasToTempFilePath({x:s,y:h,width:a,height:n,destWidth:r,destHeight:o,canvasId:"avatar-canvas",fileType:"png",quality:this.qlty,success:function(t){t=t.tempFilePath,i.$emit("upload",{avatar:i.imgSrc,path:t,index:i.indx,data:i.rtn})},fail:function(i){t.showToast({title:"error1",duration:2e3})},complete:function(){t.hideLoading(),i.noBar||t.showTabBar()}},this)}},fPrvUpload:function(){var i=this;if(!this.fPrvUploading){this.fPrvUploading=!0,setTimeout(function(){i.fPrvUploading=!1},1e3);var e=this.selStyle,s=(parseInt(e.width),parseInt(e.height),this.prvX),h=this.prvY,a=this.prvWidth,n=this.prvHeight,r=this.exportWidth||a,o=this.exportHeight||n;t.showLoading({mask:!0}),this.styleDisplay="none",this.styleTop="-10000px",this.hasSel=!1,this.fHideImg(),t.canvasToTempFilePath({x:s,y:h,width:a,height:n,destWidth:r,destHeight:o,canvasId:"prv-canvas",fileType:"png",quality:this.qlty,success:function(t){t=t.tempFilePath,i.$emit("upload",{avatar:i.imgSrc,path:t,index:i.indx,data:i.rtn})},fail:function(){t.showToast({title:"error_prv",duration:2e3})},complete:function(){t.hideLoading(),i.noBar||t.showTabBar()}},this)}},fDrawInit:function(){var t=this,i=arguments.length>0&&void 0!==arguments[0]&&arguments[0],e=this.windowWidth,s=this.windowHeight,h=this.imgWidth,a=this.imgHeight,n=h/a,r=e-40,o=s-50-80,l=(this.pixelRatio,parseInt(this.selStyle.width)),c=parseInt(this.selStyle.height);switch(this.fixWidth=0,this.fixHeight=0,this.lckWidth=0,this.lckHeight=0,this.stc){case"x":this.fixWidth=1;break;case"y":this.fixHeight=1;break;case"long":n>1?this.fixWidth=1:this.fixHeight=1;break;case"short":n>1?this.fixHeight=1:this.fixWidth=1;break;case"longSel":l>c?this.fixWidth=1:this.fixHeight=1;break;case"shortSel":l>c?this.fixHeight=1:this.fixWidth=1}switch(this.lck){case"x":this.lckWidth=1;break;case"y":this.lckHeight=1;break;case"long":n>1?this.lckWidth=1:this.lckHeight=1;break;case"short":n>1?this.lckHeight=1:this.lckWidth=1;break;case"longSel":l>c?this.lckWidth=1:this.lckHeight=1;break;case"shortSel":l>c?this.lckHeight=1:this.lckWidth=1}this.fixWidth?o=(r=l)/n:this.fixHeight?r=(o=c)*n:n<1?a<o?(r=h,o=a):r=(o=o)*n:h<r?(r=h,o=a):o=(r=r)/n,this.isin&&(this.scaleWidth=0,this.scaleHeight=0,r<l&&(o=(r=l)/n,this.lckHeight=0),o<c&&(r=(o=c)*n,this.lckWidth=0)),this.scaleSize=1,this.rotateDeg=0,this.posWidth=(e-r)/2,this.posHeight=(s-o-50)/2,this.useWidth=r,this.useHeight=o;var p=this.selStyle,d=parseInt(p.left),f=parseInt(p.top),u=parseInt(p.width),g=parseInt(p.height),v=(this.canvas,this.canvasOper,this.ctxCanvas),x=this.ctxCanvasOper;x.setLineWidth(3),x.setStrokeStyle("grey"),x.setGlobalAlpha(.4),x.setFillStyle("black"),x.strokeRect(d,f,u,g),x.fillRect(0,0,this.windowWidth,f),x.fillRect(0,f,d,g),x.fillRect(0,f+g,this.windowWidth,this.windowHeight-g-f-50),x.fillRect(d+u,f,this.windowWidth-u-d,g),x.setStrokeStyle("red"),x.moveTo(d+20,f),x.lineTo(d,f),x.lineTo(d,f+20),x.moveTo(d+u-20,f),x.lineTo(d+u,f),x.lineTo(d+u,f+20),x.moveTo(d+20,f+g),x.lineTo(d,f+g),x.lineTo(d,f+g-20),x.moveTo(d+u-20,f+g),x.lineTo(d+u,f+g),x.lineTo(d+u,f+g-20),x.stroke(),x.draw(!1,function(){i&&(t.styleDisplay="flex",t.styleTop="0",v.setFillStyle("black"),t.fDrawImage())}),this.$emit("avtinit")},fDrawImage:function(){var t=Date.now();if(!(t-this.drawTm<20)){this.drawTm=t;var i=this.ctxCanvas;i.fillRect(0,0,this.windowWidth,this.windowHeight-50),i.translate(this.posWidth+this.useWidth/2,this.posHeight+this.useHeight/2),i.scale(this.scaleSize,this.scaleSize),i.rotate(this.rotateDeg*Math.PI/180),i.drawImage(this.imgPath,-this.useWidth/2,-this.useHeight/2,this.useWidth,this.useHeight),i.draw(!1)}},fHideImg:function(){this.prvImg="",this.prvTop="-10000px",this.showOper=!0,this.prvImgData=null,this.target=null},fClose:function(){this.styleDisplay="none",this.styleTop="-10000px",this.hasSel=!1,this.fHideImg(),this.noBar||t.showTabBar()},fPreview:function(){var i=this;if(!this.fPreviewing){this.fPreviewing=!0,setTimeout(function(){i.fPreviewing=!1},1e3);var e=this.selStyle,s=parseInt(e.left),h=parseInt(e.top),a=parseInt(e.width),n=parseInt(e.height);t.showLoading({mask:!0}),t.canvasToTempFilePath({x:s,y:h,width:a,height:n,canvasId:"avatar-canvas",fileType:"png",quality:this.qlty,success:function(t){i.prvImgTmp=t=t.tempFilePath;var e=i.ctxCanvasPrv,s=i.windowWidth,h=parseInt(i.cvsStyleHeight),a=parseInt(i.selStyle.width),n=parseInt(i.selStyle.height),r=s-40,o=h-80,l=r/a,c=n*l;c<o?(a=r,n=c):(a*=l=o/n,n=o),e.setFillStyle("black"),e.fillRect(0,0,s,h),i.prvX=s=(s-a)/2,i.prvY=h=(h-n)/2,i.prvWidth=a,i.prvHeight=n,e.drawImage(t,s,h,a,n),e.draw(!1),"android"!=i.platform&&(i.showOper=!1),i.prvTop="0"},fail:function(){t.showToast({title:"error2",duration:2e3})},complete:function(){t.hideLoading()}},this)}},fChooseImg:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:void 0,i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:void 0,e=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0;if(i){var s=i.selWidth,h=i.selHeight,a=i.expWidth,n=i.expHeight,r=i.quality,o=i.canRotate,l=i.canScale,c=i.minScale,p=i.maxScale,d=i.stretch,f=i.inner,u=i.lock;a&&(this.exportWidth=a.indexOf("upx")>=0?parseInt(a)*this.pxRatio:parseInt(a)),n&&(this.exportHeight=n.indexOf("upx")>=0?parseInt(n)*this.pxRatio:parseInt(n)),this.letRotate="false"===o?0:1,this.letScale="false"===l?0:1,this.qlty=parseInt(r)||.9,this.mnScale=c||.3,this.mxScale=p||4,this.stc=d,this.isin="true"===f?1:0,this.lck=u,this.isin?(this.btnWidth="24%",this.btnDsp="none"):(this.btnWidth="19%",this.btnDsp="flex"),s&&h&&(s=s.indexOf("upx")>=0?parseInt(s)*this.pxRatio:parseInt(s),h=h.indexOf("upx")>=0?parseInt(h)*this.pxRatio:parseInt(h),this.selStyle.width=s+"px",this.selStyle.height=h+"px",this.selStyle.top=(this.windowHeight-h-50)/2+"px",this.selStyle.left=(this.windowWidth-s)/2+"px",this.hasSel=!0)}this.rtn=e,this.indx=t,this.fSelect()},fRotate:function(){this.rotateDeg+=90-this.rotateDeg%90,this.fDrawImage()},fStart:function(t){var i=t.touches,e=i[0],s=i[1];if(this.touch0=e,this.touch1=s,s){var h=s.x-e.x,a=s.y-e.y;this.fgDistance=Math.sqrt(h*h+a*a)}},fMove:function(t){var i=t.touches,e=i[0],s=i[1];if(s){var h=s.x-e.x,a=s.y-e.y,n=Math.sqrt(h*h+a*a),r=.005*(n-this.fgDistance),o=this.scaleSize+r;do{if(!this.letScale)break;if(o<this.mnScale)break;if(o>this.mxScale)break;if(this.isin){var l=this.useWidth*o,c=this.useHeight*o,p=this.posWidth+this.useWidth/2-l/2,d=this.posHeight+this.useHeight/2-c/2,f=p+l,u=d+c,g=parseInt(this.selStyle.left),v=parseInt(this.selStyle.top),x=parseInt(this.selStyle.width),w=parseInt(this.selStyle.height);if(g<p||g+x>f||v<d||v+w>u)break;this.scaleWidth=(this.useWidth-l)/2,this.scaleHeight=(this.useHeight-c)/2}this.scaleSize=o}while(0);this.fgDistance=n,s.x!==e.x&&this.letRotate&&(h=(this.touch1.y-this.touch0.y)/(this.touch1.x-this.touch0.x),a=(s.y-e.y)/(s.x-e.x),this.rotateDeg+=180*Math.atan((a-h)/(1+h*a))/Math.PI,this.touch0=e,this.touch1=s),this.fDrawImage()}else if(this.touch0){var m=e.x-this.touch0.x,y=e.y-this.touch0.y,S=this.posWidth+m,I=this.posHeight+y;if(this.isin){var W=this.useWidth*this.scaleSize,H=this.useHeight*this.scaleSize,k=S+this.useWidth/2-W/2,b=I+this.useHeight/2-H/2,T=k+W,D=b+H,R=parseInt(this.selStyle.left),P=parseInt(this.selStyle.top),C=parseInt(this.selStyle.width),M=parseInt(this.selStyle.height);!this.lckWidth&&Math.abs(m)<100&&(R>=k&&R+C<=T?this.posWidth=S:R<k?this.posWidth=R-this.scaleWidth:R+C>T&&(this.posWidth=R-(W-C)-this.scaleWidth)),!this.lckHeight&&Math.abs(y)<100&&(P>=b&&P+M<=D?this.posHeight=I:P<b?this.posHeight=P-this.scaleHeight:P+M>D&&(this.posHeight=P-(H-M)-this.scaleHeight))}else Math.abs(m)<100&&!this.lckWidth&&(this.posWidth=S),Math.abs(y)<100&&!this.lckHeight&&(this.posHeight=I);this.touch0=e,this.fDrawImage()}},fEnd:function(t){var i=t.touches,e=i&&i[0];i&&i[1];e?this.touch0=e:(this.touch0=null,this.touch1=null)},fGetImgData:function(){var i=this;return new Promise(function(e,s){var h=i.prvX,a=i.prvY,n=i.prvWidth,r=i.prvHeight;t.canvasGetImageData({canvasId:"prv-canvas",x:h,y:a,width:n,height:r,success:function(t){e(t.data)},fail:function(t){s(t)}},i)})},fColorChange:function(){var i,e=(i=h.default.mark(function i(e){var s,a,n,r,o,l,c,p,d,f,u,g,v,x,w,m,y,S,I,W,H,k,b,T,D,R,P;return h.default.wrap(function(i){for(;;)switch(i.prev=i.next){case 0:if(!((s=Date.now())-this.prvTm<100)){i.next=3;break}return i.abrupt("return");case 3:if(this.prvTm=s,t.showLoading({mask:!0}),this.prvImgData){i.next=11;break}return i.next=8,this.fGetImgData().catch(function(i){t.showToast({title:"error_read",duration:2e3})});case 8:if(this.prvImgData=i.sent){i.next=10;break}return i.abrupt("return");case 10:this.target=new Uint8ClampedArray(this.prvImgData.length);case 11:if(a=this.prvImgData,n=this.target,0===(r=e.detail.value))n=a;else for((r=(r+100)/200)<.005&&(r=0),r>.995&&(r=1),H=a.length-1;H>=0;H-=4)o=a[H-3]/255,l=a[H-2]/255,c=a[H-1]/255,m=Math.max(o,l,c),w=Math.min(o,l,c),g=m-w,m===w?d=0:m===o&&l>=c?d=(l-c)/g*60:m===o&&l<c?d=(l-c)/g*60+360:m===l?d=(c-o)/g*60+120:m===c&&(d=(o-l)/g*60+240),0===(u=(m+w)/2)||m===w?f=0:0<u&&u<=.5?f=g/(2*u):u>.5&&(f=g/(2-2*u)),a[H]&&(p=a[H]),r<.5?f=f*r/.5:r>.5&&(f=2*f+2*r-f*r/.5-1),0===f?o=l=c=Math.round(255*u):(u<.5?x=u*(1+f):u>=.5&&(x=u+f-u*f),v=2*u-x,S=(y=d/360)+1/3,I=y,W=y-1/3,k=function(t){return t<0?t+1:t>1?t-1:t},b=function(t){return t<1/6?v+6*(x-v)*t:t>=1/6&&t<.5?x:t>=.5&&t<2/3?v+6*(x-v)*(2/3-t):v},o=S=Math.round(255*b(k(S))),l=I=Math.round(255*b(k(I))),c=W=Math.round(255*b(k(W)))),p&&(n[H]=p),n[H-3]=o,n[H-2]=l,n[H-1]=c;T=this.prvX,D=this.prvY,R=this.prvWidth,P=this.prvHeight,this.ctxCanvasPrv.setFillStyle("black"),this.ctxCanvasPrv.fillRect(T,D,R,P),this.ctxCanvasPrv.draw(!0),t.canvasPutImageData({canvasId:"prv-canvas",x:T,y:D,width:R,height:P,data:n,fail:function(){t.showToast({title:"error_put",duration:2e3})},complete:function(){t.hideLoading()}},this);case 18:case"end":return i.stop()}},i,this)}),function(){var t=this,e=arguments;return new Promise(function(s,h){var n=i.apply(t,e);function r(t){a(n,s,h,r,o,"next",t)}function o(t){a(n,s,h,r,o,"throw",t)}r(void 0)})});return function(t){return e.apply(this,arguments)}}(),btop:function(t){return new Promise(function(i,e){for(var s=t.split(","),h=s[0].match(/:(.*?);/)[1],a=atob(s[1]),n=a.length,r=new Uint8Array(n);n--;)r[n]=a.charCodeAt(n);return i((window.URL||window.webkitURL).createObjectURL(new Blob([r],{type:h})))})}}};i.default=n}).call(this,e(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).default)},296:
-/*!**************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */function(t,i,e){"use strict";e.r(i);var s=e(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=style&index=0&lang=css& */297),h=e.n(s);for(var a in s)"default"!==a&&function(t){e.d(i,t,function(){return s[t]})}(a);i.default=h.a},297:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5-app/components/yq-avatar/yq-avatar.vue?vue&type=style&index=0&lang=css& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */function(t,i,e){}}]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/yq-avatar/yq-avatar"],{
+
+/***/ 322:
+/*!*************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./yq-avatar.vue?vue&type=template&id=b4f22132&name=yq-avatar& */ 323);
+/* harmony import */ var _yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./yq-avatar.vue?vue&type=script&lang=js& */ 325);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./yq-avatar.vue?vue&type=style&index=0&lang=css& */ 327);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ 14);
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ 323:
+/*!***********************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=template&id=b4f22132&name=yq-avatar& ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=template&id=b4f22132&name=yq-avatar& */ 324);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_template_id_b4f22132_name_yq_avatar___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ 324:
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=template&id=b4f22132&name=yq-avatar& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  var s0 = _vm.__get_style([_vm.imgStyle])
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        s0: s0
+      }
+    }
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ 325:
+/*!**************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=script&lang=js& */ 326);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ 326:
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var tabHeight = 50;var _default =
+{
+  name: "yq-avatar",
+  data: function data() {
+    return {
+      cvsStyleHeight: '0px',
+      styleDisplay: 'none',
+      styleTop: '-10000px',
+      prvTop: '-10000px',
+      imgStyle: {},
+      selStyle: {},
+      showOper: true,
+      imgSrc: {
+        imgSrc: '' },
+
+      btnWidth: '19%',
+      btnDsp: 'flex' };
+
+  },
+  watch: {
+    avatarSrc: function avatarSrc() {
+      this.imgSrc.imgSrc = this.avatarSrc;
+    } },
+
+  props: {
+    avatarSrc: '',
+    avatarStyle: '',
+    selWidth: '',
+    selHeight: '',
+    expWidth: '',
+    expHeight: '',
+    minScale: '',
+    maxScale: '',
+    canScale: '',
+    canRotate: '',
+    lockWidth: '',
+    lockHeight: '',
+    stretch: '',
+    lock: '',
+    noTab: '',
+    inner: '',
+    quality: '',
+    index: '' },
+
+  created: function created() {var _this = this;
+    this.ctxCanvas = uni.createCanvasContext('avatar-canvas', this);
+    this.ctxCanvasOper = uni.createCanvasContext('oper-canvas', this);
+    this.ctxCanvasPrv = uni.createCanvasContext('prv-canvas', this);
+    this.qlty = parseInt(this.quality) || 0.9;
+    this.imgSrc.imgSrc = this.avatarSrc;
+    this.letRotate = this.canRotate === 'false' || this.inner === 'true' ? 0 : 1;
+    this.letScale = this.canScale === 'false' ? 0 : 1;
+    this.isin = this.inner === 'true' ? 1 : 0;
+    this.indx = this.index || undefined;
+    this.mnScale = this.minScale || 0.3;
+    this.mxScale = this.maxScale || 4;
+    this.noBar = this.noTab === 'true' ? 1 : 0;
+    this.stc = this.stretch;
+    this.lck = this.lock;
+    if (this.isin) {
+      this.btnWidth = '24%';
+      this.btnDsp = 'none';
+    } else {
+      this.btnWidth = '19%';
+      this.btnDsp = 'flex';
+    }
+
+    if (this.noBar) {
+      this.moreHeight = 0;
+      this.fWindowResize();
+    } else {
+      uni.showTabBar({
+        complete: function complete(res) {
+          _this.moreHeight = res.errMsg === 'showTabBar:ok' ? 50 : 0;
+          _this.fWindowResize();
+        } });
+
+    }
+  },
+  methods: {
+    fWindowResize: function fWindowResize() {
+      var sysInfo = uni.getSystemInfoSync();
+      this.platform = sysInfo.platform;
+      this.pixelRatio = sysInfo.pixelRatio;
+      this.windowWidth = sysInfo.windowWidth;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      this.windowHeight = sysInfo.windowHeight + this.moreHeight;
+      this.cvsStyleHeight = this.windowHeight - tabHeight - 2 + 'px';
+
+      this.pxRatio = this.windowWidth / 750;
+
+      var style = this.avatarStyle;
+      if (style && style !== true && (style = style.trim())) {
+        style = style.split(';');
+        var obj = {};var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
+          for (var _iterator = style[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var v = _step.value;
+            if (!v) continue;
+            v = v.trim().split(':');
+            if (v[1].indexOf('upx') >= 0) {
+              var arr = v[1].trim().split(' ');
+              for (var k in arr) {
+                if (!arr[k]) continue;
+                if (arr[k].indexOf('upx') >= 0) {
+                  arr[k] = parseFloat(arr[k]) * this.pxRatio + 'px';
+                }
+              }
+              v[1] = arr.join(' ');
+            }
+            obj[v[0].trim()] = v[1].trim();
+          }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
+        this.imgStyle = obj;
+      }
+
+      this.expWidth && (this.exportWidth = this.expWidth.indexOf('upx') >= 0 ? parseInt(this.expWidth) * this.pxRatio : parseInt(this.expWidth));
+      this.expHeight && (this.exportHeight = this.expHeight.indexOf('upx') >= 0 ? parseInt(this.expHeight) * this.pxRatio : parseInt(this.expHeight));
+
+      if (this.styleDisplay === 'flex') {
+        this.fDrawInit(true);
+      }
+      this.fHideImg();
+    },
+    fSelect: function fSelect() {var _this2 = this;
+      if (this.fSelecting) return;
+      this.fSelecting = true;
+      setTimeout(function () {_this2.fSelecting = false;}, 500);
+
+      uni.chooseImage({
+        count: 1,
+        sizeType: ['compressed'],
+        sourceType: ['album', 'camera'],
+        success: function success(r) {
+          uni.showLoading({ mask: true });
+          var path = _this2.imgPath = r.tempFilePaths[0];
+          uni.getImageInfo({
+            src: path,
+            success: function success(r) {
+              _this2.imgWidth = r.width;
+              _this2.imgHeight = r.height;
+              _this2.path = path;
+              if (!_this2.hasSel) {
+                var style = _this2.selStyle || {};
+                if (_this2.selWidth && _this2.selHeight) {
+                  var selWidth = _this2.selWidth.indexOf('upx') >= 0 ? parseInt(_this2.selWidth) * _this2.pxRatio : parseInt(_this2.selWidth),
+                  selHeight = _this2.selHeight.indexOf('upx') >= 0 ? parseInt(_this2.selHeight) * _this2.pxRatio : parseInt(_this2.selHeight);
+                  style.width = selWidth + 'px';
+                  style.height = selHeight + 'px';
+                  style.top = (_this2.windowHeight - selHeight - tabHeight) / 2 + 'px';
+                  style.left = (_this2.windowWidth - selWidth) / 2 + 'px';
+                } else {
+                  uni.showModal({
+                    title: '裁剪框的宽或高没有设置',
+                    showCancel: false });
+
+                  return;
+                }
+                _this2.selStyle = style;
+              }
+
+              if (_this2.noBar) {
+                _this2.fDrawInit(true);
+              } else {
+                uni.hideTabBar({
+                  complete: function complete() {
+                    _this2.fDrawInit(true);
+                  } });
+
+              }
+            },
+            fail: function fail() {
+              uni.showToast({
+                title: "error3",
+                duration: 2000 });
+
+            },
+            complete: function complete() {
+              uni.hideLoading();
+            } });
+
+        } });
+
+    },
+    fUpload: function fUpload() {var _this3 = this;
+
+      if (this.fUploading) return;
+      this.fUploading = true;
+      setTimeout(function () {_this3.fUploading = false;}, 1000);
+
+      var style = this.selStyle,
+      x = parseInt(style.left),
+      y = parseInt(style.top),
+      width = parseInt(style.width),
+      height = parseInt(style.height),
+      expWidth = this.exportWidth || width,
+      expHeight = this.exportHeight || height;
+
+
+
+
+
+
+
+      uni.showLoading({ mask: true });
+      this.styleDisplay = 'none';
+      this.styleTop = '-10000px';
+      this.hasSel = false;
+      this.fHideImg();
+      uni.canvasToTempFilePath({
+        x: x,
+        y: y,
+        width: width,
+        height: height,
+        destWidth: expWidth,
+        destHeight: expHeight,
+        canvasId: 'avatar-canvas',
+        fileType: 'png',
+        quality: this.qlty,
+        success: function success(r) {
+          r = r.tempFilePath;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          _this3.$emit("upload", { avatar: _this3.imgSrc, path: r, index: _this3.indx, data: _this3.rtn });
+
+        },
+        fail: function fail(res) {
+          uni.showToast({
+            title: "error1",
+            duration: 2000 });
+
+        },
+        complete: function complete() {
+          uni.hideLoading();
+          _this3.noBar || uni.showTabBar();
+        } },
+      this);
+    },
+    fPrvUpload: function fPrvUpload() {var _this4 = this;
+      if (this.fPrvUploading) return;
+      this.fPrvUploading = true;
+      setTimeout(function () {_this4.fPrvUploading = false;}, 1000);
+
+      var style = this.selStyle,
+      destWidth = parseInt(style.width),
+      destHeight = parseInt(style.height),
+      prvX = this.prvX,
+      prvY = this.prvY,
+      prvWidth = this.prvWidth,
+      prvHeight = this.prvHeight,
+      expWidth = this.exportWidth || prvWidth,
+      expHeight = this.exportHeight || prvHeight;
+
+
+
+
+
+
+
+
+      uni.showLoading({ mask: true });
+
+      this.styleDisplay = 'none';
+      this.styleTop = '-10000px';
+      this.hasSel = false;
+      this.fHideImg();
+      uni.canvasToTempFilePath({
+        x: prvX,
+        y: prvY,
+        width: prvWidth,
+        height: prvHeight,
+        destWidth: expWidth,
+        destHeight: expHeight,
+        canvasId: 'prv-canvas',
+        fileType: 'png',
+        quality: this.qlty,
+        success: function success(r) {
+          r = r.tempFilePath;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          _this4.$emit("upload", { avatar: _this4.imgSrc, path: r, index: _this4.indx, data: _this4.rtn });
+
+        },
+        fail: function fail() {
+          uni.showToast({
+            title: "error_prv",
+            duration: 2000 });
+
+        },
+        complete: function complete() {
+          uni.hideLoading();
+          _this4.noBar || uni.showTabBar();
+        } },
+      this);
+    },
+    fDrawInit: function fDrawInit() {var _this5 = this;var ini = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var allWidth = this.windowWidth,
+      allHeight = this.windowHeight,
+      imgWidth = this.imgWidth,
+      imgHeight = this.imgHeight,
+      imgRadio = imgWidth / imgHeight,
+      useWidth = allWidth - 40,
+      useHeight = allHeight - tabHeight - 80,
+      pixelRatio = this.pixelRatio,
+      selWidth = parseInt(this.selStyle.width),
+      selHeight = parseInt(this.selStyle.height);
+
+      this.fixWidth = 0;
+      this.fixHeight = 0;
+      this.lckWidth = 0;
+      this.lckHeight = 0;
+      switch (this.stc) {
+        case 'x':this.fixWidth = 1;break;
+        case 'y':this.fixHeight = 1;break;
+        case 'long':if (imgRadio > 1) this.fixWidth = 1;else this.fixHeight = 1;break;
+        case 'short':if (imgRadio > 1) this.fixHeight = 1;else this.fixWidth = 1;break;
+        case 'longSel':if (selWidth > selHeight) this.fixWidth = 1;else this.fixHeight = 1;break;
+        case 'shortSel':if (selWidth > selHeight) this.fixHeight = 1;else this.fixWidth = 1;break;}
+
+      switch (this.lck) {
+        case 'x':this.lckWidth = 1;break;
+        case 'y':this.lckHeight = 1;break;
+        case 'long':if (imgRadio > 1) this.lckWidth = 1;else this.lckHeight = 1;break;
+        case 'short':if (imgRadio > 1) this.lckHeight = 1;else this.lckWidth = 1;break;
+        case 'longSel':if (selWidth > selHeight) this.lckWidth = 1;else this.lckHeight = 1;break;
+        case 'shortSel':if (selWidth > selHeight) this.lckHeight = 1;else this.lckWidth = 1;break;}
+
+      if (this.fixWidth) {
+        useWidth = selWidth;
+        useHeight = useWidth / imgRadio;
+      } else if (this.fixHeight) {
+        useHeight = selHeight;
+        useWidth = useHeight * imgRadio;
+      } else if (imgRadio < 1) {
+        if (imgHeight < useHeight) {
+          useWidth = imgWidth;
+          useHeight = imgHeight;
+        } else {
+          useHeight = useHeight;
+          useWidth = useHeight * imgRadio;
+        }
+      } else {
+        if (imgWidth < useWidth) {
+          useWidth = imgWidth;
+          useHeight = imgHeight;
+        } else {
+          useWidth = useWidth;
+          useHeight = useWidth / imgRadio;
+        }
+      }
+      if (this.isin) {
+        this.scaleWidth = 0;
+        this.scaleHeight = 0;
+        if (useWidth < selWidth) {
+          useWidth = selWidth;
+          useHeight = useWidth / imgRadio;
+          this.lckHeight = 0;
+        }
+        if (useHeight < selHeight) {
+          useHeight = selHeight;
+          useWidth = useHeight * imgRadio;
+          this.lckWidth = 0;
+        }
+      }
+
+      this.scaleSize = 1;
+      this.rotateDeg = 0;
+      this.posWidth = (allWidth - useWidth) / 2;
+      this.posHeight = (allHeight - useHeight - tabHeight) / 2;
+      this.useWidth = useWidth;
+      this.useHeight = useHeight;
+
+      var style = this.selStyle,
+      left = parseInt(style.left),
+      top = parseInt(style.top),
+      width = parseInt(style.width),
+      height = parseInt(style.height),
+      canvas = this.canvas,
+      canvasOper = this.canvasOper,
+      ctxCanvas = this.ctxCanvas,
+      ctxCanvasOper = this.ctxCanvasOper;
+
+      ctxCanvasOper.setLineWidth(3);
+      ctxCanvasOper.setStrokeStyle('grey');
+      ctxCanvasOper.setGlobalAlpha(0.4);
+      ctxCanvasOper.setFillStyle('black');
+      ctxCanvasOper.strokeRect(left, top, width, height);
+      ctxCanvasOper.fillRect(0, 0, this.windowWidth, top);
+      ctxCanvasOper.fillRect(0, top, left, height);
+      ctxCanvasOper.fillRect(0, top + height, this.windowWidth, this.windowHeight - height - top - tabHeight);
+      ctxCanvasOper.fillRect(left + width, top, this.windowWidth - width - left, height);
+      ctxCanvasOper.setStrokeStyle('red');
+      ctxCanvasOper.moveTo(left + 20, top);ctxCanvasOper.lineTo(left, top);ctxCanvasOper.lineTo(left, top + 20);
+      ctxCanvasOper.moveTo(left + width - 20, top);ctxCanvasOper.lineTo(left + width, top);ctxCanvasOper.lineTo(left + width, top + 20);
+      ctxCanvasOper.moveTo(left + 20, top + height);ctxCanvasOper.lineTo(left, top + height);ctxCanvasOper.lineTo(left, top + height - 20);
+      ctxCanvasOper.moveTo(left + width - 20, top + height);ctxCanvasOper.lineTo(left + width, top + height);ctxCanvasOper.lineTo(left + width, top + height - 20);
+      ctxCanvasOper.stroke();
+
+      ctxCanvasOper.draw(false, function () {
+        if (ini) {
+          _this5.styleDisplay = 'flex';
+
+
+
+
+          _this5.styleTop = '0';
+
+          ctxCanvas.setFillStyle('black');
+          _this5.fDrawImage();
+        }
+      });
+
+      this.$emit("avtinit");
+    },
+    fDrawImage: function fDrawImage() {
+      var tm_now = Date.now();
+      if (tm_now - this.drawTm < 20) return;
+      this.drawTm = tm_now;
+      var ctxCanvas = this.ctxCanvas;
+      ctxCanvas.fillRect(0, 0, this.windowWidth, this.windowHeight - tabHeight);
+      ctxCanvas.translate(this.posWidth + this.useWidth / 2, this.posHeight + this.useHeight / 2);
+      ctxCanvas.scale(this.scaleSize, this.scaleSize);
+      ctxCanvas.rotate(this.rotateDeg * Math.PI / 180);
+      ctxCanvas.drawImage(this.imgPath, -this.useWidth / 2, -this.useHeight / 2, this.useWidth, this.useHeight);
+      ctxCanvas.draw(false);
+    },
+    fHideImg: function fHideImg() {
+      this.prvImg = '';
+      this.prvTop = '-10000px';
+      this.showOper = true;
+      this.prvImgData = null;
+      this.target = null;
+    },
+    fClose: function fClose() {
+      this.styleDisplay = 'none';
+      this.styleTop = '-10000px';
+      this.hasSel = false;
+      this.fHideImg();
+      this.noBar || uni.showTabBar();
+    },
+    fPreview: function fPreview() {var _this6 = this;
+      if (this.fPreviewing) return;
+      this.fPreviewing = true;
+      setTimeout(function () {_this6.fPreviewing = false;}, 1000);
+
+      var style = this.selStyle,
+      x = parseInt(style.left),
+      y = parseInt(style.top),
+      width = parseInt(style.width),
+      height = parseInt(style.height);
+
+
+
+
+
+
+      uni.showLoading({ mask: true });
+
+      uni.canvasToTempFilePath({
+        x: x,
+        y: y,
+        width: width,
+        height: height,
+        canvasId: 'avatar-canvas',
+        fileType: 'png',
+        quality: this.qlty,
+        success: function success(r) {
+          _this6.prvImgTmp = r = r.tempFilePath;
+
+          var ctxCanvasPrv = _this6.ctxCanvasPrv,
+          prvX = _this6.windowWidth,
+          prvY = parseInt(_this6.cvsStyleHeight),
+          prvWidth = parseInt(_this6.selStyle.width),
+          prvHeight = parseInt(_this6.selStyle.height),
+          useWidth = prvX - 40,
+          useHeight = prvY - 80,
+          radio = useWidth / prvWidth,
+          rHeight = prvHeight * radio;
+          if (rHeight < useHeight) {
+            prvWidth = useWidth;
+            prvHeight = rHeight;
+          } else {
+            radio = useHeight / prvHeight;
+            prvWidth *= radio;
+            prvHeight = useHeight;
+          }
+          ctxCanvasPrv.setFillStyle('black');
+          ctxCanvasPrv.fillRect(0, 0, prvX, prvY);
+          _this6.prvX = prvX = (prvX - prvWidth) / 2;
+          _this6.prvY = prvY = (prvY - prvHeight) / 2;
+          _this6.prvWidth = prvWidth;
+          _this6.prvHeight = prvHeight;
+          ctxCanvasPrv.drawImage(r, prvX, prvY, prvWidth, prvHeight);
+          ctxCanvasPrv.draw(false);
+
+
+
+
+
+
+
+
+          if (_this6.platform != 'android') {
+            _this6.showOper = false;
+          }
+          _this6.prvTop = '0';
+
+        },
+        fail: function fail() {
+          uni.showToast({
+            title: "error2",
+            duration: 2000 });
+
+        },
+        complete: function complete() {
+          uni.hideLoading();
+        } },
+      this);
+    },
+    fChooseImg: function fChooseImg() {var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+      if (params) {
+        var selWidth = params.selWidth,
+        selHeight = params.selHeight,
+        expWidth = params.expWidth,
+        expHeight = params.expHeight,
+        quality = params.quality,
+        canRotate = params.canRotate,
+        canScale = params.canScale,
+        minScale = params.minScale,
+        maxScale = params.maxScale,
+        stretch = params.stretch,
+        inner = params.inner,
+        lock = params.lock;
+
+        expWidth && (this.exportWidth = expWidth.indexOf('upx') >= 0 ? parseInt(expWidth) * this.pxRatio : parseInt(expWidth));
+        expHeight && (this.exportHeight = expHeight.indexOf('upx') >= 0 ? parseInt(expHeight) * this.pxRatio : parseInt(expHeight));
+        this.letRotate = canRotate === 'false' ? 0 : 1;
+        this.letScale = canScale === 'false' ? 0 : 1;
+        this.qlty = parseInt(quality) || 0.9;
+        this.mnScale = minScale || 0.3;
+        this.mxScale = maxScale || 4;
+        this.stc = stretch;
+        this.isin = inner === 'true' ? 1 : 0;
+        this.lck = lock;
+        if (this.isin) {
+          this.btnWidth = '24%';
+          this.btnDsp = 'none';
+        } else {
+          this.btnWidth = '19%';
+          this.btnDsp = 'flex';
+        }
+
+        if (selWidth && selHeight) {
+          selWidth = selWidth.indexOf('upx') >= 0 ? parseInt(selWidth) * this.pxRatio : parseInt(selWidth);
+          selHeight = selHeight.indexOf('upx') >= 0 ? parseInt(selHeight) * this.pxRatio : parseInt(selHeight);
+          this.selStyle.width = selWidth + 'px';
+          this.selStyle.height = selHeight + 'px';
+          this.selStyle.top = (this.windowHeight - selHeight - tabHeight) / 2 + 'px';
+          this.selStyle.left = (this.windowWidth - selWidth) / 2 + 'px';
+          this.hasSel = true;
+        }
+      }
+      this.rtn = data;
+      this.indx = index;
+      this.fSelect();
+    },
+    fRotate: function fRotate() {
+
+
+
+
+
+
+
+
+      // if(this.letRotate) {
+      this.rotateDeg += 90 - this.rotateDeg % 90;
+      this.fDrawImage();
+      // }
+    },
+    fStart: function fStart(e) {
+      var touches = e.touches,
+      touch0 = touches[0],
+      touch1 = touches[1];
+
+      this.touch0 = touch0;
+      this.touch1 = touch1;
+
+      if (touch1) {
+        var x = touch1.x - touch0.x,
+        y = touch1.y - touch0.y;
+        this.fgDistance = Math.sqrt(x * x + y * y);
+      }
+    },
+    fMove: function fMove(e) {
+      var touches = e.touches,
+      touch0 = touches[0],
+      touch1 = touches[1];
+
+      if (touch1) {
+        var x = touch1.x - touch0.x,
+        y = touch1.y - touch0.y,
+        fgDistance = Math.sqrt(x * x + y * y),
+        scaleSize = 0.005 * (fgDistance - this.fgDistance),
+        beScaleSize = this.scaleSize + scaleSize;
+
+        do {
+          if (!this.letScale) break;
+          if (beScaleSize < this.mnScale) break;
+          if (beScaleSize > this.mxScale) break;
+          if (this.isin) {
+            var imgWidth = this.useWidth * beScaleSize,
+            imgHeight = this.useHeight * beScaleSize,
+            rx0 = this.posWidth + this.useWidth / 2,
+            ry0 = this.posHeight + this.useHeight / 2,
+            l = rx0 - imgWidth / 2,t = ry0 - imgHeight / 2,
+            r = l + imgWidth,b = t + imgHeight,
+            left = parseInt(this.selStyle.left),
+            top = parseInt(this.selStyle.top),
+            width = parseInt(this.selStyle.width),
+            height = parseInt(this.selStyle.height);
+            if (left < l || left + width > r || top < t || top + height > b) break;
+            this.scaleWidth = (this.useWidth - imgWidth) / 2;
+            this.scaleHeight = (this.useHeight - imgHeight) / 2;
+          }
+
+          this.scaleSize = beScaleSize;
+        } while (0);
+        this.fgDistance = fgDistance;
+
+        if (touch1.x !== touch0.x && this.letRotate) {
+          x = (this.touch1.y - this.touch0.y) / (this.touch1.x - this.touch0.x);
+          y = (touch1.y - touch0.y) / (touch1.x - touch0.x);
+          this.rotateDeg += Math.atan((y - x) / (1 + x * y)) * 180 / Math.PI;
+          this.touch0 = touch0;
+          this.touch1 = touch1;
+        }
+
+        this.fDrawImage();
+      } else if (this.touch0) {
+        var _x = touch0.x - this.touch0.x,
+        _y = touch0.y - this.touch0.y,
+        beX = this.posWidth + _x,
+        beY = this.posHeight + _y;
+        if (this.isin) {
+          var _imgWidth = this.useWidth * this.scaleSize,
+          _imgHeight = this.useHeight * this.scaleSize,
+          _rx = beX + this.useWidth / 2,
+          _ry = beY + this.useHeight / 2,
+          _l = _rx - _imgWidth / 2,_t = _ry - _imgHeight / 2,
+          _r = _l + _imgWidth,_b = _t + _imgHeight,
+          _left = parseInt(this.selStyle.left),
+          _top = parseInt(this.selStyle.top),
+          _width = parseInt(this.selStyle.width),
+          _height = parseInt(this.selStyle.height);
+          if (!this.lckWidth && Math.abs(_x) < 100) {
+            if (_left >= _l && _left + _width <= _r) {
+              this.posWidth = beX;
+            } else if (_left < _l) {
+              this.posWidth = _left - this.scaleWidth;
+            } else if (_left + _width > _r) {
+              this.posWidth = _left - (_imgWidth - _width) - this.scaleWidth;
+            }
+          }
+          if (!this.lckHeight && Math.abs(_y) < 100) {
+            if (_top >= _t && _top + _height <= _b) {
+              this.posHeight = beY;
+            } else if (_top < _t) {
+              this.posHeight = _top - this.scaleHeight;
+            } else if (_top + _height > _b) {
+              this.posHeight = _top - (_imgHeight - _height) - this.scaleHeight;
+            }
+          }
+        } else {
+          if (Math.abs(_x) < 100 && !this.lckWidth) this.posWidth = beX;
+          if (Math.abs(_y) < 100 && !this.lckHeight) this.posHeight = beY;
+        }
+
+        this.touch0 = touch0;
+        this.fDrawImage();
+      }
+    },
+    fEnd: function fEnd(e) {
+      var touches = e.touches,
+      touch0 = touches && touches[0],
+      touch1 = touches && touches[1];
+      if (touch0) {
+        this.touch0 = touch0;
+      } else {
+        this.touch0 = null;
+        this.touch1 = null;
+      }
+    },
+    fGetImgData: function fGetImgData() {var _this7 = this;
+      return new Promise(function (resolve, reject) {
+        var prvX = _this7.prvX,
+        prvY = _this7.prvY,
+        prvWidth = _this7.prvWidth,
+        prvHeight = _this7.prvHeight;
+
+
+
+
+
+
+        uni.canvasGetImageData({
+          canvasId: 'prv-canvas',
+          x: prvX,
+          y: prvY,
+          width: prvWidth,
+          height: prvHeight,
+          success: function success(res) {
+            resolve(res.data);
+          },
+          fail: function fail(err) {
+            reject(err);
+          } },
+        _this7);
+      });
+    },
+    fColorChange: function () {var _fColorChange = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(e) {var tm_now, data, target, i, r, g, b, a, h, s, l, d, p, q, t, min, max, hK, tR, tG, tB, n, correctRGB, createRGB, prvX, prvY, prvWidth, prvHeight;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                tm_now = Date.now();if (!(
+                tm_now - this.prvTm < 100)) {_context.next = 3;break;}return _context.abrupt("return");case 3:
+                this.prvTm = tm_now;
+
+                uni.showLoading({ mask: true });if (
+
+                this.prvImgData) {_context.next = 11;break;}_context.next = 8;return (
+                  this.fGetImgData().catch(function (res) {
+                    uni.showToast({
+                      title: "error_read",
+                      duration: 2000 });
+
+                  }));case 8:if (this.prvImgData = _context.sent) {_context.next = 10;break;}return _context.abrupt("return");case 10:
+                this.target = new Uint8ClampedArray(this.prvImgData.length);case 11:
+
+
+                data = this.prvImgData,
+                target = this.target,
+                i = e.detail.value;
+
+
+                if (i === 0) {
+                  target = data;
+                } else {
+                  i = (i + 100) / 200;
+                  if (i < 0.005) i = 0;
+                  if (i > 0.995) i = 1;
+                  for (n = data.length - 1; n >= 0; n -= 4) {
+                    r = data[n - 3] / 255;
+                    g = data[n - 2] / 255;
+                    b = data[n - 1] / 255;
+                    max = Math.max(r, g, b);
+                    min = Math.min(r, g, b);
+                    d = max - min;
+                    if (max === min) {
+                      h = 0;
+                    } else if (max === r && g >= b) {
+                      h = 60 * ((g - b) / d);
+                    } else if (max === r && g < b) {
+                      h = 60 * ((g - b) / d) + 360;
+                    } else if (max === g) {
+                      h = 60 * ((b - r) / d) + 120;
+                    } else if (max === b) {
+                      h = 60 * ((r - g) / d) + 240;
+                    }
+                    l = (max + min) / 2;
+                    if (l === 0 || max === min) {
+                      s = 0;
+                    } else if (0 < l && l <= 0.5) {
+                      s = d / (2 * l);
+                    } else if (l > 0.5) {
+                      s = d / (2 - 2 * l);
+                    }
+                    data[n] && (a = data[n]);
+
+                    if (i < 0.5) {
+                      s = s * i / 0.5;
+                    } else if (i > 0.5) {
+                      s = 2 * s + 2 * i - s * i / 0.5 - 1;
+                    }
+
+                    if (s === 0) {
+                      r = g = b = Math.round(l * 255);
+                    } else {
+                      if (l < 0.5) {
+                        q = l * (1 + s);
+                      } else if (l >= 0.5) {
+                        q = l + s - l * s;
+                      }
+                      p = 2 * l - q;
+                      hK = h / 360;
+                      tR = hK + 1 / 3;
+                      tG = hK;
+                      tB = hK - 1 / 3;
+                      correctRGB = function correctRGB(t) {
+                        if (t < 0) {
+                          return t + 1.0;
+                        }
+                        if (t > 1) {
+                          return t - 1.0;
+                        }
+                        return t;
+                      };
+                      createRGB = function createRGB(t) {
+                        if (t < 1 / 6) {
+                          return p + (q - p) * 6 * t;
+                        } else if (t >= 1 / 6 && t < 1 / 2) {
+                          return q;
+                        } else if (t >= 1 / 2 && t < 2 / 3) {
+                          return p + (q - p) * 6 * (2 / 3 - t);
+                        }
+                        return p;
+                      };
+                      r = tR = Math.round(createRGB(correctRGB(tR)) * 255);
+                      g = tG = Math.round(createRGB(correctRGB(tG)) * 255);
+                      b = tB = Math.round(createRGB(correctRGB(tB)) * 255);
+                    }
+                    a && (target[n] = a);
+                    target[n - 3] = r;
+                    target[n - 2] = g;
+                    target[n - 1] = b;
+                  }
+                }
+                prvX = this.prvX,
+                prvY = this.prvY,
+                prvWidth = this.prvWidth,
+                prvHeight = this.prvHeight;
+
+                this.ctxCanvasPrv.setFillStyle('black');
+                this.ctxCanvasPrv.fillRect(prvX, prvY, prvWidth, prvHeight);
+                this.ctxCanvasPrv.draw(true);
+
+
+
+
+
+
+
+                uni.canvasPutImageData({
+                  canvasId: 'prv-canvas',
+                  x: prvX,
+                  y: prvY,
+                  width: prvWidth,
+                  height: prvHeight,
+                  data: target,
+                  fail: function fail() {
+                    uni.showToast({
+                      title: 'error_put',
+                      duration: 2000 });
+
+                  },
+                  complete: function complete() {
+                    uni.hideLoading();
+                  } },
+                this);case 18:case "end":return _context.stop();}}}, _callee, this);}));function fColorChange(_x2) {return _fColorChange.apply(this, arguments);}return fColorChange;}(),
+
+    btop: function btop(base64) {
+      return new Promise(function (resolve, reject) {
+        var arr = base64.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]),
+        n = bstr.length,
+        u8arr = new Uint8Array(n);
+        while (n--) {
+          u8arr[n] = bstr.charCodeAt(n);
+        }
+        return resolve((window.URL || window.webkitURL).createObjectURL(new Blob([u8arr], { type: mime })));
+      });
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 327:
+/*!**********************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Downloads/HBuilderX.2.2.2.20190816.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./yq-avatar.vue?vue&type=style&index=0&lang=css& */ 328);
+/* harmony import */ var _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Downloads_HBuilderX_2_2_2_20190816_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_yq_avatar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ 328:
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Administrator/Desktop/App/cscb-h5/components/yq-avatar/yq-avatar.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ })
+
+}]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/yq-avatar/yq-avatar.js.map
 ;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
     'components/yq-avatar/yq-avatar-create-component',
     {
         'components/yq-avatar/yq-avatar-create-component':(function(module, exports, __webpack_require__){
-            __webpack_require__('1')['createComponent'](__webpack_require__(291))
+            __webpack_require__('1')['createComponent'](__webpack_require__(322))
         })
     },
     [['components/yq-avatar/yq-avatar-create-component']]

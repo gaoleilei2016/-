@@ -2,7 +2,7 @@
 <template>
 	<view class="pd-list">
 		<view class="cu-list menu-avatar" style="margin-top:0;">
-			<view @tap="navigator" class="cu-item " style="height:200rpx"  v-for="(item,index) in list" :key="index">
+			<view @tap="navigator(item.id)" class="cu-item" style="height:200rpx"  v-for="(item,index) in list" :key="index">
 				<image lazy-load="true" class="cu-avatar radius xl" :src="item.logo" mode="aspectFill"></image>
 				<view class="content" style="line-height:3em;left:180upx;width:350upx">
 					<view class="text-bold">
@@ -44,9 +44,9 @@
 			}
 		},
 		methods:{
-			navigator(){
+			navigator(id){
 				uni.navigateTo({
-					url:'project_detail'
+					url:'project_detail?id='+id
 				})
 			},
 		}

@@ -7,24 +7,24 @@
 				<swiper style="height: 600upx;" class="screen-swiper round-dot square-dot" :indicator-dots="false"
 				 :circular="true" :autoplay="true" interval="5000" duration="500">
 					<swiper-item @tap="previewImage(images,index)" v-for="(item,index) in images" :key="index">
-						<image :src="seller.seller.brand_logo==null||seller.seller.brand_logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.seller.brand_logo" mode="aspectFill"></image>
+						<image :src="seller.brand_logo==null||seller.brand_logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.brand_logo" mode="aspectFill"></image>
 					</swiper-item>
 				</swiper>
 			</view>
 			<view class="padding bg-white text-black margin-bottom-sm">
-				<view class="text-lg text-bold ">{{seller.seller.title}}</view>
-				<view class="margin-top-sm text-xxl flex align-center" @tap="callPhone(seller.seller.phone)">
+				<view class="text-lg text-bold ">{{seller.title}}</view>
+				<view class="margin-top-sm text-xxl flex align-center" @tap="callPhone(seller.phone)">
 					<text class="icon-phone text-theme"></text>
-					<view class="text-df margin-left-sm text-bold">{{seller.seller.phone}}</view>
+					<view class="text-df margin-left-sm text-bold">{{seller.phone}}</view>
 				</view>
 				<view class="margin-tb-sm flex flex-wrap">
 					<view class="cu-tag line-black text-bold radius" v-for="(item,index) in seller.serviceTypeList" :key="index">{{item.name}}</view>
 				</view>
 				<view class="margin-tb-sm text-xxl flex align-center" @tap="openLocation(seller)">
 					<text class="icon-location text-theme"></text>
-					<view class="margin-left-sm text-df self-center">{{seller.seller.address==null?'':seller.seller.address}}</view>
+					<view class="margin-left-sm text-df self-center">{{seller.address==null?'':seller.address}}</view>
 				</view>
-				<view class="margin-tb-sm" v-if="seller.seller.seller_desc!=null">{{seller.seller.seller_desc}}</view>
+				<view class="margin-tb-sm" v-if="seller.seller_desc!=null">{{seller.seller_desc}}</view>
 			</view>
 			<!-- 菜单 (在mescroll-uni中不能使用fixed,否则iOS滚动时会抖动, 所以需在mescroll-uni之外存在一个一样的菜单) -->
 			<view id="tabInList">
@@ -39,8 +39,8 @@
 <script>
 	var that;
 	import MescrollUni from "@/components/mescroll-uni/mescroll-uni.vue";
-	import TabsSticky from "../more/tabs-sticky.vue";
-	import PdList from "@/components/other/pd-list.vue";
+	import TabsSticky from "../more/tabs-sticky";
+	import PdList from "@/components/other/pd-list";
 	import mockData from "@/utils/pdlist.js"; // 模拟数据
 	export default {
 		components: {
@@ -73,6 +73,7 @@
 				navTop: null, // nav距离到顶部的距离 (如计算不准确,可直接写死某个值)
 				isShowSticky: false, // 是否悬浮
 				images:[''],
+				good:{},
 				seller: {
 					seller:{
 						brand_logo:'',
@@ -126,13 +127,6 @@
 			that = this;
 			this.id=e.id;
 			this.sellerinfo();
-			//  高度自适应
-			uni.getSystemInfo({
-				success: function(res) {
-					let calc = res.windowHeight;
-					that.winHeight = calc;
-				}
-			});
 		},
 		methods: {
 			// mescroll组件初始化的回调,可获取到mescroll对象
@@ -239,38 +233,32 @@
 			实际项目以您服务器接口返回的数据为准,无需本地处理分页.
 			* */
 			getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
-				//延时一秒,模拟联网
-				if(this.tabIndex === 0){
-					
-				}
-				if(this.tabIndex === 0){
-					
-				}
-				if(this.tabIndex === 0){
-					
-				}
-				setTimeout(()=> {
-					try{
-						let listData = []
-						// tabIndex 
-						if (this.tabIndex === 0) {
-							// 全部商品
-							for (let i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
-								if (i === mockData.length) break
-								listData.push(mockData[i])
-							}
-						} else if (this.tabIndex === 1) {
-						
-						} else if (this.tabIndex === 2) {
-							
-						}
-						// 回调
-						successCallback && successCallback(listData);
-					} catch (e) {
-						//联网失败的回调
-						errorCallback && errorCallback();
+				try{
+					var listData = []
+					// tabIndex 
+					if (this.tabIndex === 0) {
+						// 全部商品
+						sellerinfo(pageNum,pageSize,1)
+					} else if (this.tabIndex === 1) {
+						sellerinfo(pageNum,pageSize,1)
+					} else if (this.tabIndex === 2) {
+						sellerinfo(pageNum,pageSize,1)
 					}
-				},1000)
+					// 回调
+					
+				} catch (e) {
+					//联网失败的回调
+					errorCallback && errorCallback();
+				}
+				function sellerinfo(pageNum,pageSize,cea_id) {
+					that.$api.postWithData(that.api.goodsListCEA, 
+					{page:pageNum,size:pageSize,cea_id:1},
+						function callbacks(res) {
+							listData = res.data;
+							console.log(res);
+						successCallback && successCallback(listData);
+					})
+				}
 			},
 			callPhone(phone){
 				uni.makePhoneCall({
@@ -278,18 +266,18 @@
 				})
 			},
 			sellerinfo() {
-				// this.$api.postWithData(this.api.sellerinfo, {id: this.id},
-				// 	function callbacks(res) {
-				// 		that.seller = res.code;
-				// 		// console.log(that.seller);
-				// 	})
+				this.$api.postWithData(this.api.seller, {id: this.id},
+					function callbacks(res) {
+						that.seller = res.data;
+						// console.log(that.seller);
+					})
 			},
 			openLocation(seller) {
 				uni.openLocation({
-					latitude: Number(seller.seller.latitude),
-					longitude: Number(seller.seller.longitude),
-					name: seller.seller.title,
-					address: seller.seller.address,
+					latitude: Number(seller.latitude),
+					longitude: Number(seller.longitude),
+					name: seller.title,
+					address: seller.address,
 				})
 			}
 		}

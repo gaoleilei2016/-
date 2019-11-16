@@ -3,7 +3,7 @@
 		<swiper style="height: 600upx;" class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="false"
 		 :circular="true" :autoplay="true" interval="5000" duration="500">
 			<swiper-item @tap="previewImage(images,index)" v-for="(item,index) in images" :key="index">
-				<image :src="seller.brand_logo==null||seller.brand_logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.seller.brand_logo"
+				<image :src="seller.logo==null||seller.logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.logo"
 				 mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
@@ -14,7 +14,7 @@
 			</view>
 			<view class="margin-top-xs">
 				<text class="text-red text-price text-xxl text-bold">{{seller.price}}</text>
-				<text class="margin-left">门市价:<text class="text-price margin-left-sm"></text>{{seller.petail_price}}</text>
+				<text class="margin-left">门市价:<text class="text-price margin-left-sm"></text>{{seller.market_price}}</text>
 			</view>
 			<view class="margin-top-sm flex justify-between align-center">
 				<text>商家:<text>{{seller.shop==null?'':seller.shop}}</text></text>
@@ -46,12 +46,12 @@
 			<navigator url="home" class="action">
 				<view class="cuIcon-shop"> </view> 商家
 			</navigator>
-			<navigator url="sure_order" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
-				<text class="text-price text-bold">680</text>
+			<navigator :url="'sure_order?good='+JSON.stringify(seller)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
+				<text class="text-price text-bold">{{seller.price}}</text>
 				<text class="text-df">单独购买</text>
 			</navigator>
-			<navigator url="sure_order" class="bg-red submit flex flex-direction justify-center align-center text-lg">
-				<text class="text-price text-bold">480<text class="text-sm">起</text> </text>
+			<navigator :url="'sure_order?good='+JSON.stringify(seller)+'&isone=5'" class="bg-red submit flex flex-direction justify-center align-center text-lg">
+				<text class="text-price text-bold">{{seller.price_5}}<text class="text-sm">起</text> </text>
 				<text class="text-df">发起拼单</text>
 			</navigator>
 		</view>
@@ -63,26 +63,41 @@
 	export default {
 		data() {
 			return {
+				id:null,
 				images: [''],
 				dotStyle: false,
 				seller: {
-					title: '美国狮魔(LION)保养特惠',
-					phone: '15932207322',
-					shop: '贵州汽车之翼服务连锁',
-					address: '贵阳市观山湖区金融城MAXD座',
-					seller_desc: "全合成(5W-40)SN级机油4L保养套餐:包含:机油,机油格,工时费,全车检测2次+同款机油1L,发动机外观清洗,ETC卡,",
-					price: '680.00',
-					petail_price: '1430.00',
-					views: '12',
-					stock: '23'
+					id:null,
+					logo:'',
+					title: '',
+					phone: '',
+					shop: '',
+					address: '',
+					seller_desc: "",
+					price: '',
+					price_3:'',
+					price_5:'',
+					market_price: '',
+					views: '',
+					stock: ''
 				},
 			}
 		},
 		onShow() {},
 		onLoad(e) {
 			that = this;
+			this.id=e.id
+			console.log(e.id);
+			this.getGoodDetail(e.id)
 		},
 		methods: {
+			getGoodDetail(id){
+				this.$api.postWithData(this.api.good, {id: this.id},
+					function callbacks(res) {
+						that.seller=res.data
+						console.log(res);
+					})
+			},
 			openLocation(seller) {
 				uni.openLocation({
 					latitude: Number(seller.seller.latitude),

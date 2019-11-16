@@ -3164,6 +3164,76 @@ scroll-view.cu-steps .cu-item {
 }
 
 /*  -- 内外边距 -- */
+.percent10{
+	width: 10%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent20{
+	width: 20%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent30{
+	width: 30%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent40{
+	width: 40%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent50{
+	width: 50%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent60{
+	width: 60%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent70{
+	width: 70%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent80{
+	width: 80%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent90{
+	width: 90%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent100{
+	width: 100%;
+	line-height:80rpx;
+	height: 80rpx;
+}
+.percent100-100{
+	width: 100%;
+	line-height:100rpx;
+	height: 100rpx;
+}
+.p100-60{
+	width: 100%;
+	line-height:60rpx;
+	height: 60rpx;
+}
+.p60-60{
+	width: 60%;
+	line-height:60rpx;
+	height: 60rpx;
+}
+.percent120{
+	width: 120%;
+	line-height:80rpx;
+	height: 80rpx;
+}
 .margin-0 {
 	margin: 0;
 }
@@ -4874,6 +4944,35 @@ scroll-view.cu-steps .cu-item {
 }
 .cuIcon-btn:before {
 	content: "\E601";
+}
+[class*="icon-"] {
+	font-family: "icon";
+	font-size: inherit;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'icon';  /* project id 1508683 */
+  src: url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.eot');
+  src: url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1508683_4fzbq8349n2.svg#iconfont') format('svg');
+}
+.icon-tab1:before{
+	content: '\E607';
+}
+.icon-tab2:before{
+	content: '\E60E';
+}
+.icon-tab3:before{
+	content: '\E696';
+}
+.icon-location:before{
+	content: '\E62F';
+}
+.icon-phone:before{
+	content: '\E6F9';
 }
 ::-webkit-scrollbar {
 	width: 0;
