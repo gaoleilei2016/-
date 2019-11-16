@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"cu-bar.",[1],"foot{ -webkit-box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0); box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0); }\n",],undefined,{path:"./pages/mine/carmanager.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/carmanager.wxml') } }));

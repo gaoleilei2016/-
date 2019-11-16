@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "商家主页",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
-    "tabs-sticky": "/pages/more/tabs-sticky",
-    "pd-list": "/components/other/pd-list"
-  }
-}

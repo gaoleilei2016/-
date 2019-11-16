@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "快速发布",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "tui-datetime": "/components/dateTime/dateTime"
-  }
-}

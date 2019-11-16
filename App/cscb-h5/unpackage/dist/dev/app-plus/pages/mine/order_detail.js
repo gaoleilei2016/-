@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"lineHeight { line-height: ",[0,50],"; }\n.",[1],"minWidth { min-width: ",[0,200],"; }\n",],undefined,{path:"./pages/mine/order_detail.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/order_detail.wxml') } }));

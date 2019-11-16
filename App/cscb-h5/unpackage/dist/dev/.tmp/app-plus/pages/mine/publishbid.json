@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "我的发布",
-  "navigationBarTextStyle": "black",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "load-tip": "/colorui/components/loadtip"
-  }
-}

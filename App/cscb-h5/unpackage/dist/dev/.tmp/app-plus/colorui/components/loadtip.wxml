@@ -1,1 +1,0 @@
-<view><tui-loadmore vue-id="1" visible="{{visible}}" bind:__l="__l"></tui-loadmore><tui-nomore vue-id="2" visible="{{!visible}}" bind:__l="__l"></tui-nomore></view>
