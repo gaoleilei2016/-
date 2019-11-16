@@ -84,6 +84,7 @@
 		},
 		onLoad(res) {
 			that=this;
+			console.log(res);
 			//res.ordersn
 			//res.sl_ordersn
 			this.getPayResult()

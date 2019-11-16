@@ -4,7 +4,7 @@
 		<tabs-sticky v-if="isShowSticky" v-model="tabIndex" :fixed="true" :tabs="tabs" @change="changeTab"></tabs-sticky>
 		<mescroll-uni @down="downCallback" @up="upCallback" :up="upOption" @scroll="scroll" @init="mescrollInit" @topclick="topClick">
 			<view>
-				<swiper style="height: 600upx;" class="screen-swiper round-dot square-dot" :indicator-dots="false"
+				<swiper :style="'height:'+screenWidth+'px;'" class="screen-swiper round-dot square-dot" :indicator-dots="false"
 				 :circular="true" :autoplay="true" interval="5000" duration="500">
 					<swiper-item @tap="previewImage(images,index)" v-for="(item,index) in images" :key="index">
 						<image :src="seller.brand_logo==null||seller.brand_logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':seller.brand_logo" mode="aspectFill"></image>
@@ -17,8 +17,8 @@
 					<text class="icon-phone text-theme"></text>
 					<view class="text-df margin-left-sm text-bold">{{seller.phone}}</view>
 				</view>
-				<view class="margin-tb-sm flex flex-wrap">
-					<view class="cu-tag line-black text-bold radius" v-for="(item,index) in seller.serviceTypeList" :key="index">{{item.name}}</view>
+				<view v-if="seller.typeList.length>0" class="margin-tb-sm flex flex-wrap">
+					<view class="cu-tag line-black text-bold radius" v-for="(item,index) in seller.typeList" :key="index">{{item.name}}</view>
 				</view>
 				<view class="margin-tb-sm text-xxl flex align-center" @tap="openLocation(seller)">
 					<text class="icon-location text-theme"></text>
@@ -56,6 +56,7 @@
 		},
 		data() {
 			return {
+				screenWidth:this.screenWidth,
 				mescroll: null, //mescroll实例对象
 				upOption: {
 					onScroll: true, // 是否监听滚动事件, 默认false (配置为true时,可@scroll="scroll"获取到滚动条位置和方向)
@@ -124,6 +125,7 @@
 		},
 		onShow() {},
 		onLoad(e) {
+			console.log(this.screenWidth);
 			that = this;
 			this.id=e.id;
 			this.sellerinfo();
@@ -268,7 +270,14 @@
 			sellerinfo() {
 				this.$api.postWithData(this.api.seller, {id: this.id},
 					function callbacks(res) {
-						that.seller = res.data;
+						if(res.code==1&&res.data!=null){
+							that.seller = res.data;
+						}else{
+							this.$api.msg(res.msg)
+							setTimeout(function() {
+								uni.navigateBack()
+							}, 2000);
+						}
 						// console.log(that.seller);
 					})
 			},
