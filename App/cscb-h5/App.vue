@@ -7,8 +7,10 @@
 			Vue.prototype.uid=2207
 			Vue.prototype.seller_id=60
 			Vue.prototype.wxConfig=null;
+			
 			uni.getSystemInfo({
 				success: function(e) {
+					Vue.prototype.screenWidth=e.windowWidth;
 					// #ifndef MP
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
