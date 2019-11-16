@@ -4,7 +4,7 @@
 		onLaunch: function() {
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
-			Vue.prototype.uid=2207
+			Vue.prototype.uid=2210
 			Vue.prototype.seller_id=60
 			Vue.prototype.wxConfig=null;
 			
