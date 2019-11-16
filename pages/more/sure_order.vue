@@ -150,7 +150,7 @@
 				this.form.o_type=this.dropdownlistData[this.selectIndex].value
 				this.form.num=this.value
 				this.form.redids=0
-				location.href="https://cscbnew.kelinteng.com/index/pay/cea?id="+this.good.id+'&uid='+this.uid+'&seller_id='+this.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num
+				location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.good.id+'&uid='+this.uid+'&seller_id='+this.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num
 				// location.href="https://cscbnew.kelinteng.com/index/pay/cea?data="+JSON.stringify(this.form)
 				// this.$api.postWithData(this.api.orderpay,this.form,
 				// 	function callbacks(res){
