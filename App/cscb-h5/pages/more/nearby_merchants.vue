@@ -42,6 +42,7 @@
 	import TabsSticky from "../more/tabs-sticky";
 	import PdList from "@/components/other/pd-list";
 	import mockData from "@/utils/pdlist.js"; // 模拟数据
+	import Vue from 'vue'
 	export default {
 		components: {
 			MescrollUni,
@@ -74,60 +75,16 @@
 				navTop: null, // nav距离到顶部的距离 (如计算不准确,可直接写死某个值)
 				isShowSticky: false, // 是否悬浮
 				images:[''],
-				good:{},
 				seller: {
-					seller:{
-						brand_logo:'',
-						title:'益路行海韵风景店',
-						phone:'15932207322',
-						address:'贵阳市观山湖区金融城MAXD座',
-						seller_desc:"描述一哈哈",
-					},
-					serviceTypeList:[{name:'维修保养'},{name:'美容装饰'},{name:'汽车保险'}],
-					engineOilist:[],
-					projectsList:[
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00',
-						logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'
-						},
-						],
-					goodsList:[{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						{logo:'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png',
-						title:'标题',views:'12',stock:'23',price:'50.00',market_price:'200.00'},
-						]
+					typeList:[]
 				},
-				id:0
 			}
 		},
 		onShow() {},
 		onLoad(e) {
 			console.log(this.screenWidth);
 			that = this;
-			this.id=e.id;
+			Vue.prototype.seller_id=e.id;
 			this.sellerinfo();
 		},
 		methods: {
@@ -149,7 +106,6 @@
 				// 	mescroll.hideUpScroll(); // 切换菜单,不显示mescroll进度, 显示系统进度条
 				// 	uni.showLoading();
 				// }
-				console.log(this.tabIndex);
 				this.getListDataFromNet(mescroll.num, mescroll.size, (curPageData)=>{
 					//联网成功的回调
 					console.log("mescroll.num=" + mescroll.num + ", mescroll.size=" + mescroll.size + ", curPageData.length=" + curPageData.length);
@@ -242,9 +198,10 @@
 						// 全部商品
 						sellerinfo(pageNum,pageSize,1)
 					} else if (this.tabIndex === 1) {
-						sellerinfo(pageNum,pageSize,1)
+						console.log(this.tabIndex);
+						projectLists(pageNum,pageSize)
 					} else if (this.tabIndex === 2) {
-						sellerinfo(pageNum,pageSize,1)
+						goodsLists(pageNum,pageSize)
 					}
 					// 回调
 					
@@ -261,6 +218,24 @@
 						successCallback && successCallback(listData);
 					})
 				}
+				function projectLists(pageNum,pageSize) {
+					that.$api.postWithData(that.api.projectList, 
+					{page:pageNum,size:pageSize,seller_id:that.seller_id},
+						function callbacks(res) {
+							console.log(res);
+							listData = res.data;
+						successCallback && successCallback(listData);
+					})
+				}
+				function goodsLists(pageNum,pageSize) {
+					that.$api.postWithData(that.api.goodsList, 
+					{page:pageNum,size:pageSize,seller_id:that.seller_id},
+						function callbacks(res) {
+							listData = res.data;
+							console.log(res);
+						successCallback && successCallback(listData);
+					})
+				}
 			},
 			callPhone(phone){
 				uni.makePhoneCall({
@@ -268,7 +243,7 @@
 				})
 			},
 			sellerinfo() {
-				this.$api.postWithData(this.api.seller, {id: this.id},
+				this.$api.postWithData(this.api.seller, {id: this.seller_id},
 					function callbacks(res) {
 						if(res.code==1&&res.data!=null){
 							that.seller = res.data;

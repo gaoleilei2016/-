@@ -43,7 +43,7 @@
 			<navigator url="home" class="action">
 				<view class="cuIcon-home"> </view> 首页
 			</navigator>
-			<navigator url="home" class="action">
+			<navigator :url="'nearby_merchants?id='+sid" class="action">
 				<view class="cuIcon-shop"> </view> 商家
 			</navigator>
 			<navigator :url="'sure_order?good='+JSON.stringify(seller)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
@@ -63,6 +63,7 @@
 	export default {
 		data() {
 			return {
+				sid:this.seller_id,
 				id:null,
 				images: [''],
 				dotStyle: false,
