@@ -101,7 +101,7 @@
     },
     "h5" : {
 		"publicPath":"https://cscbnew.kelinteng.com/cscbh5/",
-		"devServer" : {
+        "devServer" : {
             "port" : 80, //端口号
             "disableHostCheck" : true,
             "proxy" : {
@@ -134,5 +134,4 @@
 //cscbnew.kelinteng.com', //目标接口域名
 //是否跨域
 // 设置支持https协议的代理
-
 
