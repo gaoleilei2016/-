@@ -40,6 +40,10 @@
 			<tui-numberbox :min="1" :max="100" :value="value" @change="change"></tui-numberbox>
 		</view>
 		<view class="flex bg-white justify-between align-center padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">关注优惠</text>
+			<text class="text-black text-bold">{{gzyh.name}}</text>
+		</view>
+		<view class="flex bg-white justify-between align-center padding-lr percent100-100 margin-top-sm">
 			<text class="text-black text-bold">购买类型</text>
 			<text class="text-black text-bold">拼单购买({{good.o_type}})</text>
 			<!-- <tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
@@ -122,7 +126,8 @@
 				},
 				price:0,
 				seller:{},
-				good:{}
+				good:{},
+				gzyh:{}
 			}
 		},
 		onLoad(e) {
@@ -135,17 +140,26 @@
 		},
 		methods: {
 			getPinResult(){
-				this.$api.postWithData(this.api.payResult,
-				{ordersn:'CEA20191113175741506666'},
-					function callbacks(res){
-						if(res.code==1&&res.data!=null){
-							that.good=res.data
-							that.price=that.good.price
-							console.log(res);
-						}else{
-							
-						}
-					})
+			this.$api.postWithData(this.api.isSubscribe,{uid:this.uid},
+				function callbacks(res){
+					if(res.code==1&&res.data!=null){
+						that.gzyh=res.data
+						that.$api.postWithData(that.api.payResult,{ordersn:'CEA20191113175741506666'},
+							function callbacks(res){
+								if(res.code==1&&res.data!=null){
+									that.good=res.data
+									if(that.gzyh.money==null||that.gzyh.money==''){
+										that.gzyh.money=0
+									}
+									that.price=(that.good.price)-Number(parseFloat(that.gzyh.money));
+								}else{
+									that.price=(that.good.price)
+								}
+							})
+					}else{
+						that.$api.msg("服务器错误")
+					}
+				})
 			},
 			getSellerListCEA(){
 				let data = {
@@ -176,7 +190,7 @@
 			},
 			change: function(e) {
 				this.value = e.value
-				this.price=that.good.price*e.value
+				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
 			},
 			openLocation(){
 				uni.openLocation({
