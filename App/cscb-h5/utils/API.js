@@ -20,6 +20,7 @@ const API = {
 	seller:'mall/seller',
 	projectList:'mall/projectList',
 	goodsList:'mall/goodsList',
+	isSubscribe:'mp/isSubscribe',
 	//2.首页-广告接口
 	adlist:'wemini/adlist',
 	//3.挂单推荐列表
