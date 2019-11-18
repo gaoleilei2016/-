@@ -16,7 +16,8 @@
 				<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
 				<view style="width:100upx;" class="text-cut text-sm">{{item.sm_nickname}}</view>
 			</view>
-			<view @tap="share()" v-if="!info.slList.length>=info.o_type" class="text-center">
+			<!-- v-if="!info.slList.length>=info.o_type" -->
+			<view @tap="share()"  class="text-center">
 				<image style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
 				<view class="text-sm">邀请好友</view>
 			</view>
