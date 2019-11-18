@@ -16,7 +16,7 @@
 				<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
 				<view style="width:100upx;" class="text-cut text-sm">{{item.sm_nickname}}</view>
 			</view>
-			<view class="text-center">
+			<view v-if="!info.slList.length>=info.o_type" class="text-center">
 				<image style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
 				<view class="text-sm">邀请好友</view>
 			</view>
@@ -25,15 +25,15 @@
 			<view class="padding-lr-sm">
 				<view class="flex justify-between margin-top-sm">
 					<text>商品名称</text>
-					<text>{{info.tp_title}}</text>
+					<text>{{info.objTitle}}</text>
 				</view>
 				<view class="flex justify-between margin-top-sm">
 					<text>支付金额</text>
-					<text>{{info.tp_title}}</text>
+					<text>{{info.price}}</text>
 				</view>
 				<view class="flex justify-between margin-top-sm">
 					<text>交易时间</text>
-					<text>{{info.payTime}}</text>
+					<text>{{info.create_at}}</text>
 				</view>
 				<view class="flex justify-between margin-top-sm">
 					<text>支付方式</text>
@@ -56,14 +56,14 @@
 		</view>
 		<view class="bg-white flex justify-between padding-lr-sm margin-tb-sm padding-tb">
 				<view style="width: 15%;">
-					<image class="round bg-black" :src="info.brand_logo" style="width: 90upx;height: 90upx;" mode="aspectFit"></image>
+					<image class="round bg-black" :src="info.s_brand_logo" style="width: 90upx;height: 90upx;" mode="aspectFit"></image>
 				</view>
 				<view style="width: 60%;" class="flex flex-direction  justify-around">
 					<text >{{info.seller_title}}</text>
 					<text class="">联系电话:<text>{{info.seller_phone}}</text></text>
-					<text @tap="navigationTo(info)">地址:<text>{{info.seller_address}}</text><text class="text-theme"> (导航到店)</text></text>
+					<text @tap="navigationTo(info)">地址:<text>{{info.s_address}}</text><text class="text-theme"> (导航到店)</text></text>
 				</view>
-				<view style="width:25%;" class="">
+				<view style="width:20%;" class="">
 					<image src="http://txcos.kelinteng.com/uploads/20191014/qrcode.png" mode="widthFix" style="width:130upx;height: 130upx;"></image>
 				</view>
 		</view>
@@ -87,13 +87,14 @@
 			console.log(res);
 			//res.ordersn
 			//res.sl_ordersn
-			this.getPayResult()
+			this.getPayResult(res.ordersn)
 		},
 		
 		methods: {
-			getPayResult()
+			getPayResult(ordersn)
 			{
-				this.$api.postWithData(this.api.payResult,{ordersn:'CEA20191113175741506666',sl_ordersn:'CEA20191113175741506666'},
+				//sl_ordersn:'CEA20191113175741506666'
+				this.$api.postWithData(this.api.payResult,{ordersn:'CEA20191113175741506666'},
 					function callbacks(res){
 						console.log(res);
 						if(res.code==1&&res.data!=null){
@@ -113,10 +114,10 @@
 			},
 			navigationTo(info) {
 				uni.openLocation({
-					name: info.seller_address,
-					address: info.seller_address,
-					latitude: Number(info.seller_latitude),
-					longitude: Number(info.seller_longitude),
+					name: info.s_title,
+					address: info.s_address,
+					latitude: Number(info.s_latitude),
+					longitude: Number(info.s_longitude),
 				})
 			}
 		}
