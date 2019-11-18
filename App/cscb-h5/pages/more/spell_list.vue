@@ -11,10 +11,10 @@
 				</view>
 			</view>
 		</view>
-		<view class="flex justify-between padding-tb-lg">
-				<swiper vertical autoplay circular interval="3000" class="tui-swiper margin-left-lg">
-					<swiper-item v-for="(item,index) in ceaDeail.orderList" :key="index" class="tui-swiper-item">
-						<view class="tui-news-item text-sm margin-left text-white" @tap='detail'>{{item.sm_nickname}} 刚刚拼单成功</view>
+		<view class="flex justify-between padding-tb-lg " >
+				<swiper  vertical autoplay circular interval="3000" class="tui-swiper margin-left-lg">
+					<swiper-item v-for="(item,index) in ceaDeail.orderList" :key="index" style="" class="tui-swiper-item">
+						<view style="background-color: rgba(255,255,255,0.2);" class="tui-news-item text-sm text-white round padding-tb-xs padding-lr-sm" @tap='detail'>{{item.sm_nickname}} 刚刚拼单成功</view>
 					</swiper-item>
 				</swiper>
 			<view @tap="dialog=true" class='cu-tag' style="color:#FFF;background: #FE9639; border-top-left-radius: 5000upx;border-bottom-left-radius: 5000upx;">
@@ -259,5 +259,8 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+	uni-swiper .uni-swiper-wrapper{
+		width: 50%;
 	}
 </style>
