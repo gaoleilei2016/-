@@ -38,7 +38,9 @@ image {
 .radius {
 	border-radius: 6upx;
 }
-
+.radius-lg {
+	border-radius: 20upx;
+}
 /* ==================
           图片
  ==================== */
