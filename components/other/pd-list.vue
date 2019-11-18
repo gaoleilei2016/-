@@ -41,13 +41,24 @@
 				default(){
 					return []
 				}
+			},
+			index:{
+				type:Number,
+				default(){
+					return 0
+				}
 			}
 		},
 		methods:{
 			navigator(id){
-				uni.navigateTo({
-					url:'project_detail?id='+id
-				})
+				console.log(this.index);
+				if(this.index==0){
+					uni.navigateTo({
+						url:'project_detail?id='+id
+					})
+				}else{
+					location.href="http://cscb2.kelinteng.com/index/mall/details.html?id="+id
+				}
 			},
 		}
 	}
