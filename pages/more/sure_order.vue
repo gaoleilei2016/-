@@ -6,7 +6,7 @@
 				<view class="text-black text-bold">创世车宝自营店</view>
 				<view class="cuIcon-right align-center"></view>
 			</view>
-			<view class="text-xl">
+			<view @tap="openLocation" class="text-xl">
 				<text class="cuIcon-locationfill"></text>
 			</view>
 		</view>
@@ -169,6 +169,14 @@
 					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShow = !this.dropdownShow
+			},
+			openLocation(){
+				uni.openLocation({
+					latitude:Number(26.599907),
+					longitude:Number(106.628821),
+					address:'',
+					name:''
+				})
 			},
 		},
 	}

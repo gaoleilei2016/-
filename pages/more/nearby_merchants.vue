@@ -31,7 +31,7 @@
 				<tabs-sticky  v-model="tabIndex" :tabs="tabs" @change="changeTab"></tabs-sticky>
 			</view>
 			<!-- 数据列表 -->
-			<pd-list :list="pdList"></pd-list>
+			<pd-list :list="pdList" :index="tabIndex"></pd-list>
 		</mescroll-uni>
 	</view>
 </template>
