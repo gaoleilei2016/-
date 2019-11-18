@@ -5,7 +5,7 @@
 				<view>
 					<image style="width:80upx; height:60upx;" mode="aspectFit" src="../../static/success51.png"></image>
 				</view>
-				<text>{{info.status}}</text>
+				<text>{{info.statusText}}</text>
 			</view>
 			<view class="flex justify-center align-center margin-top">
 				<text class="text-price text-xxxl text-black">0.01</text>
