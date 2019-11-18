@@ -100,9 +100,8 @@
         }
     },
     "h5" : {
-        "publicPath" : "https://cscbnew.kelinteng.com/h5/",
-        "devServer" : {
-            "port" : 80, //端口号
+		"devServer" : {
+			"port" : 80, //端口号
             "disableHostCheck" : true,
             "proxy" : {
                 "/api/" : {
@@ -121,7 +120,7 @@
         "router" : {
             "mode" : "history",
             "base" : "/h5/"
-        },
+		},
         "sdkConfigs" : {
             "maps" : {
                 "qqmap" : {
