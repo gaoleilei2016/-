@@ -72,6 +72,9 @@
 
 <script>
 	var that;
+	// #ifdef H5
+	var jweixin = require('../../utils/wxsdk.js')
+	// #endif
 	export default {
 		data() {
 			return {
