@@ -56,7 +56,7 @@
 				<button @tap="navigator" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">帮我助力</button>
 			</view>
 			<view style="background: #f9ecd8;width: 100%;" class="radius-lg solid-bottom flex flex-direction justify-center">
-				<view class="text-center padding-tb-sm">需邀请{{good.o_type}}人助力</view>
+				<view style="background-image: url(../../static/yaoqing.png);background-repeat: no-repeat;background-position-x:50%;margin-top: -20upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
 				<view class="flex justify-center padding-tb">
 					<view @tap="share" class="text-center" v-for="(item,index) in ceaDeail.orderList" :key="index">
 						<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
@@ -66,7 +66,7 @@
 			</view>
 		</view>
 		<view class="bg-white radius-lg margin-top-xl margin-lr flex flex-direction align-center">
-			<view class="padding-tb-sm">{{ceaDeail.title}}</view>
+			<view class="padding-tb-sm" >{{ceaDeail.title}}</view>
 			<image style="width: 100%;" src="https://img.51miz.com/preview/muban/00/00/33/02/M-330290-93DA5F00.jpg!/quality/90/unsharp/true/compress/true/fw/840" mode="widthFix"></image>
 		</view>
 		<view class="cu-modal" :class="dialog?'show':''">
@@ -140,48 +140,7 @@
 				StatusBar: this.StatusBar,
 				CustomBar: this.CustomBar,
 				good:{},
-				ceaDeail:{
-					"id": 1,
-					"title": "机油特惠",
-					"desc": "机油年终特惠",
-					"content": "机油年终特惠",
-					"image": "\/\/cscb2.kelinteng.com\/static\/upload\/667e3cf3b76fd7aa\/547542f4c760ae7d.jpg",
-					"status": 1,
-					"seller_get_price": "65.00",
-					"seller_get_rate": 0,
-					"create_time": "2019-11-13 14:48:53",
-					"orderNum": 4,
-					"orderList": [{
-						"id": 1314,
-						"ordersn": "CEA20191113175741506666",
-						"uid": 2207,
-						"price": "358.00",
-						"sm_nickname": "王子术",
-						"sm_headimg": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqkiawz4tGORxDjO3COoGpA6ItxJ0xswicplmmAicOgkMv37ibtP3OiaBPClbwbTw23nweGXS7lZNMZScQ\/132"
-					}, {
-						"id": 1315,
-						"ordersn": "CEA20191113175934566930",
-						"uid": 2207,
-						"price": "358.00",
-						"sm_nickname": "王子术",
-						"sm_headimg": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqkiawz4tGORxDjO3COoGpA6ItxJ0xswicplmmAicOgkMv37ibtP3OiaBPClbwbTw23nweGXS7lZNMZScQ\/132"
-					}, {
-						"id": 1316,
-						"ordersn": "CEA20191113180126231344",
-						"uid": 2207,
-						"price": "358.00",
-						"sm_nickname": "王子术",
-						"sm_headimg": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqkiawz4tGORxDjO3COoGpA6ItxJ0xswicplmmAicOgkMv37ibtP3OiaBPClbwbTw23nweGXS7lZNMZScQ\/132"
-					}, {
-						"id": 1317,
-						"ordersn": "CEA20191113180533129845",
-						"uid": 2207,
-						"price": "358.00",
-						"sm_nickname": "王子术",
-						"sm_headimg": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqkiawz4tGORxDjO3COoGpA6ItxJ0xswicplmmAicOgkMv37ibtP3OiaBPClbwbTw23nweGXS7lZNMZScQ\/132"
-					}],
-					"countDown": 1573540411
-				}
+				ceaDeail:{}
 
 			}
 		},
