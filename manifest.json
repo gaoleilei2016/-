@@ -85,9 +85,9 @@
     "quickapp" : {},
     /* 快应用特有相关 */
     "mp-weixin" : {
-        /* 小程序特有相关 */
-        "appid" : "wxff4f5bfb08ec41ed",
         "setting" : {
+            /* 小程序特有相关 */
+            "appid" : "wxff4f5bfb08ec41ed",
             "urlCheck" : true,
             "es6" : true,
             "minified" : true
@@ -100,7 +100,7 @@
         }
     },
     "h5" : {
-		"publicPath":"https://cscbnew.kelinteng.com/cscbh5/",
+        "publicPath" : "https://cscbnew.kelinteng.com/h5/",
         "devServer" : {
             "port" : 80, //端口号
             "disableHostCheck" : true,
@@ -119,7 +119,8 @@
         //     "secure" : true // 设置支持https协议的代理
         // }
         "router" : {
-            "mode" : "history"
+            "mode" : "history",
+            "base" : "/h5/"
         },
         "sdkConfigs" : {
             "maps" : {
