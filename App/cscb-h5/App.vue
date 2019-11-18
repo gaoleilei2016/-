@@ -54,8 +54,8 @@
 			console.log('App Show')
 			this.$api.post(this.api.wechatJSSDK,
 				function callbacks(res){
-					console.log(res);
-					Vue.prototype.wxConfig=JSON.stringify(res.data);
+					console.log(res.data);
+					uni.setStorageSync("wxConfig",JSON.stringify(res.data))
 				})
 		},
 		onHide: function() {
