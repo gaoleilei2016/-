@@ -21,43 +21,43 @@
 				规则
 			</view>
 		</view>
-		<view class="bg-white radius margin flex flex-direction align-center">
+		<view class="bg-white radius-lg margin flex flex-direction align-center">
 			<view style="margin-top: -70upx;" class="flex flex-direction justify-center align-center">
 				<image class="round" style="width: 140upx;height: 140upx;" src="http://img.tukexw.com/img/2c99a00e77f69be1.jpg"
 				 mode="aspectFit"></image>
 				<view class="flex align-center padding-tb-sm">
-					<view class="margin-right-sm">助力倒计时</view>
+					<view class="margin-right-sm text-black text-bold">助力倒计时</view>
 					<tui-countdown :isColon="false" :days="true" color="#fff" bcolor="#000" bgcolor="#000" colonColor="#000" :time="timeList"
 					 :height="35" :width="35" :size="26" :colonsize="32"></tui-countdown>
 				</view>
 			</view>
 			<view class="flex justify-between self-start margin-lr-sm" style="min-height: 80upx;line-height: 80upx;width: 90%;">
 				<view class="flex align-center justify-between">
-					<image src="../../static/bm.png" mode="aspectFit" style="width:80upx;height:80upx;"></image>
+					<view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;"><text>美孚</text></view>
 					<view class="text-black text-bold">{{good.s_title}}</view>
-					<view class="cuIcon-right align-center"></view>
+					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>官方</text></view>
 				</view>
 				<view @tap="openLocation" class="text-lg">
 					<text class="cuIcon-locationfill"></text>
 				</view>
 			</view>
-			<view class="flex padding-tb-sm align-center bg-gray">
+			<view class="flex padding-tb-sm align-center radius-lg" style="background-image: linear-gradient(to bottom, #ff9847, #fc5a3a);">
 				<image class="margin-lr radius" :src="good.s_brand_logo" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
 				<view class="flex flex-direction justify-start text-sm">
-					<view style="width:430upx;" class="text-df text-black text-cut text-bold">{{good.objTitle}}</view>
-					<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
-					<view class="text-df text-bold text-black"><text class="text-price">{{good.price}}</text>/件</view>
+					<view style="width:430upx;" class="text-df text-white text-cut text-bold">{{good.objTitle}}</view>
+					<view class="margin-tb-sm"><text class="text-white">描述:</text><text>{{good.objDesc}}</text> </view>
+					<view class="text-df text-bold text-white"><text class="text-price">{{good.price}}</text>/件</view>
 				</view>
 			</view>
 			<view class="text-sm margin-tb-sm">
-				我在参与好友助力，0元拿券活动快来祝我一臂之力吧
+				我在参与好友助力,<text class="text-red text-lg text-bold">0元</text>拿券活动快来祝我一臂之力吧
 			</view>
 			<view class="margin-bottom flex padding-lr" style="width: 100%;">
 				<button @tap="navigator" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">帮我助力</button>
 			</view>
-			<view style="background: #FDF6F0;width: 100%;" class="radius  solid-bottom flex flex-direction justify-center">
+			<view style="background: #f9ecd8;width: 100%;" class="radius-lg solid-bottom flex flex-direction justify-center">
 				<view class="text-center padding-tb-sm">需邀请{{good.o_type}}人助力</view>
-				<view class="flex justify-center padding-tb-xl">
+				<view class="flex justify-center padding-tb">
 					<view @tap="share" class="text-center" v-for="(item,index) in ceaDeail.orderList" :key="index">
 						<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
 						<view style="width:100upx;" class="text-cut text-sm">{{item.sm_nickname}}</view>
@@ -65,7 +65,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="bg-white radius margin-top-xl margin-lr flex flex-direction align-center">
+		<view class="bg-white radius-lg margin-top-xl margin-lr flex flex-direction align-center">
 			<view class="padding-tb-sm">{{ceaDeail.title}}</view>
 			<image style="width: 100%;" src="https://img.51miz.com/preview/muban/00/00/33/02/M-330290-93DA5F00.jpg!/quality/90/unsharp/true/compress/true/fw/840" mode="widthFix"></image>
 		</view>
