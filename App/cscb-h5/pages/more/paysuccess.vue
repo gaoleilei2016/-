@@ -59,8 +59,8 @@
 					<image class="round bg-black" :src="info.s_brand_logo" style="width: 90upx;height: 90upx;" mode="aspectFit"></image>
 				</view>
 				<view style="width: 60%;" class="flex flex-direction  justify-around">
-					<text >{{info.seller_title}}</text>
-					<text class="">联系电话:<text>{{info.seller_phone}}</text></text>
+					<text >{{info.s_title}}</text>
+					<text class="">联系电话:<text>{{info.s_phone}}</text></text>
 					<text @tap="navigationTo(info)">地址:<text>{{info.s_address}}</text><text class="text-theme"> (导航到店)</text></text>
 				</view>
 				<view style="width:20%;" class="">
