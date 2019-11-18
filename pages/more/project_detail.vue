@@ -43,7 +43,7 @@
 			<navigator url="home" class="action">
 				<view class="cuIcon-home"> </view> 首页
 			</navigator>
-			<navigator :url="'nearby_merchants?id='+sid" class="action">
+			<navigator @tap="goBack" class="action">
 				<view class="cuIcon-shop"> </view> 商家
 			</navigator>
 			<navigator :url="'sure_order?good='+JSON.stringify(seller)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
@@ -92,6 +92,9 @@
 			this.getGoodDetail(e.id)
 		},
 		methods: {
+			goBack(){
+				uni.navigateBack()
+			},
 			getGoodDetail(id){
 				this.$api.postWithData(this.api.good, {id: this.id},
 					function callbacks(res) {
