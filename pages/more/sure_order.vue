@@ -3,7 +3,7 @@
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
 				<image src="../../static/bm.png" mode="aspectFit" style="width:80upx;height:80upx;"></image>
-				<view class="text-black text-bold">创世车宝自营店</view>
+				<view class="text-black text-bold">{{seller.title}}</view>
 				<view class="cuIcon-right align-center"></view>
 			</view>
 			<view @tap="openLocation" class="text-xl">
@@ -100,6 +100,7 @@
 					num:0,
 					redids:0
 				},
+				seller:{},
 				price:0,
 				good:{},
 				goodprice:0
@@ -110,6 +111,7 @@
 			this.good=JSON.parse(e.good)
 			console.log(e.good);
 			console.log(e.isone);
+			this.sellerinfo()
 			if(e.isone==1){
 				this.goodprice=this.good.price;
 				this.price=this.goodprice
@@ -136,6 +138,20 @@
 			}
 		},
 		methods: {
+			sellerinfo() {
+				this.$api.postWithData(this.api.seller, {id: this.seller_id},
+					function callbacks(res) {
+						if(res.code==1&&res.data!=null){
+							that.seller = res.data;
+						}else{
+							this.$api.msg(res.msg)
+							setTimeout(function() {
+								uni.navigateBack()
+							}, 2000);
+						}
+						// console.log(that.good);
+					})
+			},
 			goPay(){
 				let that=this;
 				if(this.dropdownlistData[this.selectIndex].value==0){
@@ -172,10 +188,10 @@
 			},
 			openLocation(){
 				uni.openLocation({
-					latitude:Number(26.599907),
-					longitude:Number(106.628821),
-					address:'',
-					name:''
+					latitude:Number(this.seller.latitude),
+					longitude:Number(this.seller.longitude),
+					address:this.seller.address,
+					name:this.seller.title
 				})
 			},
 		},
