@@ -6,7 +6,7 @@
 				<tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
 					<template v-slot:selectionbox>
 						<view  @click="dropDownList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
-							{{seller_list[selectIndex].sub_title}}<text class="cuIcon-right align-center"></text>
+							{{seller_list[selectIndex].title}}<text class="cuIcon-triangledownfill align-center"></text>
 						</view>
 					</template>
 					<template v-slot:dropdownbox>
@@ -14,7 +14,7 @@
 							<scroll-view scroll-y style="height: 400upx;">
 								<block v-for="(item,index) in seller_list" :key="index">
 									<view :class="selectIndex==index?'bg-cyan':'bg-white'" @click="dropDownList(index)" class="text-cut padding-left-sm percent100" >
-										{{item.sub_title}}
+										{{item.title}}
 									</view>
 								</block>
 							</scroll-view>
@@ -31,9 +31,7 @@
 			<image class="margin-lr radius" :src="good.s_brand_logo" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
 				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.objTitle}}</view>
-				<view>规格：<text>4L</text> </view>
-				<view>级别：<text>SN</text> </view>
-				<view>粘度：<text>ow-40</text> </view>
+				<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
 				<view class="text-df text-bold text-black"><text class="text-price">{{good.price}}</text>/件</view>
 			</view>
 		</view>
@@ -190,10 +188,10 @@
 			},
 			openLocation(){
 				uni.openLocation({
-					latitude:Number(this.good.s_latitude),
-					longitude:Number(this.good.s_longitude),
-					address:this.good.s_address,
-					name:this.good.s_title
+					latitude:Number(this.seller_list[this.selectIndex].latitude),
+					longitude:Number(this.seller_list[this.selectIndex].longitude),
+					address:this.seller_list[this.selectIndex].address,
+					name:this.seller_list[this.selectIndex].title
 				})
 			},
 			dropDownList(index) {

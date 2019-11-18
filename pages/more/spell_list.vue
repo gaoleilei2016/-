@@ -45,9 +45,7 @@
 				<image class="margin-lr radius" :src="good.s_brand_logo" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
 				<view class="flex flex-direction justify-start text-sm">
 					<view style="width:430upx;" class="text-df text-black text-cut text-bold">{{good.objTitle}}</view>
-					<view>规格：<text>4L</text> </view>
-					<view>级别：<text>SN</text> </view>
-					<view>粘度：<text>ow-40</text> </view>
+					<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
 					<view class="text-df text-bold text-black"><text class="text-price">{{good.price}}</text>/件</view>
 				</view>
 			</view>
