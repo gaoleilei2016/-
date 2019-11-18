@@ -14,9 +14,7 @@
 			<image class="margin-lr radius" src="../../static/gg.png" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
 				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.title}}</view>
-				<view>规格：<text>4L</text> </view>
-				<view>级别：<text>SN</text> </view>
-				<view>粘度：<text>ow-40</text> </view>
+				<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
 				<view class="text-df text-bold text-black"><text class="text-price">{{goodprice}}</text>/件</view>
 			</view>
 		</view>
