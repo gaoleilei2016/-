@@ -118,9 +118,9 @@
         //     "secure" : true // 设置支持https协议的代理
         // }
         "router" : {
-            "mode" : "history",
-            "base" : "/h5/"
-		},
+            "mode" : "hash",
+            "base" : ""
+        },
         "sdkConfigs" : {
             "maps" : {
                 "qqmap" : {
