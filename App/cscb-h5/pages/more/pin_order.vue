@@ -171,15 +171,7 @@
 				this.form.num=this.value
 				this.form.redids=0
 				this.form.spell_list_ordersn=this.good.spell_list_ordersn
-				console.log(this.form);
-				this.$api.postWithData(this.api.orderpaySL,this.form,
-					function callbacks(res){
-						console.log(res);
-						that.payment(res.data)
-						uni.navigateTo({
-							url:'paysuccess?type=2'
-						})
-				})
+				location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.form.id+'&uid='+this.form.uid+'&seller_id='+this.form.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num
 				
 			},
 			change: function(e) {
