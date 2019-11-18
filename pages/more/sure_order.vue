@@ -23,6 +23,10 @@
 			<tui-numberbox :min="1" :max="100" :value="value" @change="change"></tui-numberbox>
 		</view>
 		<view class="flex bg-white justify-between align-center padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">关注优惠</text>
+			<text class="text-black text-bold">{{gzyh.name}}</text>
+		</view>
+		<view class="flex bg-white justify-between align-center padding-lr percent100-100 margin-top-sm">
 			<text class="text-black text-bold">购买类型</text>
 			<tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
 				<template v-slot:selectionbox>
@@ -103,7 +107,9 @@
 				seller:{},
 				price:0,
 				good:{},
-				goodprice:0
+				goodprice:0,
+				gzyh:{},
+				isOne:1
 			}
 		},
 		onLoad(e) {
@@ -112,6 +118,7 @@
 			console.log(e.good);
 			console.log(e.isone);
 			this.sellerinfo()
+			this.isOne=e.isone
 			if(e.isone==1){
 				this.goodprice=this.good.price;
 				this.price=this.goodprice
@@ -128,13 +135,13 @@
 				this.price=0;
 			}
 			if(this.selectIndex==1){
-				this.price=(this.good.price*this.value)+".00";
+				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
 			}
 			if(this.selectIndex==2){
-				this.price=(this.good.price_3*this.value)+".00";
+				this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
 			}
 			if(this.selectIndex==3){
-				this.price=(this.good.price_5*this.value)+".00";
+				this.price=(this.good.price_5*this.value)-Number(parseFloat(that.gzyh.money));
 			}
 		},
 		methods: {
@@ -149,7 +156,11 @@
 								uni.navigateBack()
 							}, 2000);
 						}
-						// console.log(that.good);
+					})
+				this.$api.postWithData(this.api.isSubscribe,{uid:this.uid},
+					function callbacks(res){
+						that.gzyh=res.data
+						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
 					})
 			},
 			goPay(){
