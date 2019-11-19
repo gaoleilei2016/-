@@ -154,7 +154,7 @@
 							}, 2000);
 						}
 					})
-				this.$api.postWithData(this.api.isSubscribe,{uid:this.uid},
+				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 					function callbacks(res){
 						that.gzyh=res.data
 						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
