@@ -261,31 +261,45 @@ const post=(api,callbacks)=>{
 }
 
 const postWithData=(api,data,callbacks)=>{
-	if(Boolean(api) === false){
-		console.log("请求地址为空")
-		return;
+	let appid = "wx0f540572b7afe6af"; //为测试号id
+	let uid = getUrlParam("uid"); //是否存在code
+	let local = window.location.href;
+	if (!isLogin) {
+		//不存在就打开上面的地址进行授权
+		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=http%3a%2f%2fcea.kelinteng.com`;
+		uni.setStorageSync("isLogin",true)
+		return
+	} else {
+		console.log(uid);
+		if(uni.getStorageSync("uid")==''||uni.getStorageSync("uid")==null){
+			uni.setStorageSync("uid",uid)
+		}
+		if(Boolean(api) === false){
+			console.log("请求地址为空")
+			return;
+		}
+		let params={};
+		if(data==null||data==undefined||data==''){
+			data={};
+		}
+		console.log("请求地址: "+test.config.baseUrl+api)
+		// uni.showToast({icon:"loading",mask:true,duration:60000,title:"加载中..."})
+		test.post(api,data,{params:params})
+			.then(res => {
+			  if(res.data.code==-1){//未登录或登陆已过期
+				  login(api,data,callbacks)
+				  return;
+			  }
+			  console.log(res)
+			  // uni.hideToast();
+			  callbacks(res.data)
+			})
+			.catch(err => {
+			  console.log(err)
+			  // uni.hideToast();
+			  uni.showToast({icon:"none",mask:false,title:"请求错误，请稍后重试"})
+		});
 	}
-	let params={};
-	if(data==null||data==undefined||data==''){
-		data={};
-	}
-	console.log("请求地址: "+test.config.baseUrl+api)
-	// uni.showToast({icon:"loading",mask:true,duration:60000,title:"加载中..."})
-	test.post(api,data,{params:params})
-		.then(res => {
-		  if(res.data.code==-1){//未登录或登陆已过期
-			  login(api,data,callbacks)
-			  return;
-		  }
-		  console.log(res)
-		  // uni.hideToast();
-		  callbacks(res.data)
-		})
-		.catch(err => {
-		  console.log(err)
-		  // uni.hideToast();
-		  uni.showToast({icon:"none",mask:false,title:"请求错误，请稍后重试"})
-	});
 }
 const get=(api,callbacks)=>{
 	if(Boolean(api) === false){
