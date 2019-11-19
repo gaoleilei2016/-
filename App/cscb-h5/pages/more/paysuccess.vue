@@ -90,7 +90,7 @@
 		onLoad(res) {
 			that = this;
 			console.log(res);
-			this.sl_ordersn=res.sl_ordersn
+			this.sl_ordersn=res.ordersn
 			//res.ordersn
 			//res.sl_ordersn
 			this.getPayResult(res.ordersn)
