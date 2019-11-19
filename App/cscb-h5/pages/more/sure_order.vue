@@ -148,7 +148,7 @@
 						if(res.code==1&&res.data!=null){
 							that.seller = res.data;
 						}else{
-							this.$api.msg(res.msg)
+							that.$api.msg(res.msg)
 							setTimeout(function() {
 								uni.navigateBack()
 							}, 2000);
