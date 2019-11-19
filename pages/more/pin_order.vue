@@ -142,7 +142,7 @@
 				function callbacks(res){
 					if(res.code==1&&res.data!=null){
 						that.gzyh=res.data
-						that.$api.postWithData(that.api.payResult,{ordersn:'CEA20191113175741506666'},
+						that.$api.postWithData(that.api.payResult,{ordersn:this.ordersn},
 							function callbacks(res){
 								if(res.code==1&&res.data!=null){
 									that.good=res.data
