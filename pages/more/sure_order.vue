@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image src="../../static/bm.png" mode="aspectFit" style="width:80upx;height:80upx;"></image>
+				<image :src="seller.brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding: 20upx;"></image>
 				<view class="text-black text-bold">{{seller.title}}</view>
 				<view class="cuIcon-right align-center"></view>
 			</view>
@@ -11,7 +11,7 @@
 			</view>
 		</view>
 		<view class="flex padding-tb-sm align-center">
-			<image class="margin-lr radius" src="../../static/gg.png" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
+			<image class="margin-lr radius" :src="good.logo" mode="aspectFit" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
 				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.title}}</view>
 				<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
