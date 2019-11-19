@@ -100,8 +100,8 @@
         }
     },
     "h5" : {
-		"devServer" : {
-			"port" : 80, //端口号
+        "devServer" : {
+            "port" : 80, //端口号
             "disableHostCheck" : true,
             "proxy" : {
                 "/api/" : {
@@ -118,8 +118,8 @@
         //     "secure" : true // 设置支持https协议的代理
         // }
         "router" : {
-            "mode" : "hash",
-            "base" : ""
+            "mode": "hash",
+            "base": ""
         },
         "sdkConfigs" : {
             "maps" : {
