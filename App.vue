@@ -2,10 +2,11 @@
 	import Vue from 'vue'
 	export default {
 		onLaunch: function() {
+			uni.clearStorageSync()
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
-			Vue.prototype.uid=2210
-			Vue.prototype.seller_id=60
+			// Vue.prototype.uid=2210
+			// Vue.prototype.seller_id=60
 			Vue.prototype.wxConfig=null;
 			
 			uni.getSystemInfo({
@@ -60,6 +61,7 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+			// uni.clearStorageSync()
 		}
 	}
 </script>
