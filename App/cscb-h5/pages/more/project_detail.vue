@@ -18,7 +18,7 @@
 			</view>
 			<view class="margin-top-sm flex justify-between align-center">
 				<text>商家:<text>{{seller.title==null?'':seller.title}}</text></text>
-				<text>1.31km</text>
+				<text v-if="false">1.31km</text>
 			</view>
 			<view class="margin-top-sm align-center" @tap="openLocation(seller)">
 				<text>地址:</text>
