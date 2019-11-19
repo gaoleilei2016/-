@@ -61,16 +61,18 @@
 			<view style="background: #f9ecd8;width: 100%;" class="radius-lg solid-bottom flex flex-direction justify-center">
 				<view style="background-image: url(../../static/yaoqing.png);background-repeat: no-repeat;background-position-x:50%;margin-top: -20upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
 				<view class="flex justify-center padding-tb">
-					<view @tap="share" class="text-center" v-for="(item,index) in ceaDeail.orderList" :key="index">
+					<view @tap="share" class="text-center" v-if="good.slList.length>0" v-for="(item,index) in good.slList" :key="index">
 						<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
 						<view style="width:100upx;" class="text-cut text-sm">{{item.sm_nickname}}</view>
+					</view>
+					<view @tap="share" class="text-center" v-if="good.slList.length<=0" >
+						<image class="round" style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="bg-white radius-lg margin-top-xl margin-lr flex flex-direction align-center">
-			<view v-if="false" class="padding-tb-sm" >{{ceaDeail.title}}</view>
-			<view style="background-image: url(../../static/haibao.png);background-size: 100% 100%;width:70%; background-repeat: no-repeat;background-position-x:50%;margin-top: -19upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
+			<view style="background-image: url(../../static/haibao.png);background-size: 100% 100%;width:70%; background-repeat: no-repeat;background-position-x:50%;margin-top: -19upx;" class="text-center text-white padding-tb-sm">{{ceaDeail.title}}</view>
 			<image style="width: 100%;" src="http://txcos.kelinteng.com/uploads/mall/%E5%B0%8F%E6%B5%B7%E6%8A%A52.0.jpg" mode="widthFix"></image>
 		</view>
 		<view class="cu-modal" :class="dialog?'show':''">
@@ -143,7 +145,9 @@
 				dialog: false,
 				StatusBar: this.StatusBar,
 				CustomBar: this.CustomBar,
-				good:{},
+				good:{
+					slList:[]
+				},
 				ceaDeail:{}
 
 			}
@@ -177,7 +181,7 @@
 			},
 			navigator(){
 				uni.navigateTo({
-					url:'pin_order'
+					url:'pin_order?ordersn='+that.good.ordersn
 				})
 			},
 			share() {
