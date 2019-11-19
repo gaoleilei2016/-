@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image src="../../static/bm.png" mode="aspectFit" style="width:80upx;height:80upx;"></image>
+				<image :src="seller_list[selectIndex].brand_logo" mode="aspectFit" style="width:80upx;height:80upx;"></image>
 				<tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
 					<template v-slot:selectionbox>
 						<view  @click="dropDownList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
@@ -28,7 +28,7 @@
 			</view>
 		</view>
 		<view class="flex padding-tb-sm align-center">
-			<image class="margin-lr radius" :src="good.s_brand_logo" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
+			<image class="margin-lr radius" :src="good.objLogo" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
 				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.objTitle}}</view>
 				<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
@@ -142,7 +142,7 @@
 				function callbacks(res){
 					if(res.code==1&&res.data!=null){
 						that.gzyh=res.data
-						that.$api.postWithData(that.api.payResult,{ordersn:this.ordersn},
+						that.$api.postWithData(that.api.payResult,{ordersn:that.ordersn},
 							function callbacks(res){
 								if(res.code==1&&res.data!=null){
 									that.good=res.data
@@ -172,7 +172,7 @@
 				this.$api.postWithData(this.api.sellerListCEA,data,
 					function callbacks(res){
 						that.seller_list=res.data
-						that.seller_list.unshift({id:that.good.shopid,address:that.good.s_address,title:that.good.s_title,latitude:that.good.s_latitude,longitude:that.good.s_longitude})
+						that.seller_list.unshift({id:that.good.shopid,address:that.good.s_address,title:that.good.s_title,latitude:that.good.s_latitude,longitude:that.good.s_longitude,brand_logo:that.good.s_brand_logo})
 						that.selectIndex=0
 					})
 			},
