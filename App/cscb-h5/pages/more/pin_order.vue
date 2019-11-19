@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image :src="seller_list[selectIndex].brand_logo" mode="aspectFit" style="width:80upx;height:80upx;"></image>
+				<image :src="seller_list[selectIndex].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:20upx;"></image>
 				<tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
 					<template v-slot:selectionbox>
 						<view  @click="dropDownList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
