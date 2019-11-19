@@ -95,7 +95,7 @@
 			this.ordersn = res.ordersn
 			this.getPayResult(res.ordersn)
 			// #ifdef H5
-			this.$api.post('http://cscb2.kelinteng.com/index/index/wxjssdk',
+			this.$api.post(this.api.wechatJSSDK,
 				function callbacks(res){
 					console.log(res.data);
 					res.data.debug=true
