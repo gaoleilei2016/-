@@ -36,7 +36,7 @@
 					<!-- <view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;">
 						
 					</view> -->
-					<image style="width: 40px;height:40px;" :src="good.s_brand_logo" mode="widthFix"></image>
+					<image style="width: 40px;height:40px; padding: 20upx;" :src="good.s_brand_logo" mode="aspectFill"></image>
 					<view class="text-black text-bold">{{good.s_title}}</view>
 					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>优选</text></view>
 				</view>
@@ -124,18 +124,9 @@
 		},
 		onLoad(e) {
 			that = this;
+			this.sl_ordersn=e.sl_ordersn
 			this.initData(e.sl_ordersn);
 			this.getPayResult(e.sl_ordersn)
-			// #ifdef H5
-			jweixin.config({
-				debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-				appId: 'wxf9651f8626d421a9', // 必填，公众号的唯一标识
-				timestamp: '1573616116', // 必填，生成签名的时间戳
-				nonceStr: '093bd45e4bpo8gln', // 必填，生成签名的随机串
-				signature: '8b0d8b99af0a751af31c981cb8720240a1cc38bd', // 必填，签名
-				jsApiList: ['checkJsApi', 'translateVoice', 'scanQRCode', 'updateAppMessageShareData'] // 必填，需要使用的JS接口列表
-			});
-			// #endif
 		},
 		data() {
 			return {
@@ -146,7 +137,8 @@
 				good:{
 					slList:[]
 				},
-				ceaDeail:{}
+				ceaDeail:{},
+				sl_ordersn:''
 
 			}
 		},
@@ -155,7 +147,7 @@
 				this.$api.postWithData(this.api.payResult,
 				{
 					// ordersn: 'CEA20191113175741506666',
-					sl_ordersn: 'CEA20191113175741506666',//'CEA20191113175741506666'
+					sl_ordersn: sl_ordersn,//'CEA20191113175741506666'
 				},
 				function callbacks(res)
 				{
@@ -183,19 +175,7 @@
 				})
 			},
 			share() {
-				// #ifdef H5
-				jweixin.ready(function() {
-					jweixin.updateAppMessageShareData({
-						title: '标题', // 分享标题
-						desc: '分享描述', // 分享描述
-						link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-						imgUrl: '', // 分享图标
-						success: function() {
-							// 设置成功
-						}
-					})
-				});
-				// #endif
+				location.href="http://cscb2.kelinteng.com/index/index/sharecea?spell_list_ordersn="+this.sl_ordersn
 			},
 			openLocation(){
 				uni.openLocation({

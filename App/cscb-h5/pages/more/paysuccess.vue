@@ -83,33 +83,17 @@
 				pindan: false,
 				info: {},
 				imgList: [],
-				tsDetail: {}
+				tsDetail: {},
+				sl_ordersn:''
 			}
 		},
 		onLoad(res) {
 			that = this;
 			console.log(res);
+			this.sl_ordersn=res.sl_ordersn
 			//res.ordersn
 			//res.sl_ordersn
 			this.getPayResult(res.ordersn)
-			// #ifdef H5
-			this.$api.post(this.api.wechatJSSDK,
-				function callbacks(res){
-					console.log(res.data);
-					res.data.debug=true
-					jweixin.config(res.data)
-				})
-			// let wxConfig=JSON.parse(uni.getStorageSync("wxConfig"))
-			// console.log(wxConfig);
-			// jweixin.config({
-			// 	appId:wxConfig.appId,
-			// 	debug: true,
-			// 	jsApiList:wxConfig.jsApiList,
-			// 	nonceStr: wxConfig.nonceStr,
-			// 	signature: wxConfig.signature,
-			// 	timestamp: wxConfig.timestamp
-			// });
-			// #endif
 		},
 
 		methods: {
@@ -145,20 +129,7 @@
 				})
 			},
 			share() {
-				// #ifdef H5
-				jweixin.ready(function() {
-					jweixin.updateAppMessageShareData({
-						title: '标题', // 分享标题
-						desc: '分享描述', // 分享描述
-						link: 'https://cscbnew.kelinteng.com/h5/#/pages/more/spell_list', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-						imgUrl: 'https://cscbnew.kelinteng.com/h5/#/pages/more/spell_list', // 分享图标
-						success: function(res) {
-							// 设置成功
-							that.$api.msg(res)
-						}
-					})
-				});
-				// #endif
+				location.href="http://cscb2.kelinteng.com/index/index/sharecea?spell_list_ordersn="+this.sl_ordersn
 			},
 		}
 	}
