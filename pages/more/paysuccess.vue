@@ -93,16 +93,23 @@
 			//res.sl_ordersn
 			this.getPayResult(res.ordersn)
 			// #ifdef H5
-			let wxConfig=JSON.parse(uni.getStorageSync("wxConfig"))
-			console.log(wxConfig);
-			jweixin.config({
-				appId:wxConfig.appId,
-				debug: true,
-				jsApiList:wxConfig.jsApiList,
-				nonceStr: wxConfig.nonceStr,
-				signature: wxConfig.signature,
-				timestamp: wxConfig.timestamp
-			});
+			this.$api.post(this.api.wechatJSSDK,
+				function callbacks(res){
+					console.log(res.data);
+					res.data.debug=true
+					jweixin.config(res.data)
+					uni.setStorageSync("wxConfig",JSON.stringify(res.data))
+				})
+			// let wxConfig=JSON.parse(uni.getStorageSync("wxConfig"))
+			// console.log(wxConfig);
+			// jweixin.config({
+			// 	appId:wxConfig.appId,
+			// 	debug: true,
+			// 	jsApiList:wxConfig.jsApiList,
+			// 	nonceStr: wxConfig.nonceStr,
+			// 	signature: wxConfig.signature,
+			// 	timestamp: wxConfig.timestamp
+			// });
 			// #endif
 		},
 
