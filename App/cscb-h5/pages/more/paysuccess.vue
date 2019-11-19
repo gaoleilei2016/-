@@ -111,7 +111,7 @@
 			getPayResult(ordersn) {
 				//sl_ordersn:'CEA20191113175741506666'
 				this.$api.postWithData(this.api.payResult, {
-						ordersn: 'CEA20191113175741506666'
+						ordersn: ordersn//'CEA20191113175741506666'
 					},
 					function callbacks(res) {
 						console.log(res);
