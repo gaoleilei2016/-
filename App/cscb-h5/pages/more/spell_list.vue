@@ -1,6 +1,6 @@
 <template>
 	<view class="padding-bottom-xl">
-		<image style="width: 100%;position: fixed;z-index: -1;" mode="widthFix" src="http://www.05sun.com/up/1910/201910071349266156.png"></image>
+		<image style="width: 100%;position: fixed;z-index: -1;" mode="widthFix" src="http://txcos.kelinteng.com/uploads/mall/cea_bg.PNG"></image>
 		<view class="cu-custom" :style="[{height:CustomBar + 'px'}]">
 			<view class="cu-bar fixed bg-white" :style="style">
 				<navigator url="home" class="action">
@@ -33,24 +33,27 @@
 			</view>
 			<view class="flex justify-between self-start margin-lr-sm" style="min-height: 80upx;line-height: 80upx;width: 90%;">
 				<view class="flex align-center justify-between">
-					<view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;"><text>美孚</text></view>
+					<!-- <view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;">
+						
+					</view> -->
+					<image style="width: 40px;height:40px;" :src="good.s_brand_logo" mode="widthFix"></image>
 					<view class="text-black text-bold">{{good.s_title}}</view>
-					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>官方</text></view>
+					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>优选</text></view>
 				</view>
 				<view @tap="openLocation" class="text-lg">
 					<text class="cuIcon-locationfill"></text>
 				</view>
 			</view>
 			<view class="flex padding-tb-sm align-center radius-lg" style="background-image: linear-gradient(to bottom, #ff9847, #fc5a3a);">
-				<image class="margin-lr radius" :src="good.s_brand_logo" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
+				<image class="margin-lr radius" :src="good.objLogo" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
 				<view class="flex flex-direction justify-start text-sm">
 					<view style="width:430upx;" class="text-df text-white text-cut text-bold">{{good.objTitle}}</view>
-					<view class="margin-tb-sm"><text class="text-white">描述:</text><text>{{good.objDesc}}</text> </view>
+					<view class="margin-tb-sm"><text class="text-white"></text><text>{{good.objDesc}}</text> </view>
 					<view class="text-df text-bold text-white"><text class="text-price">{{good.price}}</text>/件</view>
 				</view>
 			</view>
 			<view class="text-sm margin-tb-sm">
-				我在参与好友助力,<text class="text-red text-lg text-bold">0元</text>拿券活动快来祝我一臂之力吧
+				我在参与好友助力,<text class="text-red text-lg text-bold">底价</text>购买年终保养,快来祝我一臂之力吧
 			</view>
 			<view class="margin-bottom flex padding-lr" style="width: 100%;">
 				<button @tap="navigator" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">帮我助力</button>
@@ -68,7 +71,7 @@
 		<view class="bg-white radius-lg margin-top-xl margin-lr flex flex-direction align-center">
 			<view v-if="false" class="padding-tb-sm" >{{ceaDeail.title}}</view>
 			<view style="background-image: url(../../static/haibao.png);background-size: 100% 100%;width:70%; background-repeat: no-repeat;background-position-x:50%;margin-top: -19upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
-			<image style="width: 100%;" src="https://img.51miz.com/preview/muban/00/00/33/02/M-330290-93DA5F00.jpg!/quality/90/unsharp/true/compress/true/fw/840" mode="widthFix"></image>
+			<image style="width: 100%;" src="http://txcos.kelinteng.com/uploads/mall/%E5%B0%8F%E6%B5%B7%E6%8A%A52.0.jpg" mode="widthFix"></image>
 		</view>
 		<view class="cu-modal" :class="dialog?'show':''">
 			<view class="cu-dialog" style="background-color:transparent;width: 600upx;">
@@ -121,11 +124,11 @@
 		},
 		onLoad(e) {
 			that = this;
-			this.initData();
-			this.getPayResult()
+			this.initData(e.sl_ordersn);
+			this.getPayResult(e.sl_ordersn)
 			// #ifdef H5
 			jweixin.config({
-				debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+				debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 				appId: 'wxf9651f8626d421a9', // 必填，公众号的唯一标识
 				timestamp: '1573616116', // 必填，生成签名的时间戳
 				nonceStr: '093bd45e4bpo8gln', // 必填，生成签名的随机串
@@ -146,11 +149,11 @@
 			}
 		},
 		methods: {
-			getPayResult(){
+			getPayResult(sl_ordersn){
 				this.$api.postWithData(this.api.payResult,
 				{
-					ordersn: 'CEA20191113175741506666',
-					sl_ordersn: 'CEA20191113175741506666'
+					// ordersn: 'CEA20191113175741506666',
+					sl_ordersn: sl_ordersn,//'CEA20191113175741506666'
 				},
 				function callbacks(res)
 				{
@@ -160,11 +163,11 @@
 					console.log(res);
 				})
 			},
-			initData() {
+			initData(sl_ordersn) {
 				this.$api.postWithData(this.api.ceaDetail, {
 						cea_id: 1,
-						ordersn: 'CEA20191113175741506666',
-						sl_ordersn: 'CEA20191113175741506666'
+						// ordersn: 'CEA20191113175741506666',
+						sl_ordersn: sl_ordersn,//'CEA20191113175741506666'
 					},
 					function callbacks(res) {
 						that.ceaDeail = res.data
