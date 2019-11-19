@@ -124,12 +124,13 @@
 				price:0,
 				seller:{},
 				good:{},
-				gzyh:{}
+				gzyh:{},
+				ordersn:''
 			}
 		},
 		onLoad(e) {
+			this.ordersn=e.ordersn
 			that=this;
-			this.getSellerListCEA()
 			this.getPinResult()
 		},
 		updated() {
@@ -137,7 +138,7 @@
 		},
 		methods: {
 			getPinResult(){
-			this.$api.postWithData(this.api.isSubscribe,{uid:this.uid},
+			this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 				function callbacks(res){
 					if(res.code==1&&res.data!=null){
 						that.gzyh=res.data
@@ -149,6 +150,7 @@
 										that.gzyh.money=0
 									}
 									that.price=(that.good.price)-Number(parseFloat(that.gzyh.money));
+									that.getSellerListCEA()
 								}else{
 									that.price=(that.good.price)
 								}
@@ -170,6 +172,7 @@
 				this.$api.postWithData(this.api.sellerListCEA,data,
 					function callbacks(res){
 						that.seller_list=res.data
+						that.seller_list.unshift({id:that.good.shopid,address:that.good.s_address,title:that.good.s_title,latitude:that.good.s_latitude,longitude:that.good.s_longitude})
 						that.selectIndex=0
 					})
 			},
