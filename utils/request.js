@@ -13,8 +13,8 @@ export default class Request {
     header: {
 	  'content-type':'application/json;charset=UTF-8',
 	  'content-type':'application/x-www-form-urlencoded',
-	  'cscb-token':'8631a2fc993b1963a8636a36edd7724a',
-	  'cscb-login-token':''
+	  // 'cscb-token':'8631a2fc993b1963a8636a36edd7724a',
+	  // 'cscb-login-token':''
 	  //noFuaITTaoo50/DI1OD4DAuegBwlduwepVetR8oDI3WiqYXVKv+er9N+4yVJ2yVK3M2iI6Ig8G8c6bsrmT1Gnyz15vJUgPB1fMmxLjp9wjPUrmSMhoseCjMSlm8/F2tT
     },
     method: 'POST',
