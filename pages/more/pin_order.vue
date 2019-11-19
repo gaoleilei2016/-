@@ -178,7 +178,7 @@
 			},
 			goPay(){
 				console.log(this.seller_list[this.selectIndex].id);
-				this.form.id=this.good.id
+				this.form.id=this.good.objid
 				this.form.uid=uni.getStorageSync("uid")
 				this.form.seller_id=this.seller_list[this.selectIndex].id
 				this.form.o_type=this.good.o_type
