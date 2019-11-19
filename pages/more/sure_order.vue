@@ -92,9 +92,6 @@
 				}, {
 					name: "3人拼单",
 					value : 3,
-				}, {
-					name: "5人拼单",
-					value : 5,
 				}],
 				form:{
 					id:0,
