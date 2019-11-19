@@ -61,12 +61,10 @@
 			<view style="background: #f9ecd8;width: 100%;" class="radius-lg solid-bottom flex flex-direction justify-center">
 				<view style="background-image: url(../../static/yaoqing.png);background-repeat: no-repeat;background-position-x:50%;margin-top: -20upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
 				<view class="flex justify-center padding-tb">
-					<view @tap="share" class="text-center" v-if="good.slList.length>0" v-for="(item,index) in good.slList" :key="index">
-						<image class="round" style="width: 80upx;height: 80upx;" :src="item.sm_headimg" mode="aspectFit"></image>
-						<view style="width:100upx;" class="text-cut text-sm">{{item.sm_nickname}}</view>
-					</view>
-					<view @tap="share" class="text-center" v-if="good.slList.length<=0" >
-						<image class="round" style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
+					<view @tap="share" class="text-center"  v-for="(item,index) in good.o_type" :key="index">
+						<image v-if="index<good.slList.length" class="round" style="width: 80upx;height: 80upx;" :src="good.slList[index].sm_headimg" mode="aspectFit"></image>
+						<view v-if="index<good.slList.length" style="width:100upx;" class="text-cut text-sm">{{good.slList[index].sm_nickname}}</view>
+						<image v-if="index>=good.slList.length" class="round" style="width: 80upx;height: 80upx;" src="../../static/fabu.png" mode="aspectFit"></image>
 					</view>
 				</view>
 			</view>
@@ -157,7 +155,7 @@
 				this.$api.postWithData(this.api.payResult,
 				{
 					// ordersn: 'CEA20191113175741506666',
-					sl_ordersn: sl_ordersn,//'CEA20191113175741506666'
+					sl_ordersn: 'CEA20191113175741506666',//'CEA20191113175741506666'
 				},
 				function callbacks(res)
 				{
