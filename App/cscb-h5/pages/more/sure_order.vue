@@ -166,7 +166,7 @@
 					this.$api.msg("请选择购买类型")
 					return ;
 				}
-				this.form.id=this.good.id
+				this.form.id=this.good.objid
 				this.form.uid=uni.getStorageSync("uid")
 				this.form.seller_id=uni.getStorageSync("seller_id")
 				this.form.o_type=this.dropdownlistData[this.selectIndex].value
