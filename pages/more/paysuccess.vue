@@ -159,7 +159,7 @@
 					jweixin.updateAppMessageShareData({
 						title: '标题', // 分享标题
 						desc: '分享描述', // 分享描述
-						link: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list?', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+						link: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list?sl_ordersn=', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 						imgUrl: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list', // 分享图标
 						success: function(res) {
 							// 设置成功
