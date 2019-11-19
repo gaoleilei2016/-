@@ -66,7 +66,8 @@
 			</view>
 		</view>
 		<view class="bg-white radius-lg margin-top-xl margin-lr flex flex-direction align-center">
-			<view class="padding-tb-sm" >{{ceaDeail.title}}</view>
+			<view v-if="false" class="padding-tb-sm" >{{ceaDeail.title}}</view>
+			<view style="background-image: url(../../static/haibao.png);background-size: 100% 100%;width:70%; background-repeat: no-repeat;background-position-x:50%;margin-top: -19upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
 			<image style="width: 100%;" src="https://img.51miz.com/preview/muban/00/00/33/02/M-330290-93DA5F00.jpg!/quality/90/unsharp/true/compress/true/fw/840" mode="widthFix"></image>
 		</view>
 		<view class="cu-modal" :class="dialog?'show':''">
