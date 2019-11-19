@@ -121,10 +121,10 @@
 				this.price=this.goodprice
 				this.selectIndex=1
 			}
-			if(e.isone==5){
-				this.goodprice=this.good.price_5;
+			if(e.isone==3){
+				this.goodprice=this.good.price_3;
 				this.price=this.goodprice
-				this.selectIndex=3
+				this.selectIndex=2
 			}
 		},
 		updated() {
