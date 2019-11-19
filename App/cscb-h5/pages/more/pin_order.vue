@@ -111,9 +111,6 @@
 				}, {
 					name: "3人拼单",
 					value : 2,
-				}, {
-					name: "5人拼单",
-					value : 3,
 				}],
 				form:{
 					id:0,//商品ID
