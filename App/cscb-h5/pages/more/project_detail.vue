@@ -35,7 +35,8 @@
 				<text class="margin-left text-df ">项目详情</text>
 			</view>
 			<view class="flex justify-center padding-xl">
-				<text>暂无详情</text>
+				<view v-if="good.content==null">暂无详情</view>
+				<view v-else v-html="good.content"></view>
 			</view>
 		</view>
 		<view class="cu-tabbar-height"></view>
