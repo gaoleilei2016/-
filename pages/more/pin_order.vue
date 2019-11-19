@@ -140,7 +140,7 @@
 			getPinResult(){
 			this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 				function callbacks(res){
-					if(res.code==1&&res.data!=null){
+					if(res.data!=null){
 						that.gzyh=res.data
 						that.$api.postWithData(that.api.payResult,{ordersn:that.ordersn},
 							function callbacks(res){
