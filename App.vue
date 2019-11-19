@@ -2,7 +2,7 @@
 	import Vue from 'vue'
 	export default {
 		onLaunch: function() {
-			uni.clearStorageSync()
+			// uni.clearStorageSync()
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
 			// Vue.prototype.uid=2210
