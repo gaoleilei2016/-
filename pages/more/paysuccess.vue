@@ -83,7 +83,8 @@
 				pindan: false,
 				info: {},
 				imgList: [],
-				tsDetail: {}
+				tsDetail: {},
+				ordersn:'',
 			}
 		},
 		onLoad(res) {
@@ -91,19 +92,22 @@
 			console.log(res);
 			//res.ordersn
 			//res.sl_ordersn
+			this.ordersn = res.ordersn
 			this.getPayResult(res.ordersn)
 			// #ifdef H5
-			this.$api.post(this.api.wechatJSSDK,
+			this.$api.post('http://cscb2.kelinteng.com/index/index/wxjssdk',
 				function callbacks(res){
 					console.log(res.data);
-					jweixin.config({
-						appId: 'wxf9651f8626d421a9',//res.data.appId,
-						debug: res.data.debug,
-						jsApiList: ["onWXDeviceBluetoothStateChange","onWXDeviceStateChange","openProductSpecificView","addCard","chooseCard","openCard","translateVoice","getNetworkType","openLocation","getLocation","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","onMenuShareQZone","chooseImage","previewImage","uploadImage","downloadImage","closeWindow","scanQRCode","chooseWXPay","hideOptionMenu","showOptionMenu","hideMenuItems","showMenuItems","hideAllNonBaseMenuItem","showAllNonBaseMenuItem","startScanWXDevice","stopScanWXDevice","onWXDeviceBindStateChange","onScanWXDeviceResult","onReceiveDataFromWXDevice","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","onVoicePlayEnd","uploadVoice","downloadVoice","openWXDeviceLib","closeWXDeviceLib","getWXDeviceInfos","sendDataToWXDevice","disconnectWXDevice","getWXDeviceTicket","connectWXDevice"],//res.data.jsApiList,
-						nonceStr: 'utqb9rey01pc9eko',//res.data.nonceStr,
-						signature: 'bd23f419c1b5906a94fca36877778e49078ae21e',//res.data.signature,
-						timestamp: '1574150365',//res.data.timestamp
-					});
+					res.data.debug=true
+					jweixin.config(res.data);
+					// jweixin.config({
+					// 	appId: 'wxf9651f8626d421a9',//res.data.appId,
+					// 	debug: res.data.debug,
+					// 	jsApiList: ["onWXDeviceBluetoothStateChange","onWXDeviceStateChange","openProductSpecificView","addCard","chooseCard","openCard","translateVoice","getNetworkType","openLocation","getLocation","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","onMenuShareQZone","chooseImage","previewImage","uploadImage","downloadImage","closeWindow","scanQRCode","chooseWXPay","hideOptionMenu","showOptionMenu","hideMenuItems","showMenuItems","hideAllNonBaseMenuItem","showAllNonBaseMenuItem","startScanWXDevice","stopScanWXDevice","onWXDeviceBindStateChange","onScanWXDeviceResult","onReceiveDataFromWXDevice","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","onVoicePlayEnd","uploadVoice","downloadVoice","openWXDeviceLib","closeWXDeviceLib","getWXDeviceInfos","sendDataToWXDevice","disconnectWXDevice","getWXDeviceTicket","connectWXDevice"],//res.data.jsApiList,
+					// 	nonceStr: 'utqb9rey01pc9eko',//res.data.nonceStr,
+					// 	signature: 'bd23f419c1b5906a94fca36877778e49078ae21e',//res.data.signature,
+					// 	timestamp: '1574150365',//res.data.timestamp
+					// });
 					// res.data.debug=true
 					// jweixin.config(res.data)
 					// uni.setStorageSync("wxConfig",JSON.stringify(res.data))
@@ -157,9 +161,9 @@
 				// #ifdef H5
 				jweixin.ready(function() {
 					jweixin.updateAppMessageShareData({
-						title: '标题', // 分享标题
-						desc: '分享描述', // 分享描述
-						link: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list?sl_ordersn=', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+						title: '您的好友需要您鼎力相助,快来看看TA怎么了', // 分享标题
+						desc: '猛戳底价购买年终汽车保养套餐,只此一次哦', // 分享描述
+						link: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list?sl_ordersn='+this.ordersn, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 						imgUrl: 'https://cea.kelinteng.com/h5/#/pages/more/spell_list', // 分享图标
 						success: function(res) {
 							// 设置成功
