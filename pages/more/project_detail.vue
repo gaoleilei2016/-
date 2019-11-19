@@ -81,7 +81,7 @@
 		},
 		methods: {
 			sellerinfo() {
-				this.$api.postWithData(this.api.seller, {id: this.seller_id},
+				this.$api.postWithData(this.api.seller, {id: uni.getStorageSync("seller_id")},
 					function callbacks(res) {
 						if(res.code==1&&res.data!=null){
 							that.seller = res.data;

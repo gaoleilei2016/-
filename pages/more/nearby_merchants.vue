@@ -84,7 +84,7 @@
 		onLoad(e) {
 			console.log(this.screenWidth);
 			that = this;
-			Vue.prototype.seller_id=e.id;
+			uni.setStorageSync("seller_id",e.id)
 			this.sellerinfo();
 		},
 		methods: {
@@ -220,7 +220,7 @@
 				}
 				function projectLists(pageNum,pageSize) {
 					that.$api.postWithData(that.api.projectList, 
-					{page:pageNum,size:pageSize,seller_id:that.seller_id},
+					{page:pageNum,size:pageSize,seller_id:uni.getStorageSync("seller_id")},
 						function callbacks(res) {
 							console.log(res);
 							listData = res.data;
@@ -229,7 +229,7 @@
 				}
 				function goodsLists(pageNum,pageSize) {
 					that.$api.postWithData(that.api.goodsList, 
-					{page:pageNum,size:pageSize,seller_id:that.seller_id},
+					{page:pageNum,size:pageSize,seller_id:uni.getStorageSync("seller_id")},
 						function callbacks(res) {
 							listData = res.data;
 							console.log(res);
@@ -243,7 +243,7 @@
 				})
 			},
 			sellerinfo() {
-				this.$api.postWithData(this.api.seller, {id: this.seller_id},
+				this.$api.postWithData(this.api.seller, {id: uni.getStorageSync("seller_id")},
 					function callbacks(res) {
 						if(res.code==1&&res.data!=null){
 							that.seller = res.data;
