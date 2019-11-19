@@ -2,7 +2,7 @@
 	import Vue from 'vue'
 	export default {
 		onLaunch: function() {
-			// uni.clearStorageSync()
+			uni.clearStorageSync()
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
 			// Vue.prototype.uid=2210
@@ -53,11 +53,11 @@
 				}
 			})
 			console.log('App Show')
-			this.$api.post(this.api.wechatJSSDK,
-				function callbacks(res){
-					console.log(res.data);
-					uni.setStorageSync("wxConfig",JSON.stringify(res.data))
-				})
+			// this.$api.post(this.api.wechatJSSDK,
+			// 	function callbacks(res){
+			// 		console.log(res.data);
+			// 		uni.setStorageSync("wxConfig",JSON.stringify(res.data))
+			// 	})
 		},
 		onHide: function() {
 			console.log('App Hide')
