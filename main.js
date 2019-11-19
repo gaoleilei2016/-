@@ -266,7 +266,7 @@ const postWithData=(api,data,callbacks)=>{
 	let local = window.location.href;
 	if (!isLogin) {
 		//不存在就打开上面的地址进行授权
-		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=${encodeURIComponent(local)}`;
+		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=http%3a%2f%2fcea.kelinteng.com`;
 		uni.setStorageSync("isLogin",true)
 		return
 	} else {
