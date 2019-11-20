@@ -144,7 +144,7 @@
 				this.selectIndex=1
 			}
 			if(e.isone==3){
-				this.goodprice=this.good.price_3;
+				this.goodprice=this.good.price;
 				this.price=this.goodprice
 				this.selectIndex=2
 			}
@@ -241,10 +241,10 @@
 			},
 			openLocation(){
 				uni.openLocation({
-					latitude:Number(this.seller.latitude),
-					longitude:Number(this.seller.longitude),
-					address:this.seller.address,
-					name:this.seller.title
+					latitude:Number(this.seller_list[this.seller_Index].latitude),
+					longitude:Number(this.seller_list[this.seller_Index].longitude),
+					address:this.seller_list[this.seller_Index].address,
+					name:this.seller_list[this.seller_Index].title
 				})
 			},
 		},
