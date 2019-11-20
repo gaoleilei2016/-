@@ -41,12 +41,12 @@
 		</view>
 		<view class="cu-tabbar-height"></view>
 		<view class="cu-bar foot bg-white tabbar border shop bg-color-left">
-			<navigator url="home" class="action">
+			<!-- <navigator url="home" class="action">
 				<view class="cuIcon-home"> </view> 首页
 			</navigator>
 			<navigator @tap="goBack" class="action">
 				<view class="cuIcon-shop"> </view> 商家
-			</navigator>
+			</navigator> -->
 			<navigator :url="'sure_order?good='+JSON.stringify(good)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
 				<text class="text-price text-bold">{{good.price}}</text>
 				<text class="text-df">单独购买</text>
