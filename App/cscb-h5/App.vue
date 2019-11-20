@@ -45,11 +45,20 @@
 		},
 		onShow: function() {
 			let that=this;
+			console.log("aaa");
 			uni.getLocation({geocode:true,type:'wgs84',altitude:true,
 				success(res) {
+					console.log(res);
+					uni.showLoading({
+						title:res.latitude
+					})
 					Vue.prototype.lat=res.latitude
 					Vue.prototype.long=res.longitude
+					console.log(res.latitude);
 					that.$eventBus.$emit('initData');
+				},
+				fail(res) {
+					console.log(res);
 				}
 			})
 			console.log('App Show')
