@@ -3,7 +3,7 @@
 	<view class="pd-list">
 		<view class="cu-list menu-avatar" style="margin-top:0;">
 			<view @tap="navigator(item.id)" class="cu-item" style="height:200rpx"  v-for="(item,index) in list" :key="index">
-				<image lazy-load="true" class="cu-avatar radius xl" :src="item.logo" mode="aspectFill"></image>
+				<image lazy-load="true" class="cu-avatar radius xl" :src="item.logo" mode="aspectFit"></image>
 				<view class="content" style="line-height:3em;left:180upx;width:350upx">
 					<view class="text-bold">
 						<view class="text-cut">{{item.title}}</view>
