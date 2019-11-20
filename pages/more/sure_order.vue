@@ -162,6 +162,9 @@
 			if(this.selectIndex==3){
 				this.price=(this.good.price_5*this.value)-Number(parseFloat(that.gzyh.money));
 			}
+			if(this.price<0){
+				this.price=0
+			}
 		},
 		methods: {
 			sellerinfo() {
