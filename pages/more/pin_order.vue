@@ -146,6 +146,11 @@
 							function callbacks(res){
 								if(res.code==1&&res.data!=null){
 									that.good=res.data
+									if(res.data.o_type==3){
+										that.good.price=res.data.objPrice_3
+									}else if(res.data.o_type==5){
+										that.good.price=res.data.objPrice_5
+									}
 									if(that.gzyh.money==null||that.gzyh.money==''){
 										that.gzyh.money=0
 									}
