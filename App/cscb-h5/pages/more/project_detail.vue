@@ -14,7 +14,7 @@
 			</view>
 			<view class="margin-top-xs">
 				<text class="text-red text-price text-xxl text-bold">{{good.price}}</text>
-				<text class="margin-left">门市价:<text class="text-price margin-left-sm"></text>{{good.market_price}}</text>
+				<!-- <text class="margin-left">门市价:<text class="text-price margin-left-sm"></text>{{good.market_price}}</text> -->
 			</view>
 			<!-- <view class="margin-top-sm flex justify-between align-center">
 				<text>商家:<text>{{seller.title==null?'':seller.title}}</text></text>
