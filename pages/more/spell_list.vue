@@ -36,7 +36,7 @@
 					<!-- <view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;">
 						
 					</view> -->
-					<image style="width: 40px;height:40px; padding: 20upx;" :src="good.s_brand_logo" mode="aspectFill"></image>
+					<image style="width: 40px;height:40px; padding: 15upx;" :src="good.s_brand_logo==null?'../../static/logo.png':good.s_brand_logo" mode="aspectFit"></image>
 					<view class="text-black text-bold">{{good.s_title}}</view>
 					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>优选</text></view>
 				</view>
@@ -45,7 +45,7 @@
 				</view>
 			</view>
 			<view class="flex padding-tb-sm align-center radius-lg" style="background-image: linear-gradient(to bottom, #ff9847, #fc5a3a);">
-				<image class="margin-lr radius" :src="good.objLogo" mode="aspectFill" style="width: 160upx;height: 160upx;"></image>
+				<image class="margin-lr radius" :src="good.objLogo==''||good.objLogo==null?'../../static/logo.png':good.objLogo" mode="aspectFit" style="width: 160upx;height: 160upx;"></image>
 				<view class="flex flex-direction justify-start text-sm">
 					<view style="width:430upx;" class="text-df text-white text-cut text-bold">{{good.objTitle}}</view>
 					<view class="margin-tb-sm"><text class="text-white"></text><text>{{good.objDesc}}</text> </view>
@@ -135,6 +135,10 @@
 				StatusBar: this.StatusBar,
 				CustomBar: this.CustomBar,
 				good:{
+					objLogo:'',
+					objTitle:'暂无标题',
+					objDesc:'暂无描述',
+					price:'0',
 					slList:[]
 				},
 				ceaDeail:{},
