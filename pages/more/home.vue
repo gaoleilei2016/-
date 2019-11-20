@@ -1,29 +1,5 @@
 <template name="components">
 	<view>
-		<!-- #ifdef MP-WEIXIN -->
-		<cu-custom bgColor="bg-white" :isCustom="true">
-			<block slot="content">
-				<view class="cu-bar search bg-white">
-					<view class="search-form round" style="width:480upx;">
-						<text class="cuIcon-search"></text>
-						<input @confirm="searchBykeywords" :adjust-position="false" type="text" placeholder="请输入要搜索的商家名称" confirm-type="search"></input>
-					</view>
-				</view>
-			</block>
-		</cu-custom>
-		<!-- #endif -->
-		<!-- #ifdef APP-PLUS||H5 -->
-		<cu-custom bgColor="bg-white">
-			<block slot="content">
-				<view class="cu-bar search" style="height: 100%;">
-					<view class="search-form round">
-						<text class="cuIcon-search"></text>
-						<input @confirm="searchBykeywords" :adjust-position="false" type="text" placeholder="请输入要搜索的商家名称" confirm-type="search"></input></input>
-					</view>
-				</view>
-			</block>
-		</cu-custom>
-		<!-- #endif -->
 		<swiper class="screen-swiper square-dot" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000"
 		 duration="500">
 			<swiper-item v-for="(item,index) in swiperList" :key="index">
