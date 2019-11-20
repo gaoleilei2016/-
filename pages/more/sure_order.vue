@@ -136,7 +136,6 @@
 			console.log(e.good);
 			console.log(e.isone);
 			this.sellerinfo()
-			this.getSellerListCEA()
 			this.isOne=e.isone
 			if(e.isone==1){
 				this.goodprice=this.good.price;
@@ -168,21 +167,11 @@
 		},
 		methods: {
 			sellerinfo() {
-				// this.$api.postWithData(this.api.seller, {id: uni.getStorageSync("seller_id")},
-				// 	function callbacks(res) {
-				// 		if(res.code==1&&res.data!=null){
-				// 			that.seller = res.data;
-				// 		}else{
-				// 			that.$api.msg(res.msg)
-				// 			setTimeout(function() {
-				// 				uni.navigateBack()
-				// 			}, 2000);
-				// 		}
-				// 	})
 				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 					function callbacks(res){
 						that.gzyh=res.data
 						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
+						that.getSellerListCEA()
 					})
 			},
 			getSellerListCEA(){
@@ -192,9 +181,9 @@
 					longitude: 0,
 					cea_id:1,
 					page: 1,
-					size: 100
+					size: 10
 				};
-				this.$api.postWithData(this.api.sellerListCEA,data,
+				that.$api.postWithData(that.api.sellerListCEA,data,
 					function callbacks(res){
 						that.seller_list=res.data
 						// that.seller_list.unshift({id:that.seller.id,address:that.seller.address,title:that.seller.title,latitude:that.seller.latitude,longitude:that.seller.longitude,brand_logo:that.seller.brand_logo})
