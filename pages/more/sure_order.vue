@@ -2,9 +2,27 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image :src="seller.brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding: 20upx;"></image>
-				<view class="text-black text-bold">{{seller.title}}</view>
-				<view class="cuIcon-right align-center"></view>
+				<image :src="seller_list[seller_Index].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:20upx;"></image>
+				<!-- <view class="text-black text-bold">{{seller.title}}</view> -->
+				<tui-dropdown-list :show="dropdownShowSeller" :top="65" :height="400">
+					<template v-slot:selectionbox>
+						<view  @click="dropDownSellerList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
+							{{seller_list[seller_Index].title}}<text class="cuIcon-triangledownfill align-center"></text>
+						</view>
+					</template>
+					<template v-slot:dropdownbox>
+						<view class="tui-selected-list solid">
+							<scroll-view scroll-y style="height: 400upx;">
+								<block v-for="(item,index) in seller_list" :key="index">
+									<view :class="seller_Index==index?'bg-cyan':'bg-white'" @click="dropDownSellerList(index)" class="text-cut padding-left-sm percent100" >
+										{{item.title}}
+									</view>
+								</block>
+							</scroll-view>
+						</view>
+					</template>
+				</tui-dropdown-list>
+				<!-- <view class="cuIcon-right align-center"></view> -->
 			</view>
 			<view @tap="openLocation" class="text-xl">
 				<text class="cuIcon-locationfill"></text>
@@ -82,7 +100,10 @@
 			return {
 				value: 1,
 				dropdownShow: false,
+				dropdownShowSeller:false,
 				selectIndex:0,
+				seller_Index:0,
+				seller_list:[],
 				dropdownlistData: [{
 					name: "请选择类型",
 					value : 0,
@@ -115,6 +136,7 @@
 			console.log(e.good);
 			console.log(e.isone);
 			this.sellerinfo()
+			this.getSellerListCEA()
 			this.isOne=e.isone
 			if(e.isone==1){
 				this.goodprice=this.good.price;
@@ -143,21 +165,37 @@
 		},
 		methods: {
 			sellerinfo() {
-				this.$api.postWithData(this.api.seller, {id: uni.getStorageSync("seller_id")},
-					function callbacks(res) {
-						if(res.code==1&&res.data!=null){
-							that.seller = res.data;
-						}else{
-							that.$api.msg(res.msg)
-							setTimeout(function() {
-								uni.navigateBack()
-							}, 2000);
-						}
-					})
+				// this.$api.postWithData(this.api.seller, {id: uni.getStorageSync("seller_id")},
+				// 	function callbacks(res) {
+				// 		if(res.code==1&&res.data!=null){
+				// 			that.seller = res.data;
+				// 		}else{
+				// 			that.$api.msg(res.msg)
+				// 			setTimeout(function() {
+				// 				uni.navigateBack()
+				// 			}, 2000);
+				// 		}
+				// 	})
 				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 					function callbacks(res){
 						that.gzyh=res.data
 						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
+					})
+			},
+			getSellerListCEA(){
+				let data = {
+					keywords: '',
+					latitude: 0,
+					longitude: 0,
+					cea_id:1,
+					page: 1,
+					size: 100
+				};
+				this.$api.postWithData(this.api.sellerListCEA,data,
+					function callbacks(res){
+						that.seller_list=res.data
+						// that.seller_list.unshift({id:that.seller.id,address:that.seller.address,title:that.seller.title,latitude:that.seller.latitude,longitude:that.seller.longitude,brand_logo:that.seller.brand_logo})
+						that.seller_Index=0
 					})
 			},
 			goPay(){
@@ -168,7 +206,7 @@
 				}
 				this.form.id=this.good.objid
 				this.form.uid=uni.getStorageSync("uid")
-				this.form.seller_id=uni.getStorageSync("seller_id")
+				this.form.seller_id=this.seller_list[this.seller_Index].id
 				this.form.o_type=this.dropdownlistData[this.selectIndex].value
 				this.form.num=this.value
 				this.form.redids=0
@@ -193,6 +231,13 @@
 					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShow = !this.dropdownShow
+			},
+			dropDownSellerList(index) {
+				if (index !== -1) {
+					this.seller_Index=index;
+					// this.$api.msg("name：" + this.dropdownlistData[index].name)
+				}
+				this.dropdownShowSeller = !this.dropdownShowSeller
 			},
 			openLocation(){
 				uni.openLocation({
