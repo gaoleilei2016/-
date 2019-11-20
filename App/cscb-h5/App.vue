@@ -55,7 +55,7 @@
 					Vue.prototype.lat=res.latitude
 					Vue.prototype.long=res.longitude
 					console.log(res.latitude);
-					that.$eventBus.$emit('initData');
+					// that.$eventBus.$emit('initData');
 				},
 				fail(res) {
 					console.log(res);
