@@ -18,8 +18,8 @@
 					</view>
 				</view>
 				<view class="action flex flex-direction align-end justify-between margin-right-sm" style="width: 130upx;height: 65%;">
-					<text class="text-price text-red text-lg text-bold">{{item.price}}</text>
-					<text class="text-price text-red text-sm" style="text-decoration: line-through;">{{item.market_price}}</text>
+					<text class="text-price text-red text-lg text-bold">{{item.price_3}}</text>
+					<text class="text-price text-red text-sm" style="text-decoration: line-through;">{{item.price}}</text>
 					<button class="cu-btn sm radius bg-theme" style="font-size: 24upx;height: 48upx;">立即抢</button>
 				</view>
 			</view>
