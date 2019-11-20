@@ -37,7 +37,7 @@
 						
 					</view> -->
 					<image style="width: 40px;height:40px; padding: 15upx;" :src="good.s_brand_logo==null?'../../static/logo.png':good.s_brand_logo" mode="aspectFit"></image>
-					<view class="text-black text-bold">{{good.s_title}}</view>
+					<view class="text-black text-bold text-cut">{{good.s_title}}</view>
 					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>优选</text></view>
 				</view>
 				<view @tap="openLocation" class="text-lg">
