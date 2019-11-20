@@ -8,7 +8,7 @@
 				<text>{{info.statusText}}</text>
 			</view>
 			<view class="flex justify-center align-center margin-top">
-				<text class="text-price text-xxxl text-black">0.01</text>
+				<text class="text-price text-xxxl text-black">{{info.price}}</text>
 			</view>
 		</view>
 		<view v-if="pindan" style="background: #FDF6F0;" class="padding-tb-xl solid-bottom flex justify-center">
