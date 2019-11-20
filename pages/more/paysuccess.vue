@@ -129,7 +129,8 @@
 				})
 			},
 			share() {
-				location.href="http://cscb2.kelinteng.com/index/index/sharecea?spell_list_ordersn="+this.sl_ordersn
+				console.log(that.spell_list_ordersn);
+				location.href="http://cscb2.kelinteng.com/index/index/sharecea?spell_list_ordersn="+that.spell_list_ordersn
 			},
 		}
 	}
