@@ -149,18 +149,20 @@
 			}
 		},
 		updated() {
-			if(this.selectIndex==0){
-				this.price=0;
-			}
+			// if(this.selectIndex==0){
+			// 	this.price=0;
+			// }
 			if(this.selectIndex==1){
-				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
-				if(this.price>0){
+				if(this.price<=0){
+					this.price=0;
+				}else{
 					this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
 				}
 			}
 			if(this.selectIndex==2){
-				this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
-				if(this.price>0){
+				if(this.price<=0){
+					this.price=0;
+				}else{
 					this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
 				}
 			}
