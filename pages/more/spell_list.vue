@@ -23,7 +23,7 @@
 		</view>
 		<view class="bg-white radius-lg margin flex flex-direction align-center">
 			<view style="margin-top: -70upx;" class="flex flex-direction justify-center align-center">
-				<image class="round" style="width: 140upx;height: 140upx;" src="http://img.tukexw.com/img/2c99a00e77f69be1.jpg"
+				<image class="round" style="width: 140upx;height: 140upx;" :src="good.slList[0].sm_headimg"
 				 mode="aspectFit"></image>
 				<view class="flex align-center padding-tb-sm">
 					<view class="margin-right-sm text-black text-bold">助力倒计时</view>
