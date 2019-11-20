@@ -172,7 +172,7 @@
 		},
 		methods: {
 			sellerinfo() {
-				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
+				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid"),cscb_extends_activity_id:this.good.cscb_extends_activity_id},
 					function callbacks(res){
 						that.gzyh=res.data
 						if(Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))<0){
