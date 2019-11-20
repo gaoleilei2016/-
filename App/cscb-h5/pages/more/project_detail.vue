@@ -16,14 +16,14 @@
 				<text class="text-red text-price text-xxl text-bold">{{good.price}}</text>
 				<text class="margin-left">门市价:<text class="text-price margin-left-sm"></text>{{good.market_price}}</text>
 			</view>
-			<view class="margin-top-sm flex justify-between align-center">
+			<!-- <view class="margin-top-sm flex justify-between align-center">
 				<text>商家:<text>{{seller.title==null?'':seller.title}}</text></text>
 				<text v-if="false">1.31km</text>
 			</view>
 			<view class="margin-top-sm align-center" @tap="openLocation(seller)">
 				<text>地址:</text>
 				<text>{{seller.address==null?'':seller.address}}</text>
-			</view>
+			</view> -->
 			<view class="margin-tb flex justify-around align-center">
 				<text>人气:{{good.views}}</text>
 				<text>已售:{{good.stock}}</text>
@@ -77,7 +77,7 @@
 			this.id=e.id
 			console.log(e.id);
 			this.getGoodDetail(e.id)
-			this.sellerinfo()
+			// this.sellerinfo()
 		},
 		methods: {
 			sellerinfo() {
