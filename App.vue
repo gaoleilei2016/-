@@ -1,5 +1,8 @@
 <script>
 	import Vue from 'vue'
+	// // #ifdef H5
+	// var jweixin = require('utils/wxsdk.js')
+	// // #endif
 	export default {
 		onLaunch: function() {
 			// uni.clearStorageSync()
@@ -45,28 +48,6 @@
 		},
 		onShow: function() {
 			let that=this;
-			console.log("aaa");
-			uni.getLocation({geocode:true,type:'wgs84',altitude:true,
-				success(res) {
-					console.log(res);
-					uni.showLoading({
-						title:res.latitude
-					})
-					Vue.prototype.lat=res.latitude
-					Vue.prototype.long=res.longitude
-					console.log(res.latitude);
-					// that.$eventBus.$emit('initData');
-				},
-				fail(res) {
-					console.log(res);
-				}
-			})
-			console.log('App Show')
-			// this.$api.post(this.api.wechatJSSDK,
-			// 	function callbacks(res){
-			// 		console.log(res.data);
-			// 		uni.setStorageSync("wxConfig",JSON.stringify(res.data))
-			// 	})
 		},
 		onHide: function() {
 			console.log('App Hide')
