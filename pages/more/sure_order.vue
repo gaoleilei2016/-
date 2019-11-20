@@ -190,7 +190,7 @@
 					longitude: 0,
 					cea_id:1,
 					page: 1,
-					size: 10
+					size: 100
 				};
 				that.$api.postWithData(that.api.sellerListCEA,data,
 					function callbacks(res){
