@@ -13,7 +13,7 @@ const msg = (title, duration=1500, mask=false, icon='none')=>{
 const isLogin=uni.getStorageSync("isLogin") ? true : false;
 // 判断公众号截取code
 const getUrlParam = (name) => {
-	let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	let reg = new RegExp("(^|/?)" + name + "=([^&]*)(&|$|/?)");
 	// let r = window.location.search.substr(1).match(reg);
 	let r = (window.location.hash || window.location.search).substr(1).match(reg);//包含hash[#]和search[?]两种通用
 	console.log(reg);
@@ -266,10 +266,12 @@ const postWithData=(api,data,callbacks)=>{
 	let uid = getUrlParam("uid"); //是否存在code
 	let local = window.location.href;
 	console.log(window.location);
-	if (!isLogin) {
+	if(uid!=null&&uid!=undefined&&uid!=""){
+		uni.setStorageSync("uid",uid)
+	}
+	if (uni.getStorageSync("uid")==''||uni.getStorageSync("uid")==null) {
 		//不存在就打开上面的地址进行授权
 		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=${encodeURIComponent(local)}`;
-		uni.setStorageSync("isLogin",true)
 		return
 	} else {
 		console.log(uid);
