@@ -150,6 +150,9 @@
 										that.gzyh.money=0
 									}
 									that.price=(that.good.price)-Number(parseFloat(that.gzyh.money));
+									if(that.price<0){
+										that.price=0
+									}
 									that.getSellerListCEA()
 								}else{
 									that.price=(that.good.price)
@@ -191,6 +194,9 @@
 			change: function(e) {
 				this.value = e.value
 				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
+				if(this.price<0){
+					this.price=0
+				}
 			},
 			openLocation(){
 				uni.openLocation({
