@@ -154,9 +154,14 @@
 			}
 			if(this.selectIndex==1){
 				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
+				if(this.price>0){
+					this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
+				}
 			}
 			if(this.selectIndex==2){
-				this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
+				if(this.price>0){
+					this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
+				}
 			}
 			if(this.selectIndex==3){
 				this.price=(this.good.price_5*this.value)-Number(parseFloat(that.gzyh.money));
@@ -167,11 +172,12 @@
 				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 					function callbacks(res){
 						that.gzyh=res.data
-						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
-						that.getSellerListCEA()
-						if(that.price<0){
+						if(Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))<0){
 							that.price=0
+						}else{
+							that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
 						}
+						that.getSellerListCEA()
 					})
 			},
 			getSellerListCEA(){
