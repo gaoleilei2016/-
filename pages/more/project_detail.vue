@@ -4,7 +4,7 @@
 		 :circular="true" :autoplay="true" interval="5000" duration="500">
 			<swiper-item @tap="previewImage(images,index)" v-for="(item,index) in images" :key="index">
 				<image :src="good.logo==null||good.logo==''?'http://cscbnew.kelinteng.com/uploads/20191011/b6374b5b92af069b58b13e0e0bf98090.png':good.logo"
-				 mode="aspectFill"></image>
+				 mode="aspectFit"></image>
 			</swiper-item>
 		</swiper>
 		<view class="padding bg-white solid-bottom ">
