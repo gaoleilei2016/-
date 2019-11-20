@@ -161,9 +161,6 @@
 			if(this.selectIndex==3){
 				this.price=(this.good.price_5*this.value)-Number(parseFloat(that.gzyh.money));
 			}
-			if(this.price<0){
-				this.price=0
-			}
 		},
 		methods: {
 			sellerinfo() {
@@ -172,6 +169,9 @@
 						that.gzyh=res.data
 						that.price=Number(parseFloat(that.goodprice)-parseFloat(that.gzyh.money))
 						that.getSellerListCEA()
+						if(that.price<0){
+							that.price=0
+						}
 					})
 			},
 			getSellerListCEA(){
