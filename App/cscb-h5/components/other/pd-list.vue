@@ -6,7 +6,7 @@
 				<image lazy-load="true" class="cu-avatar radius xl" :src="item.logo" mode="aspectFit"></image>
 				<view class="content" style="line-height:3em;left:180upx;width:350upx">
 					<view class="text-bold">
-						<view class="text-cut">{{item.title}}</view>
+						<view class="text-cut" v-html="item.title"></view>
 					</view>
 					<view class="text-bold flex">
 						<view class="text-cut">
