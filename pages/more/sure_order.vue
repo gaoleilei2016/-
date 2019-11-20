@@ -155,10 +155,11 @@
 			if(this.selectIndex==1){
 				this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
 				if(this.price>0){
-					this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
+					this.price=(this.good.price*this.value)-Number(parseFloat(that.gzyh.money));
 				}
 			}
 			if(this.selectIndex==2){
+				this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
 				if(this.price>0){
 					this.price=(this.good.price_3*this.value)-Number(parseFloat(that.gzyh.money));
 				}
