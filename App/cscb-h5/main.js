@@ -14,7 +14,8 @@ const isLogin=uni.getStorageSync("isLogin") ? true : false;
 // 判断公众号截取code
 const getUrlParam = (name) => {
 	let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-	let r = window.location.search.substr(1).match(reg);
+	// let r = window.location.search.substr(1).match(reg);
+	let r = (window.location.hash || window.location.search).substr(1).match(reg);//包含hash[#]和search[?]两种通用
 	console.log(reg);
 	console.log(r);
 	if (r != null) {
