@@ -53,7 +53,7 @@
 			</navigator>
 			<navigator :url="'sure_order?good='+JSON.stringify(good)+'&isone=3'" class="bg-red submit flex flex-direction justify-center align-center text-lg">
 				<text class="text-price text-bold">{{good.price_3}}<text class="text-sm">起</text> </text>
-				<text class="text-df">发起拼单</text>
+				<text class="text-df">三人拼单</text>
 			</navigator>
 		</view>
 	</view>
