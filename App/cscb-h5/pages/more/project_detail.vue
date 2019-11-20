@@ -8,7 +8,7 @@
 			</swiper-item>
 		</swiper>
 		<view class="padding bg-white solid-bottom ">
-			<view class="text-lg text-bold text-black">{{good.title}}</view>
+			<view class="text-lg text-bold text-black" v-html="good.title"></view>
 			<view class="margin-top-sm" style="line-height: 40upx;">
 				<view class="text-df">{{good.good_desc}}</view>
 			</view>
