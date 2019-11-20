@@ -56,7 +56,8 @@
 				我在参与好友助力,<text class="text-red text-lg text-bold">底价</text>购买年终保养,快来祝我一臂之力吧
 			</view>
 			<view class="margin-bottom flex padding-lr" style="width: 100%;">
-				<button @tap="navigator" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">帮我助力</button>
+				<button v-if="timeList>0" @tap="navigator" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">帮我助力</button>
+				<button v-else @tap="navigatorToHome" style="color: #EA440B;background: #FBDB6F;width: 100%;" class="margin-lr text-bold cu-btn round lg block">我要拼单</button>
 			</view>
 			<view style="background: #f9ecd8;width: 100%;" class="radius-lg solid-bottom flex flex-direction justify-center">
 				<view style="background-image: url(../../static/yaoqing.png);background-repeat: no-repeat;background-position-x:50%;margin-top: -20upx;" class="text-center text-white padding-tb-sm">需邀请{{good.o_type}}人助力</view>
@@ -125,8 +126,7 @@
 		onLoad(e) {
 			that = this;
 			this.sl_ordersn=e.sl_ordersn
-			this.initData(e.sl_ordersn);
-			this.getPayResult(e.sl_ordersn)
+			this.initData(this.sl_ordersn);
 		},
 		data() {
 			return {
@@ -144,15 +144,18 @@
 		},
 		methods: {
 			getPayResult(sl_ordersn){
-				this.$api.postWithData(this.api.payResult,
+				that.$api.postWithData(that.api.payResult,
 				{
 					// ordersn: 'CEA20191113175741506666',
 					sl_ordersn: sl_ordersn,//'CEA20191113175741506666'
 				},
 				function callbacks(res)
 				{
-					if(res.code==1&&res.data!=null){
+					if(res.data!=null){
 						that.good=res.data
+						if(res.data.slList.length>=res.data.o_type){
+							that.timeList = 0
+						}
 					}
 					console.log(res);
 				})
@@ -167,11 +170,17 @@
 						that.ceaDeail = res.data
 						//应返回开始时间和结束时间
 						that.timeList = that.ceaDeail.countDown
+						that.getPayResult(sl_ordersn)
 					})
 			},
 			navigator(){
 				uni.navigateTo({
 					url:'pin_order?ordersn='+that.good.ordersn
+				})
+			},
+			navigatorToHome(){
+				uni.redirectTo({
+					url:'home'
 				})
 			},
 			share() {
