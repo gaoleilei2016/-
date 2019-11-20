@@ -264,10 +264,13 @@ const postWithData=(api,data,callbacks)=>{
 	let appid = "wx0f540572b7afe6af"; //为测试号id
 	let uid = getUrlParam("uid"); //是否存在code
 	let local = window.location.href;
-	uni.setStorageSync("uid",uid)
+	if(uid!= null && uid !=undefined && uid != '')
+	{
+		uni.setStorageSync("uid",uid)
+	}
 	if (uni.getStorageSync("uid")==''||uni.getStorageSync("uid")==null) {
 		//不存在就打开上面的地址进行授权
-		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=http%3a%2f%2fcea.kelinteng.com`;
+		window.location.href = `https://cscbnew.kelinteng.com/index/index/oauth?url=${encodeURIComponent(local)}`;
 		uni.setStorageSync("isLogin",true)
 		return
 	} else {
