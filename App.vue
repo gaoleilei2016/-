@@ -1,17 +1,11 @@
 <script>
 	import Vue from 'vue'
-	// // #ifdef H5
-	// var jweixin = require('utils/wxsdk.js')
-	// // #endif
 	export default {
 		onLaunch: function() {
-			// uni.clearStorageSync()
 			Vue.prototype.lat=0
 			Vue.prototype.long=0
 			// Vue.prototype.uid=2210
 			// Vue.prototype.seller_id=60
-			Vue.prototype.wxConfig=null;
-			
 			uni.getSystemInfo({
 				success: function(e) {
 					Vue.prototype.screenWidth=e.windowWidth;
@@ -38,7 +32,7 @@
 				}
 			})
 			setInterval(function(){
-				uni.getLocation({geocode:true,type:'wgs84',altitude:true,
+				uni.getLocation({type:'wgs84',
 					success(res) {
 						Vue.prototype.lat=res.latitude
 						Vue.prototype.long=res.longitude
@@ -47,7 +41,12 @@
 			},1000*60)
 		},
 		onShow: function() {
-			let that=this;
+			uni.getLocation({type:'wgs84',
+				success(res) {
+					Vue.prototype.lat=res.latitude
+					Vue.prototype.long=res.longitude
+				}
+			})
 		},
 		onHide: function() {
 			console.log('App Hide')
