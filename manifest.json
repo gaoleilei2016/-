@@ -109,7 +109,8 @@
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 }
-            }
+            },
+            "https" : true
         },
         // ,
         // "/reverse_geocoding/" : {
@@ -118,8 +119,8 @@
         //     "secure" : true // 设置支持https协议的代理
         // }
         "router" : {
-            "mode": "hash",
-            "base": ""
+            "mode" : "hash",
+            "base" : ""
         },
         "sdkConfigs" : {
             "maps" : {
@@ -128,7 +129,12 @@
                 }
             }
         },
-        "title" : ""
+        "title" : "",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
+        }
     }
 }
 //cscbnew.kelinteng.com', //目标接口域名
