@@ -6,7 +6,7 @@
 			"style": {
 				"navigationBarBackgroundColor": "#FFFFFF",
 				"navigationStyle": "custom",
-				"navigationBarTitleText":"商家",
+				"navigationBarTitleText":"活动商品",
 				"enablePullDownRefresh":true
 			}
 		},{
@@ -43,7 +43,7 @@
 		},{
 			"path": "pages/more/project_detail",
 			"style": {
-				"navigationBarTitleText": "项目详情",
+				"navigationBarTitleText": "商品详情",
 				"navigationBarTextStyle": "black"
 			}
 		},{
@@ -276,17 +276,7 @@
 				"navigationStyle": "custom",
 				"disableScroll": true
 			}
-		},
-		
-		{
-			"path": "pages/more/shop",//更多
-			"style": {
-				"navigationBarBackgroundColor": "#FFFFFF",
-				"navigationBarTitleText": "商城",
-				"navigationBarTextStyle": "black"
-			}
 		}
-		
 	],
 	// "tabBar":{
 	// 	"selectedColor":"#161848",
