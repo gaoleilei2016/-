@@ -2,30 +2,12 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image :src="seller_list[seller_Index].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:20upx;"></image>
-				<!-- <view class="text-black text-bold">{{seller.title}}</view> -->
-				<tui-dropdown-list :show="dropdownShowSeller" :top="65" :height="400">
-					<template v-slot:selectionbox>
-						<view  @click="dropDownSellerList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
-							{{seller_list[seller_Index].title}}<text class="cuIcon-triangledownfill align-center"></text>
-						</view>
-					</template>
-					<template v-slot:dropdownbox>
-						<view class="tui-selected-list solid">
-							<scroll-view scroll-y style="height: 400upx;">
-								<block v-for="(item,index) in seller_list" :key="index">
-									<view :class="seller_Index==index?'bg-cyan':'bg-white'" @click="dropDownSellerList(index)" class="text-cut padding-left-sm percent100" >
-										{{item.title}}
-									</view>
-								</block>
-							</scroll-view>
-						</view>
-					</template>
-				</tui-dropdown-list>
-				<!-- <view class="cuIcon-right align-center"></view> -->
+				<!-- <image :src="seller_list[seller_Index].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:20upx;"></image> -->
+				<image  mode="aspectFill" style="width:30upx;height:30upx;"></image>
+				<view class="text-black text-bold">优质商家为您精诚服务</view>
 			</view>
-			<view @tap="openLocation" class="text-xl">
-				<text class="cuIcon-locationfill"></text>
+			<view  @tap="showModal" data-target="DrawerModalR" >
+				<text>查看</text>
 			</view>
 		</view>
 		<view class="flex padding-tb-sm align-center">
@@ -72,6 +54,18 @@
 				<text>微信支付</text>
 			</view>
 		</view>
+		<view class="flex bg-white justify-between padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">联系人</text>
+			<view class="flex align-center">
+				<input type="text" v-model="form.recive_name" placeholder="请输入联系人" class="text-right text-df" placeholder-class="text-right text-df" />
+			</view>
+		</view>
+		<view class="flex bg-white justify-between padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">联系电话</text>
+			<view class="flex align-center">
+				<input type="number" maxlength="11" v-model="form.recive_phone" placeholder="请输入联系电话" class="text-right text-df" placeholder-class="text-right text-df"/>
+			</view>
+		</view>
 		<view class="cu-bar foot bg-white tabbar border shop">
 			<view class="submit flex align-center">
 				<text class="text-black text-bold">实付款:</text>
@@ -83,6 +77,28 @@
 			<view @tap="goPay" class="bg-red submit ">
 				<text>立即支付</text>
 			</view>
+		</view>
+		<view class="cu-modal drawer-modal justify-end" :class="modalName=='DrawerModalR'?'show':''" @tap="hideModal">
+			<scroll-view scroll-y="true" class="cu-dialog basis-lg" style="min-width: 80%;"  @tap.stop="" >
+				<view class="bg-white padding text-left">
+					<view class="text-black text-bold text-lg margin-bottom-sm">优选商家为您精诚服务</view>
+					<view class="">成功购买后以下商家均支持到店服务</view>
+				</view>
+				<view class="cu-list menu-avatar">
+					<view class="cu-item" style="border-top: 0.5px solid #ddd;height:180upx;" v-for="(item,index) in seller_list" :key="index">
+						<view class="cu-avatar radius lg" :style="'background-image:url('+item.brand_logo+');'"></view>
+						<view class="content">
+							<view class="text-black"><view class="text-cut">{{item.title}}</view></view>
+							<view class="text-sm flex"> <view class="text-cut">电话:{{item.store_phone}}</view></view>
+							<view @tap="openLocation(item)" class="text-sm flex"> <view class="text-cut">地址:{{item.address}}</view></view>
+						</view>
+						<view class="action">
+							<view class="text-sm">{{item.km==null?0:item.km|km}}</view>
+							<!-- <view class="cu-tag round bg-red sm">5</view> -->
+						</view>
+					</view>
+				</view>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -98,6 +114,7 @@
 		},
 		data() {
 			return {
+				modalName:null,
 				value: 1,
 				dropdownShow: false,
 				dropdownShowSeller:false,
@@ -120,7 +137,9 @@
 					seller_id:0,
 					o_type:0,
 					num:0,
-					redids:0
+					redids:0,
+					recive_name:'',
+					recive_phone:''
 				},
 				seller:{},
 				price:0,
@@ -128,6 +147,22 @@
 				goodprice:0,
 				gzyh:{},
 				isOne:1
+			}
+		},
+		filters: {
+			views: function(val) {
+				if (Number(val) > 999) {
+					return '999+';
+				} else {
+					return val.toFixed(0);
+				}
+			},
+			km: function(val) {
+				if (val != null) {
+					return (Number(val) / 1000).toFixed(2) + 'km';
+				} else {
+					return "";
+				}
 			}
 		},
 		onLoad(e) {
@@ -149,9 +184,6 @@
 			}
 		},
 		updated() {
-			// if(this.selectIndex==0){
-			// 	this.price=0;
-			// }
 			if(this.selectIndex==1){
 				if(this.price<=0){
 					this.price=0;
@@ -171,6 +203,12 @@
 			}
 		},
 		methods: {
+			showModal(e) {
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
 			sellerinfo() {
 				this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid"),cscb_extends_activity_id:this.good.cscb_extends_activity_id},
 					function callbacks(res){
@@ -186,8 +224,8 @@
 			getSellerListCEA(){
 				let data = {
 					keywords: '',
-					latitude: 0,
-					longitude: 0,
+					latitude: this.lat,
+					longitude:this.long,
 					cea_id:1,
 					page: 1,
 					size: 100
@@ -205,23 +243,22 @@
 					this.$api.msg("请选择购买类型")
 					return ;
 				}
+				if(this.form.recive_name==''){
+					this.$api.msg("请填写联系人")
+					return ;
+				}
+				if(this.form.recive_phone==''){
+					this.$api.msg("请输入联系电话")
+					return ;
+				}
 				this.form.id=this.good.objid
 				this.form.uid=uni.getStorageSync("uid")
-				this.form.seller_id=this.seller_list[this.seller_Index].id
+				// this.form.seller_id=this.seller_list[this.seller_Index].id
 				this.form.o_type=this.dropdownlistData[this.selectIndex].value
 				this.form.num=this.value
 				this.form.redids=0
-				location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.good.id+'&uid='+this.form.uid+'&seller_id='+this.form.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num
-				// location.href="https://cscbnew.kelinteng.com/index/pay/cea?data="+JSON.stringify(this.form)
-				// this.$api.postWithData(this.api.orderpay,this.form,
-				// 	function callbacks(res){
-				// 		console.log(res);
-				// 		that.payment(res.data)
-				// 		// uni.navigateTo({
-				// 		// 	url:'paysuccess?type='+that.dropdownlistData[that.selectIndex].value
-				// 		// })
-				// 	})
-				
+				// location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.good.id+'&uid='+this.form.uid+'&seller_id='+this.form.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num
+				location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.good.id+'&uid='+this.form.uid+'&o_type='+this.form.o_type+'&num='+this.form.num+'&recive_name='+this.form.recive_name+'&recive_phone='+this.form.recive_phone
 			},
 			change: function(e) {
 				this.value = e.value
@@ -229,23 +266,21 @@
 			dropDownList(index) {
 				if (index !== -1) {
 					this.selectIndex=index;
-					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShow = !this.dropdownShow
 			},
 			dropDownSellerList(index) {
 				if (index !== -1) {
 					this.seller_Index=index;
-					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShowSeller = !this.dropdownShowSeller
 			},
-			openLocation(){
+			openLocation(item){
 				uni.openLocation({
-					latitude:Number(this.seller_list[this.seller_Index].latitude),
-					longitude:Number(this.seller_list[this.seller_Index].longitude),
-					address:this.seller_list[this.seller_Index].address,
-					name:this.seller_list[this.seller_Index].title
+					latitude:Number(item.latitude),
+					longitude:Number(item.longitude),
+					address:item.address,
+					name:item.title
 				})
 			},
 		},

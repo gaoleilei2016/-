@@ -33,9 +33,6 @@
 			</view>
 			<view class="flex justify-between self-start margin-lr-sm" style="min-height: 80upx;line-height: 80upx;width: 90%;">
 				<view class="flex align-center justify-between">
-					<!-- <view class="cu-tag sm text-white margin-lr-sm bg-black"  style="padding-top: 25upx;padding-bottom: 25upx;">
-						
-					</view> -->
 					<image style="width: 40px;height:40px; padding: 15upx;" :src="good.s_brand_logo==null?'../../static/logo.png':good.s_brand_logo" mode="aspectFit"></image>
 					<view class="text-black text-bold text-cut">{{good.s_title}}</view>
 					<view class="cu-tag sm text-black radius margin-lr-sm"  style="background: #DABB86;padding-top: 20upx;padding-bottom: 20upx;"><text>优选</text></view>
@@ -164,7 +161,6 @@
 							that.timeList = 0
 						}
 					}
-					console.log(res);
 				})
 			},
 			initData(sl_ordersn) {

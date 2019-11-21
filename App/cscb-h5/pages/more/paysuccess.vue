@@ -89,10 +89,7 @@
 		},
 		onLoad(res) {
 			that = this;
-			console.log(res);
 			this.sl_ordersn=res.ordersn
-			//res.ordersn
-			//res.sl_ordersn
 			this.getPayResult(res.ordersn)
 		},
 
@@ -104,7 +101,6 @@
 						ordersn: ordersn//'CEA20191113175741506666'
 					},
 					function callbacks(res) {
-						console.log(res);
 						if (res.code == 1 && res.data != null) {
 							that.info = res.data
 							if (that.info.o_type > 1) {
