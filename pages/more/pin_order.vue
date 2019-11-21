@@ -2,7 +2,9 @@
 	<view class="">
 		<view class="bg-white padding-right flex justify-between" style="min-height: 80upx;line-height: 80upx;">
 			<view class="flex align-center">
-				<image :src="seller_list[selectIndex].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:15upx;"></image>
+				<image  mode="aspectFill" style="width:30upx;height:30upx;"></image>
+				<view class="text-black text-bold">优质商家为您精诚服务</view>
+				<!-- <image :src="seller_list[selectIndex].brand_logo" mode="aspectFill" style="width:80upx;height:80upx;padding:15upx;"></image>
 				<tui-dropdown-list :show="dropdownShow" :top="65" :height="400">
 					<template v-slot:selectionbox>
 						<view  @click="dropDownList(-1)" style="height: 60upx;line-height: 60upx;" class="text-center bg-white padding-lr-xs">
@@ -20,15 +22,15 @@
 							</scroll-view>
 						</view>
 					</template>
-				</tui-dropdown-list>
+				</tui-dropdown-list> -->
 				
 			</view>
-			<view @tap="openLocation" class="text-xl">
-				<text class="cuIcon-locationfill"></text>
+			<view  @tap="showModal" data-target="DrawerModalR" >
+				<text>查看</text>
 			</view>
 		</view>
 		<view class="flex padding-tb-sm align-center">
-			<image class="margin-lr radius" :src="good.objLogo" mode="aspectFill" style="width: 165upx;height: 165upx;"></image>
+			<image class="margin-lr radius" :src="good.objLogo" mode="aspectFit" style="width: 165upx;height: 165upx;"></image>
 			<view class="flex flex-direction justify-between text-sm">
 				<view style="width:500upx;" class="text-df text-black text-cut text-bold">{{good.objTitle}}</view>
 				<view class="margin-tb-sm"><text class="text-black">描述:</text><text>{{good.objDesc}}</text> </view>
@@ -72,6 +74,18 @@
 				<text>微信支付</text>
 			</view>
 		</view>
+		<view class="flex bg-white justify-between padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">联系人</text>
+			<view class="flex align-center">
+				<input type="text" v-model="form.recive_name" placeholder="请输入联系人" class="text-right text-df" placeholder-class="text-right text-df" />
+			</view>
+		</view>
+		<view class="flex bg-white justify-between padding-lr percent100-100 margin-top-sm">
+			<text class="text-black text-bold">联系电话</text>
+			<view class="flex align-center">
+				<input type="number" maxlength="11" v-model="form.recive_phone" placeholder="请输入联系电话" class="text-right text-df" placeholder-class="text-right text-df"/>
+			</view>
+		</view>
 		<view class="cu-bar foot bg-white tabbar border shop">
 			<view class="submit flex align-center">
 				<text class="text-black text-bold">实付款:</text>
@@ -83,6 +97,28 @@
 			<view @tap="goPay" class="bg-red submit ">
 				<text>立即支付</text>
 			</view>
+		</view>
+		<view class="cu-modal drawer-modal justify-end" :class="modalName=='DrawerModalR'?'show':''" @tap="hideModal">
+			<scroll-view scroll-y="true" class="cu-dialog basis-lg" style="min-width: 80%;"  @tap.stop="" >
+				<view class="bg-white padding text-left">
+					<view class="text-black text-bold text-lg margin-bottom-sm">优选商家为您精诚服务</view>
+					<view class="">成功购买后以下商家均支持到店服务</view>
+				</view>
+				<view class="cu-list menu-avatar">
+					<view class="cu-item" style="border-top: 0.5px solid #ddd;height:180upx;" v-for="(item,index) in seller_list" :key="index">
+						<view class="cu-avatar radius lg" :style="'background-image:url('+item.brand_logo+');'"></view>
+						<view class="content">
+							<view class="text-black"><view class="text-cut">{{item.title}}</view></view>
+							<view class="text-sm flex"> <view class="text-cut">电话:{{item.store_phone}}</view></view>
+							<view @tap="openLocation(item)" class="text-sm flex"> <view class="text-cut">地址:{{item.address}}</view></view>
+						</view>
+						<view class="action">
+							<view class="text-sm">{{item.km==null?0:item.km|km}}</view>
+							<!-- <view class="cu-tag round bg-red sm">5</view> -->
+						</view>
+					</view>
+				</view>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -96,8 +132,25 @@
 			tuiNumberbox,
 			tuiDropdownList
 		},
+		filters: {
+			views: function(val) {
+				if (Number(val) > 999) {
+					return '999+';
+				} else {
+					return val.toFixed(0);
+				}
+			},
+			km: function(val) {
+				if (val != null) {
+					return (Number(val) / 1000).toFixed(2) + 'km';
+				} else {
+					return "";
+				}
+			}
+		},
 		data() {
 			return {
+				modalName:null,
 				value: 1,
 				dropdownShow: false,
 				selectIndex:0,
@@ -119,7 +172,9 @@
 					o_type:0,//购买类型
 					num:0,//购买数量
 					redids:0,//红包ID
-					spell_list_ordersn:''//拼单订单号
+					spell_list_ordersn:'',//拼单订单号
+					recive_name:'',
+					recive_phone:''
 				},
 				price:0,
 				seller:{},
@@ -137,6 +192,12 @@
 			
 		},
 		methods: {
+			showModal(e) {
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
 			getPinResult(){
 			this.$api.postWithData(this.api.isSubscribe,{uid:uni.getStorageSync("uid")},
 				function callbacks(res){
@@ -185,16 +246,24 @@
 					})
 			},
 			goPay(){
-				console.log(this.seller_list[this.selectIndex].id);
+				if(this.form.recive_name==''){
+					this.$api.msg("请填写联系人")
+					return ;
+				}
+				if(this.form.recive_phone==''){
+					this.$api.msg("请输入联系电话")
+					return ;
+				}
+				// console.log(this.seller_list[this.selectIndex].id);
 				this.form.id=this.good.objid
 				this.form.uid=uni.getStorageSync("uid")
-				this.form.seller_id=this.seller_list[this.selectIndex].id
+				// this.form.seller_id=this.seller_list[this.selectIndex].id
 				this.form.o_type=this.good.o_type
 				this.form.num=this.value
 				this.form.redids=0
 				this.form.spell_list_ordersn=this.good.spell_list_ordersn
-				location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.form.id+'&uid='+this.form.uid+'&seller_id='+this.form.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num+"&sl_ordersn="+this.form.spell_list_ordersn
-				
+				// location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.form.id+'&uid='+this.form.uid+'&seller_id='+this.form.seller_id+'&o_type='+this.form.o_type+'&num='+this.form.num+"&sl_ordersn="+this.form.spell_list_ordersn
+                location.href="http://cscbnew.kelinteng.com/index/pay/cea.html?id="+this.form.id+'&uid='+this.form.uid+'&o_type='+this.form.o_type+'&num='+this.form.num+'&sl_ordersn='+this.form.spell_list_ordersn+'&recive_name='+this.form.recive_name+'&recive_phone='+this.form.recive_phone
 			},
 			change: function(e) {
 				this.value = e.value
@@ -203,76 +272,21 @@
 					this.price=0
 				}
 			},
-			openLocation(){
+			openLocation(item){
 				uni.openLocation({
-					latitude:Number(this.seller_list[this.selectIndex].latitude),
-					longitude:Number(this.seller_list[this.selectIndex].longitude),
-					address:this.seller_list[this.selectIndex].address,
-					name:this.seller_list[this.selectIndex].title
+					latitude:Number(item.latitude),
+					longitude:Number(item.longitude),
+					address:item.address,
+					name:item.title
 				})
 			},
 			dropDownList(index) {
 				if (index !== -1) {
 					this.selectIndex=index;
-					// this.$api.msg("name：" + this.dropdownlistData[index].name)
 				}
 				this.dropdownShow = !this.dropdownShow
-			},
-			payment: function(data, callback_succ_func, callback_error_func) {
-				if (!this.isWechat()) {
-					return;
-				}
-				if (typeof WeixinJSBridge == "undefined") {
-					if (document.addEventListener) {
-						document.addEventListener('WeixinJSBridgeReady', this.jsApiCall, false);
-					} else if (document.attachEvent) {
-						document.attachEvent('WeixinJSBridgeReady', this.jsApiCall);
-						document.attachEvent('onWeixinJSBridgeReady', this.jsApiCall);
-					}
-				} else {
-					this.jsApiCall(data, callback_succ_func, callback_error_func);
-				}
-			},
-			isWechat: function() {
-				var ua = window.navigator.userAgent.toLowerCase();
-				if (ua.match(/micromessenger/i) == 'micromessenger') {
-					return true;
-				} else {
-					return false;
-				}
-			},
-			jsApiCall(data, callback_succ_func, callback_error_func) {
-				//使用原生的，避免初始化appid问题  
-				WeixinJSBridge.invoke('getBrandWCPayRequest', {
-						appId: 'wxf9651f8626d421a9',
-						timeStamp: data.timeStamp,
-						nonceStr: data.nonceStr, // 支付签名随机串，不长于 32 位  
-						package: data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）  
-						signType: data.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'  
-						paySign: data.paySign, // 支付签名  
-						out_trade_no:data.out_trade_no
-					},
-					function(res) {
-						var msg = res.err_msg ? res.err_msg : res.errMsg;
-						//WeixinJSBridge.log(msg);  
-						switch (msg) {
-							case 'get_brand_wcpay_request:ok': //支付成功时  
-								if (callback_succ_func) {
-									callback_succ_func(res);
-								}
-								break;
-							default: //支付失败时  
-								WeixinJSBridge.log('支付失败!' + msg + ',请返回重试.');
-								if (callback_error_func) {
-									callback_error_func({
-										msg: msg
-									});
-								}
-								break;
-						}
-					})
-			},
-		},
+			}
+		}
 	}
 </script>
 

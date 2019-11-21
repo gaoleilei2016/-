@@ -47,11 +47,11 @@
 			<navigator @tap="goBack" class="action">
 				<view class="cuIcon-shop"> </view> 商家
 			</navigator> -->
-			<navigator v-if="good.cscb_extends_activity_id!=1" :url="'sure_order?good='+JSON.stringify(good)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
+			<navigator :url="'sure_order?good='+JSON.stringify(good)+'&isone=1'" class="bg-red-center submit flex text-lg flex-direction justify-center align-center">
 				<text class="text-price text-bold">{{good.price}}</text>
 				<text class="text-df">单独购买</text>
 			</navigator>
-			<navigator v-else :url="'sure_order?good='+JSON.stringify(good)+'&isone=3'" class="bg-red submit flex flex-direction justify-center align-center text-lg">
+			<navigator v-if="good.cscb_extends_activity_id == 1" :url="'sure_order?good='+JSON.stringify(good)+'&isone=3'" class="bg-red submit flex flex-direction justify-center align-center text-lg">
 				<text class="text-price text-bold">{{good.price_3}}<text class="text-sm">起</text> </text>
 				<text class="text-df">三人拼单</text>
 			</navigator>
@@ -77,7 +77,6 @@
 			this.id=e.id
 			console.log(e.id);
 			this.getGoodDetail(e.id)
-			// this.sellerinfo()
 		},
 		methods: {
 			sellerinfo() {
@@ -91,7 +90,6 @@
 								uni.navigateBack()
 							}, 2000);
 						}
-						// console.log(that.good);
 					})
 			},
 			goBack(){

@@ -14,7 +14,6 @@
 <script>
 	var that;
 	import PdList from "@/components/other/pd-list.vue";
-	import mockData from "@/utils/pdlist.js"; // 模拟数据
 	export default {
 		name: "components",
 		components: {
@@ -22,7 +21,6 @@
 		},
 		data() {
 			return {
-				CustomBar: this.CustomBar,
 				loading: true,
 				swiperList: [],
 				isLoad: true,
@@ -98,14 +96,9 @@
 					type: 3
 				},
 				function callbacks(res) {
-					console.log(res);
 					that.swiperList = res.data;
 				})
 			that.isOpenRefresh(true);
-			uni.setNavigationBarColor({
-				frontColor: '#000000',
-				backgroundColor: '#ff0000'
-			})
 		},
 		onShow() {},
 		onHide() {}
